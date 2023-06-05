@@ -11,9 +11,21 @@ A lightweight cs go server picker. On early stage of development but has the mai
 - Windows 10 or Above
 - Works on windows 8 but requires .NET Framework 4.7.2 to be installed separately
 
+## FAQ
+**1. Why it requires admin permission on execution?<br>**
+  - This is due to how windows require elevated execution when adding the necessary firewall policies. If the app is running in normal mode it will not be able to do its operations and will throw errors.
+
+**2. Windows smartscreen detected unrecognized app/publisher<br>**
+  - The app requires a registered publisher which costs a lot of money. Rest assured the app is safe and has been tested by several users.
+
+![image](https://github.com/FN-FAL113/csgo-server-picker/assets/88238718/fe0af8a8-4195-457e-bbbf-3a772e7f646c)
+
 ## To Do
 - Fetch sdr data instead of hardcoding values
 - Possible UI refactoring (for now its simple as possible)
+
+## Contributors
+- @Mohamad82Bz (for testing out the app on EU Servers and providing necessary details)
 
 ## Support the Project
 I develop stuffs for free with dedication and hardwork. Sharing this project or giving it a star are a huge sign of appreciation!
