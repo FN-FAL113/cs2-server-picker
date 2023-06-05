@@ -20,6 +20,9 @@ A lightweight cs go server picker. On early stage of development but has the mai
 
 ![image](https://github.com/FN-FAL113/csgo-server-picker/assets/88238718/fe0af8a8-4195-457e-bbbf-3a772e7f646c)
 
+**3. I'm receiving frequent timeouts when a match is being confirmed<br>**
+  - You may have blocked many servers, for optimal searching and relaying block only the necessary servers that you don't want to play on
+
 ## To Do
 - Fetch sdr data instead of hardcoding values
 - Possible UI refactoring (for now its simple as possible)
