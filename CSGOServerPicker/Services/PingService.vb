@@ -59,10 +59,6 @@
             End Try
         Next
 
-        If row.Cells(1).Value = "Getting latency..." Then
-            row.Cells(1).Value = "Failed to get latency...please try again"
-        End If
-
         ping.Dispose()
     End Sub
 

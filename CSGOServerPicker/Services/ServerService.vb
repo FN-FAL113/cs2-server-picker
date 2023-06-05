@@ -22,18 +22,18 @@
                 Dim region As String = row.Cells(0).Value
 
                 proc.StartInfo.Arguments = "/c netsh advfirewall firewall " + shouldBlock + " rule " +
-                    "name=CSGOServerPicker_" + region.Replace(" ", "") + If(block, " dir=out action=block protocol=any " +
+                    "name=CSGOServerPicker_" + region.Replace(" ", "") + If(block, " dir=out action=block protocol=UDP " +
                     "remoteip=" + App.Get_Server_Dictionary().Item(region), "")
                 proc.Start()
                 proc.WaitForExit()
 
                 If proc.ExitCode = 1 Or proc.ExitCode < 0 Then
-                    Throw New Exception(proc.StandardOutput.ReadLine())
+                    Throw New Exception(proc.StandardOutput.ReadToEnd().Split(".")(0))
 
                     Continue For
                 End If
             Catch ex As Exception
-                MessageBox.Show("An error has occured with the following message: " + Environment.NewLine + ex.Message)
+                MessageBox.Show("An error has occured while blocking/unblocking selected server with the following message: " + Environment.NewLine + ex.Message)
             End Try
         Next
 
@@ -60,13 +60,13 @@
                 End If
 
                 proc.StartInfo.Arguments = "/c netsh advfirewall firewall " + shouldBlock + " rule " +
-                "name=CSGOServerPicker_" + region.Replace(" ", "") + If(block, " dir=out action=block protocol=any " +
+                "name=CSGOServerPicker_" + region.Replace(" ", "") + If(block, " dir=out action=block protocol=UDP " +
                     "remoteip=" + App.Get_Server_Dictionary().Item(region), "")
                 proc.Start()
                 proc.WaitForExit()
 
                 If proc.ExitCode = 1 Or proc.ExitCode < 0 Then
-                    Throw New Exception(proc.StandardOutput.ReadLine())
+                    Throw New Exception(proc.StandardOutput.ReadToEnd().Split(".")(0))
 
                     Continue For
                 End If
@@ -74,7 +74,7 @@
 
             proc.Dispose()
         Catch ex As Exception
-            MessageBox.Show("An error has occured with the following message: " + Environment.NewLine + ex.Message)
+            MessageBox.Show("An error has occured while blocking/unblocking all servers with the following message: " + Environment.NewLine + ex.Message)
         End Try
 
         Ping_Servers()
