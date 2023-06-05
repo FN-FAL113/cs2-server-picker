@@ -8,9 +8,9 @@
             For Each addressRange As String In App.Get_Server_Dictionary().Item(dgRow.Cells(0).Value).Split(",")
                 ' replace host id from ip address since this will be traversed from 0 to max 8 bit value
                 Dim startingAdress = addressRange.Split("-")(0)
-                Dim address As String = startingAdress.Remove(startingAdress.LastIndexOf(".") + 1, startingAdress.Split(".")(3).Length)
+                Dim addressFormatted As String = startingAdress.Remove(startingAdress.LastIndexOf(".") + 1, startingAdress.Split(".")(3).Length)
 
-                Call Ping_Handler(address, dgRow)
+                Call Ping_Handler(addressFormatted, dgRow)
 
                 Exit For
             Next
@@ -18,16 +18,15 @@
     End Sub
 
     Public Async Sub Ping_Handler(address As String, row As DataGridViewRow)
-        '' do not ping if server is blocked
-        With row
-            If Is_Server_Blocked(.Cells(0).Value, True) Then
-                .Cells(0).Style.BackColor = Color.Red
-                .Cells(1).Value = "Blocked"
-
+        ' do not ping if server is blocked
+        With row.Cells(0)
+            If Is_Server_Blocked(.Value, True) Then
+                .Style.BackColor = Color.Red
+                row.Cells(1).Value = "Blocked"
 
                 Return
-            ElseIf .Cells(0).Style.BackColor = Color.Red Then
-                .Cells(0).Style.BackColor = Color.Empty
+            ElseIf .Style.BackColor = Color.Red Then
+                .Style.BackColor = Color.Empty
             End If
         End With
 
@@ -35,7 +34,7 @@
         Dim lowestPing As Integer = 0
 
         ' add created ping obj to a list that will be cleared disposed and cleared on ping cancel or form close
-        App.Get_Ping_Objects.Add(ping)
+        App.Get_Ping_Objects().Add(ping)
 
         row.Cells(1).Value = "Getting latency..."
 
@@ -44,7 +43,7 @@
         ' ping whole server host range
         For i = 0 To 255
             Try
-                Dim result = Await ping.SendPingAsync(address + i.ToString(), 500)
+                Dim result = Await ping.SendPingAsync(address + i.ToString(), 350)
 
                 If lowestPing = 0 Then
                     lowestPing = result.RoundtripTime
@@ -59,6 +58,10 @@
                 Exit For
             End Try
         Next
+
+        If row.Cells(1).Value = "Getting latency..." Then
+            row.Cells(1).Value = "Failed to get latency...please try again"
+        End If
 
         ping.Dispose()
     End Sub

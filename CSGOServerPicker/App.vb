@@ -59,7 +59,7 @@
     End Function
 
     Private Sub RefreshButton_Click(sender As Object, e As EventArgs) Handles RefreshButton.Click
-        Call Ping_Servers()
+        Ping_Servers()
     End Sub
 
     Private Sub MainDataGridView_SelectionChanged(sender As Object, e As EventArgs) Handles MainDataGridView.SelectionChanged
@@ -96,7 +96,7 @@
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-        Process.Start("https://github.com/FN-FAL113")
+        Process.Start("https://github.com/FN-FAL113/csgo-server-picker")
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
