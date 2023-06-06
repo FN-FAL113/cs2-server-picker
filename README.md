@@ -1,5 +1,5 @@
 # CSGO Server Picker
-A lightweight cs go server picker. On early stage of development but has the main functions to be able to select regions.
+A lightweight cs go server picker. On early stage of development but has the main functions to be able to select regions. All regions are included for selection!
 
 ## Download
 ### [Releases](https://github.com/FN-FAL113/csgo-server-picker/releases)
