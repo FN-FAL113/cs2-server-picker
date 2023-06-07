@@ -9,7 +9,7 @@ A lightweight cs go server picker. On early stage of development but has the mai
 
 ## Requirements
 - Windows 10 or Above
-- Works on windows 8 but requires .NET Framework 4.7.2 to be installed separately
+- Works on Windows 8.1 but requires [.NET Framework 4.7.2](https://dotnet.microsoft.com/en-us/download/dotnet-framework/thank-you/net472-web-installer) to be installed separately
 
 ## FAQ
 **1. Why it requires admin permission on execution?<br>**
@@ -24,7 +24,6 @@ A lightweight cs go server picker. On early stage of development but has the mai
   - You may have blocked many servers, for optimal searching and relaying block only the necessary servers that you don't want to play on
 
 ## To Do
-- Fetch sdr data instead of hardcoding values
 - Possible UI refactoring (for now its simple as possible)
 
 ## Contributors
