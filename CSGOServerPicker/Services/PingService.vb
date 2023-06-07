@@ -5,19 +5,18 @@
         Cancel_Pending_Ping()
 
         For Each dgRow As DataGridViewRow In App.Get_DataGridView_Control().Rows()
-            For Each addressRange As String In App.Get_Server_Dictionary().Item(dgRow.Cells(0).Value).Split(",")
+            For Each address As String In App.Get_Server_Dictionary().Item(dgRow.Cells(0).Value).Split(",")
                 ' replace host id from ip address since this will be traversed from 0 to max 8 bit value
-                Dim startingAdress = addressRange.Split("-")(0)
-                Dim addressFormatted As String = startingAdress.Remove(startingAdress.LastIndexOf(".") + 1, startingAdress.Split(".")(3).Length)
+                Dim addressNoHostValue As String = address.Remove(address.LastIndexOf(".") + 1, address.Split(".")(3).Length)
 
-                Call Ping_Handler(addressFormatted, dgRow)
+                Call Ping_Handler(addressNoHostValue, dgRow)
 
                 Exit For
             Next
         Next
     End Sub
 
-    Public Async Sub Ping_Handler(address As String, row As DataGridViewRow)
+    Public Async Sub Ping_Handler(addressNoHostValue As String, row As DataGridViewRow)
         ' do not ping if server is blocked
         With row.Cells(0)
             If Is_Server_Blocked(.Value, True) Then
@@ -33,17 +32,20 @@
         Dim ping As New Net.NetworkInformation.Ping
         Dim lowestPing As Integer = 0
 
-        ' add created ping obj to a list that will be cleared disposed and cleared on ping cancel or form close
+        ' add created ping obj to a list that will be cleared on ping cancel or form close
         App.Get_Ping_Objects().Add(ping)
 
         row.Cells(1).Value = "Getting latency..."
 
-        ' Async operation for pinging an ip range
+        ' Async operation for pinging whole server host range
         ' this loop maintains its context so I don't have to worry about unpredictability
-        ' ping whole server host range
         For i = 0 To 255
             Try
-                Dim result = Await ping.SendPingAsync(address + i.ToString(), 350)
+                Dim result = Await ping.SendPingAsync(addressNoHostValue + i.ToString(), 500)
+
+                If row.Cells(1).Value = "Blocked" Then
+                    Exit For
+                End If
 
                 If lowestPing = 0 Then
                     lowestPing = result.RoundtripTime

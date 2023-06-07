@@ -1,5 +1,5 @@
 ﻿Module ProcessService
-    Public Function Create_Custom_CMD_Process()
+    Public Function Create_Custom_CMD_Process() As Process
         Dim proc As Process = New Process()
 
         proc.StartInfo.FileName = "cmd.exe"
