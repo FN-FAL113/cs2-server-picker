@@ -23,6 +23,10 @@ A lightweight cs go server picker. On early stage of development but has the mai
 **3. I'm receiving frequent timeouts when a match is being confirmed<br>**
   - You may have blocked many servers, for optimal searching and relaying block only the necessary servers that you don't want to play on
 
+**4. "status" command tells incorrect server<br>**
+  - Its either your connection got relayed to or the server is part of group of servers under a region (EU West should include paris, madrid, etc..)
+  - you may checkout the light blue text from the console and see if the primary and backup router tells the exact servers that are not blocked from the app. Example: [paris-london-console-log.txt](https://github.com/FN-FAL113/csgo-server-picker/files/11701514/paris-london-console-log.txt)
+
 ## To Do
 - Possible UI refactoring (for now its simple as possible)
 
