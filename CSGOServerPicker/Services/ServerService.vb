@@ -1,6 +1,13 @@
 ﻿Imports Newtonsoft.Json.Linq
 Module ServerService
 
+    Private clusterDict As New Dictionary(Of String, String) From {
+        {"China", "Perfect,Hong Kong"},
+        {"Japan", "Tokyo"},
+        {"Stockholm (Sweden)", "Stockholm"},
+        {"India", "Chennai,Mumbai"}
+    }
+
     Public Function Fetch_Server_Data() As String
         Try
             Dim webReq As String = New Net.WebClient().DownloadString("https://api.steampowered.com/ISteamApps/GetSDRConfig/v1/?appid=730")
@@ -24,21 +31,43 @@ Module ServerService
             For Each serverProp As JProperty In mainJson.SelectToken("pops")
                 ' if serverProp object value has relays prop then loop its Object array value
                 If serverProp.Value.SelectToken("relays") IsNot Nothing Then
-                    Dim ipObjArr As JArray = serverProp.Value.SelectToken("relays")
+                    Dim ipObjArr As JArray = serverProp.Value.SelectToken("relays") ' array of objects
                     Dim ipArr As List(Of String) = New List(Of String)
 
                     ' collect server relay addresses to an array
-                    For Each ipToken As JToken In ipObjArr
+                    For Each ipToken As JObject In ipObjArr
                         ipArr.Add(ipToken.SelectToken("ipv4").ToString())
                     Next
 
-                    App.Get_Server_Dictionary().Add(serverProp.Value.SelectToken("desc").ToString(), String.Join(",", ipArr))
+                    Dim serverName As String = serverProp.Value.SelectToken("desc").ToString()
+                    Dim serverIsClustered As Boolean = False
+
+                    ' if server is part of clustered servers then add/concatenate its ip addresses to its cluster name key 
+                    For Each clusterKvp As KeyValuePair(Of String, String) In clusterDict  ' traverse every cluster
+                        For Each clusterValue As String In clusterKvp.Value.Split(",") ' traverse cluster comma-separated values
+                            If serverName.Contains(clusterValue) Then
+                                If Not App.Get_Server_Dictionary().ContainsKey(clusterKvp.Key) Then ' initialize cluster with values
+                                    App.Get_Server_Dictionary().Add(clusterKvp.Key, String.Join(",", ipArr))
+                                Else ' concatenate server ip to cluter
+                                    App.Get_Server_Dictionary().Item(clusterKvp.Key) = App.Get_Server_Dictionary().Item(clusterKvp.Key) _
+                                        + "," + String.Join(",", ipArr)
+                                End If
+
+                                serverIsClustered = True
+                            End If
+                        Next
+                    Next
+
+                    ' server is not part of clustered servers 
+                    If Not serverIsClustered Then
+                        App.Get_Server_Dictionary().Add(serverName, String.Join(",", ipArr))
+                    End If
                 End If
             Next
 
             Return serverRevision
         Catch ex As Exception
-            MessageBox.Show("An error has occured while retriving server data! Please report to github issue-tracker.", "Error")
+            MessageBox.Show("An error has occured while retrieving server data! Please report to github issue-tracker.", "Error")
 
             Return "null"
         End Try
@@ -57,6 +86,7 @@ Module ServerService
 
         Dim proc As Process = Create_Custom_CMD_Process()
 
+        ' traverse every datagrid row and block/unblock selected servers
         For Each row As DataGridViewRow In MainDataGridView.SelectedRows
             If Is_Server_Blocked(row.Cells(0).Value, block) Then
                 Continue For
@@ -94,6 +124,7 @@ Module ServerService
 
             Dim proc As Process = Create_Custom_CMD_Process()
 
+            ' traverse every datagrid row and block/unblock all servers
             For i = 0 To MainDataGridView.Rows.Count - 1
                 Dim region As String = MainDataGridView.Rows(i).Cells(0).Value
 
@@ -125,14 +156,14 @@ Module ServerService
     Public Function Is_Server_Blocked(serverName As String, block As Boolean) As Boolean
         Dim proc As Process = Create_Custom_CMD_Process()
 
-        proc.StartInfo.FileName = "cmd.exe"
         proc.StartInfo.Arguments = "/c netsh advfirewall firewall show rule name=CSGOServerPicker_" +
                 serverName.Replace(" ", "") + " | findstr ""No Rules"""
         proc.Start()
         proc.WaitForExit()
 
-        Dim containsNoRules = proc.StandardOutput.ReadLine().Contains("No rules")
-        Dim result As Boolean = IIf(block, Not containsNoRules, containsNoRules)
+        Dim procOutput = proc.StandardOutput.ReadToEnd() ' retrieve command output
+        Dim containsNoRules = IIf(String.IsNullOrEmpty(procOutput), "", procOutput.Contains("No rules")) ' if output is empty return ""
+        Dim result As Boolean = IIf(block, Not containsNoRules, containsNoRules) ' if block is true then server has firewall block policy
 
         proc.Dispose()
 

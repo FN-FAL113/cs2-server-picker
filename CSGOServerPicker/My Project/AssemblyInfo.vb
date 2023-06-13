@@ -10,7 +10,7 @@ Imports System.Runtime.InteropServices
 ' Review the values of the assembly attributes
 
 <Assembly: AssemblyTitle("CSGOServerPicker")>
-<Assembly: AssemblyDescription("A simple lightweight cs go server picker")>
+<Assembly: AssemblyDescription("A portable and lightweight server picker for cs go!")>
 <Assembly: AssemblyCompany("")>
 <Assembly: AssemblyProduct("CSGOServerPicker")>
 <Assembly: AssemblyCopyright("Copyright © 2023 by FN-FAL113")>
@@ -32,6 +32,6 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")>
 
-<Assembly: AssemblyVersion("1.0.3.0")>
-<Assembly: AssemblyFileVersion("1.0.3.0")>
+<Assembly: AssemblyVersion("1.0.4.0")>
+<Assembly: AssemblyFileVersion("1.0.4.0")>
 <Assembly: NeutralResourcesLanguage("en")>

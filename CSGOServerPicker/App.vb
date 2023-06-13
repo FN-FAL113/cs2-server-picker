@@ -3,7 +3,6 @@
     Private serverDict As New Dictionary(Of String, String)
 
     Private pingObjs As List(Of Net.NetworkInformation.Ping) = New List(Of Net.NetworkInformation.Ping)
-    Public Property relays As String
 
     Public Function Get_Server_Dictionary() As Dictionary(Of String, String)
         Return serverDict
