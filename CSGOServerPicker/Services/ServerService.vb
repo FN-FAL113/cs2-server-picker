@@ -154,16 +154,22 @@ Module ServerService
     End Sub
 
     Public Function Is_Server_Blocked(serverName As String, block As Boolean) As Boolean
+        Dim result As Boolean = False
+        Dim is_rule_exist As Boolean = False
         Dim proc As Process = Create_Custom_CMD_Process()
 
         proc.StartInfo.Arguments = "/c netsh advfirewall firewall show rule name=CSGOServerPicker_" +
-                serverName.Replace(" ", "") + " | findstr ""No Rules"""
+                serverName.Replace(" ", "") + " | findstr CSGOServerPicker_" + serverName.Replace(" ", "")
         proc.Start()
         proc.WaitForExit()
 
-        Dim procOutput = proc.StandardOutput.ReadToEnd() ' retrieve command output
-        Dim containsNoRules = IIf(String.IsNullOrEmpty(procOutput), "", procOutput.Contains("No rules")) ' if output is empty return ""
-        Dim result As Boolean = IIf(block, Not containsNoRules, containsNoRules) ' if block is true then server has firewall block policy
+        If procOutput.Contains("CSGOServerPicker_" + serverName.Replace(" ", "")) Then
+            is_rule_exist = True
+        End If
+
+        If is_rule_exist And block Then
+            result = True
+        End If
 
         proc.Dispose()
 
