@@ -167,7 +167,7 @@ Module ServerService
             is_rule_exist = True
         End If
 
-        If is_rule_exist And block Then
+        If (is_rule_exist And block) Or (Not is_rule_exist And Not block) Then
             result = True
         End If
 
