@@ -1,5 +1,5 @@
-# CSGO Server Picker
-A lightweight cs go server picker for windows. All regions are included for freedom of selection! 
+# Counter Strike 2 Server Picker
+A lightweight cs go server picker for windows. All regions are included for freedom of selection! Previously developed for CS:GO but is now for CS2!
 
 ## Download
 ### [Releases](https://github.com/FN-FAL113/csgo-server-picker/releases)
@@ -28,10 +28,10 @@ A lightweight cs go server picker for windows. All regions are included for free
   - you may checkout the light blue text from the console and see if the primary and backup router tells the exact servers that are not blocked from the app. Example: [paris-london-console-log.txt](https://github.com/FN-FAL113/csgo-server-picker/files/11701514/paris-london-console-log.txt)
 
 **5. Why windows only<br>**
-  - App is written in vb.net and windows platform still dominate the gaming scene due to better compatibility.
+  - App is written using vb.net and windows platform still dominates the gaming scene due to better compatibility.
 
 ## To Do
-- Possible UI refactoring (for now its simple as possible)
+- TBD
 
 ## Contributors
 - @Mohamad82Bz (for testing out the app on EU Servers and providing necessary details)
