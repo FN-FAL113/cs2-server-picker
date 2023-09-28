@@ -5,7 +5,7 @@ A lightweight cs go server picker for windows. All regions are included for free
 ### [Releases](https://github.com/FN-FAL113/csgo-server-picker/releases)
 
 ## Screenshot
-![image](https://github.com/FN-FAL113/csgo-server-picker/assets/88238718/378a2843-e0e7-4ee7-82de-a6f3259930f6)
+![image](https://github.com/FN-FAL113/csgo-server-picker/assets/88238718/07e5564d-e7c5-4e61-82b2-8595f4617aea)
 
 ## Requirements
 - Windows 10 or Above
