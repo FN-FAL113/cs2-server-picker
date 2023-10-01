@@ -1,5 +1,5 @@
 # Counter Strike 2 Server Picker
-A lightweight server picker for cs2. Previously developed for CS:GO but is now for CS2! All regions avaiable are included for freedom of selection.
+A lightweight server picker for cs2. Previously developed for CS:GO but is now for CS2! All regions available are included for freedom of selection.
 
 ## Download
 ### [Releases](https://github.com/FN-FAL113/csgo-server-picker/releases)
@@ -23,7 +23,7 @@ A lightweight server picker for cs2. Previously developed for CS:GO but is now f
 **3. I'm receiving frequent timeouts when a match is being confirmed<br>**
   - You may have blocked many servers, for optimal searching and relaying block only the necessary servers that you don't want to play on.
 
-**4. ```status``` command tells incorrect server<br>**
+**4. ```status``` command tells incorrect server or not being routed to lowest ping server<br>**
   - Due to the fact that we can only access the relayed addresses rather than the game servers' IP addresses directly, its either your connection got relayed to the nearest available server.
   - you may checkout the light blue text from the console and see if the primary and backup router tells the exact servers that are not blocked from the app. Example: [paris-london-console-log.txt](https://github.com/FN-FAL113/csgo-server-picker/files/11701514/paris-london-console-log.txt)
 
