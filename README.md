@@ -1,5 +1,5 @@
 # Counter Strike 2 Server Picker
-A lightweight server picker for cs2. Previously developed for CS:GO but is now for CS2! All regions available are included for freedom of selection.
+A lightweight server picker for cs2. Previously developed for CS:GO but is now for CS2! All regions available are included for freedom of selection. Still showing passion for this game since I started playing way back 2013 despite now that my laptop cannot handle the game anymore with the new visuals upgrades 😃.
 
 ## Download
 ### [Releases](https://github.com/FN-FAL113/csgo-server-picker/releases)
