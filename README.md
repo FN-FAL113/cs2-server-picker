@@ -10,10 +10,10 @@
 
 A lightweight server picker for CS2. Previously developed for CS:GO but is now for CS2! All regions available are included for freedom of selection. Still showing passion for this game since I started playing way back in 2013 despite the fact that my laptop cannot handle the game anymore with the new visual upgrades 😃.
 
-## Download
+## ⬇️ Download
 ### [Releases](https://github.com/FN-FAL113/csgo-server-picker/releases)
 
-## Screenshot
+## 📷 Screenshot
 ![image](https://github.com/FN-FAL113/csgo-server-picker/assets/88238718/101e6b5b-b826-42a7-927a-316e7833d246)
 
 ## ⚙️ Requirements
@@ -42,7 +42,7 @@ A lightweight server picker for CS2. Previously developed for CS:GO but is now f
 ## 📔 To Do
 - TBD
 
-## Contributors
+## 💡 Contributors
 - @Mohamad82Bz (for testing out the app on EU Servers and providing necessary details)
 
 ## 💙 Donors
