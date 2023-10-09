@@ -6,10 +6,9 @@
   ![GitHub release (with filter)](https://img.shields.io/github/v/release/FN-FAL113/cs2-server-picker)
   ![GitHub Repo stars](https://img.shields.io/github/stars/FN-FAL113/cs2-server-picker)
 
-
 </div>
 
-A lightweight server picker for cs2. Previously developed for CS:GO but is now for CS2! All regions available are included for freedom of selection. Still showing passion for this game since I started playing way back 2013 despite now that my laptop cannot handle the game anymore with the new visuals upgrades 😃.
+A lightweight server picker for CS2. Previously developed for CS:GO but is now for CS2! All regions available are included for freedom of selection. Still showing passion for this game since I started playing way back in 2013 despite the fact that my laptop cannot handle the game anymore with the new visual upgrades 😃.
 
 ## Download
 ### [Releases](https://github.com/FN-FAL113/csgo-server-picker/releases)
@@ -17,11 +16,11 @@ A lightweight server picker for cs2. Previously developed for CS:GO but is now f
 ## Screenshot
 ![image](https://github.com/FN-FAL113/csgo-server-picker/assets/88238718/101e6b5b-b826-42a7-927a-316e7833d246)
 
-## Requirements
+## ⚙️ Requirements
 - Windows 10 or Above
 - Works on Windows 8.1 but requires [.NET Framework 4.7.2](https://dotnet.microsoft.com/en-us/download/dotnet-framework/thank-you/net472-web-installer) to be installed separately
 
-## FAQ
+## ❔FAQ
 **1. Why it requires admin permission on execution?<br>**
   - This is due to how windows require elevated execution when adding the necessary firewall policies. If the app is running in normal mode it will not be able to do its operations and will throw errors.
 
@@ -40,15 +39,18 @@ A lightweight server picker for cs2. Previously developed for CS:GO but is now f
 **5. Why windows only<br>**
   - App is written using vb.net and windows platform still dominates the gaming scene due to better compatibility.
 
-## To Do
+## 📔 To Do
 - TBD
 
 ## Contributors
 - @Mohamad82Bz (for testing out the app on EU Servers and providing necessary details)
 
-## Support the Project
-I develop stuffs for free with dedication and hardwork. Sharing this project or giving it a star are a huge sign of appreciation!</br>
-if you want to show appreciation through donation, I accept donations through my parent's paypal while my personal account is being processed yet due to my pending national ID:<br/>
+## 💙 Donors
+- Thanks to @rainbowjose for the donation
+
+## 💖 Support the Project/Dev
+I develop stuffs for free with dedication and hardwork. Sharing this project to fellow gamers or giving it a star are a huge sign of appreciation!</br>
+if you want to show appreciation through a donation:<br/>
 <a href="https://www.paypal.com/paypalme/ameliaOrbeta" target=_blank>
   <img src="https://raw.githubusercontent.com/stefan-niedermann/paypal-donate-button/master/paypal-donate-button.png" alt="Donate with PayPal" width="40%" />
 </a>
