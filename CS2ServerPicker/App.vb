@@ -99,4 +99,21 @@
             e.Handled = True
         End If
     End Sub
+
+    Private Async Sub MainDataGridView_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles MainDataGridView.CellDoubleClick
+        If e.RowIndex = -1 Then
+            Return
+        End If
+
+        Dim dgRow As DataGridViewRow = MainDataGridView.Rows(e.RowIndex)
+        dgRow.Cells(1).Value = "Reloading..."
+        Dim serverName As String = dgRow.Cells(0).Value.ToString()
+        Dim addresses = Get_Server_Dictionary().Item(serverName).Split(",")
+        For Each address As String In addresses
+            ' replace host id from ip address since this will be traversed from 0 to max 8 bit value
+            Dim addressNoHostValue As String = address.Remove(address.LastIndexOf(".") + 1, address.Split(".")(3).Length)
+
+            Await Task.Run(Sub() Ping_Handler(addressNoHostValue, dgRow))
+        Next
+    End Sub
 End Class
