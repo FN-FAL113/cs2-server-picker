@@ -13,7 +13,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("A portable and lightweight server picker windows app for CS 2!")>
 <Assembly: AssemblyCompany("")>
 <Assembly: AssemblyProduct("CS2ServerPicker")>
-<Assembly: AssemblyCopyright("© Copyright 2023 by FN-FAL113")>
+<Assembly: AssemblyCopyright("© Copyright by FN-FAL113")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>
@@ -32,6 +32,6 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")>
 
-<Assembly: AssemblyVersion("2.0.0.0")>
-<Assembly: AssemblyFileVersion("2.0.0.0")>
+<Assembly: AssemblyVersion("2.0.1.0")>
+<Assembly: AssemblyFileVersion("2.0.1.0")>
 <Assembly: NeutralResourcesLanguage("en")>

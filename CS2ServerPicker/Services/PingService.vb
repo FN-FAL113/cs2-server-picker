@@ -1,7 +1,25 @@
 ﻿Module PingService
-    Public Async Sub Ping_Servers()
-        ' DO NOT call this procedure in a separate thread, it references UI controls
-        ' which can only be accessed in the UI thread
+
+    Public Async Sub Ping_Servers(dgRows As DataGridViewSelectedRowCollection)
+        ' DO NOT call this procedure in a separate thread
+        ' it references UI controls which can only be accessed in the UI thread
+        For Each dgRow As DataGridViewRow In dgRows
+            Dim serverName As String = dgRow.Cells(0).Value.ToString()
+            Dim address = App.Get_Server_Dictionary().Item(serverName).Split(",")(0)
+
+            Cancel_Pending_Ping(serverName)
+
+            dgRow.Cells(1).Value = "Reloading..."
+
+            ' replace host id from ip address since this will be traversed from 0 to max 8 bit value
+            Dim addressNoHostValue As String = address.Remove(address.LastIndexOf(".") + 1, address.Split(".")(3).Length)
+
+            Await Task.Run(Sub() Ping_Handler(addressNoHostValue, dgRow))
+        Next
+    End Sub
+
+    Public Async Sub Ping_All_Servers()
+        ' DO NOT call this procedure in a separate thread
         Clear_Column_Values()
 
         Cancel_Pending_Ping()
@@ -13,6 +31,7 @@
 
                 Await Task.Run(Sub() Ping_Handler(addressNoHostValue, dgRow))
 
+                ' ping first address only, skip pinging others to prevent race conditions
                 Exit For
             Next
         Next
@@ -32,10 +51,13 @@
         End With
 
         Dim ping As New Net.NetworkInformation.Ping
+        Dim pingObjsDict As Dictionary(Of String, Net.NetworkInformation.Ping) = App.Get_Ping_Objects_Dictionary()
         Dim lowestPing As Integer = 0
 
-        ' add created ping obj to a list that will be cleared on ping cancel or form close
-        App.Get_Ping_Objects().Add(ping)
+        ' add created ping obj to dictionary that gets cleared on refresh (ping all) or form close
+        If Not pingObjsDict.ContainsKey(row.Cells(0).Value) Then
+            pingObjsDict.Add(row.Cells(0).Value, ping)
+        End If
 
         row.Cells(1).Value = "Getting latency..."
 
@@ -66,17 +88,26 @@
         ping.Dispose()
     End Sub
 
-    Public Sub Cancel_Pending_Ping()
-        Dim pingObjs = App.Get_Ping_Objects()
+    Public Sub Cancel_Pending_Ping(Optional serverName As String = "")
+        Dim pingObjs = App.Get_Ping_Objects_Dictionary()
 
         If pingObjs.Count <= 0 Then
             Return
         End If
 
-        For Each ping As Net.NetworkInformation.Ping In pingObjs
-            ping.SendAsyncCancel()
-        Next
+        If String.IsNullOrEmpty(serverName) Then
+            For Each ping As Net.NetworkInformation.Ping In pingObjs.Values
+                ping.SendAsyncCancel()
 
-        pingObjs.Clear()
+                ping.Dispose()
+            Next
+
+            pingObjs.Clear()
+        ElseIf pingObjs.ContainsKey(serverName) Then
+            pingObjs.Item(serverName).SendAsyncCancel()
+            pingObjs.Item(serverName).Dispose()
+
+            pingObjs.Remove(serverName)
+        End If
     End Sub
 End Module
