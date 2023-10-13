@@ -114,7 +114,7 @@ Module ServerService
                 Dim region As String = row.Cells(0).Value
 
                 proc.StartInfo.Arguments = "/c netsh advfirewall firewall " + If(block, "add", "delete") + " rule " +
-                        "name=CS2ServerPicker_" + region.Replace(" ", "") + If(block, " dir=out action=block protocol=UDP " +
+                        "name=CS2ServerPicker_" + region.Replace(" ", "") + If(block, " dir=out action=block protocol=ANY " +
                         "remoteip=" + ServerDictionary.Item(region), "")
                 proc.Start()
                 proc.WaitForExit()
@@ -167,7 +167,7 @@ Module ServerService
                 End If
 
                 proc.StartInfo.Arguments = "/c netsh advfirewall firewall " + If(block, "add", "delete") + " rule " +
-                "name=CS2ServerPicker_" + region.Replace(" ", "") + If(block, " dir=out action=block protocol=UDP " +
+                "name=CS2ServerPicker_" + region.Replace(" ", "") + If(block, " dir=out action=block protocol=ANY " +
                     "remoteip=" + ServerDictionary.Item(region), "")
                 proc.Start()
                 proc.WaitForExit()
