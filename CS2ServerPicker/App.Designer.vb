@@ -22,7 +22,7 @@ Partial Class App
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.RefreshButton = New System.Windows.Forms.Button()
         Me.Latency = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Servers = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -31,7 +31,7 @@ Partial Class App
         Me.BlockSelectedButton = New System.Windows.Forms.Button()
         Me.UnblockSelectedButton = New System.Windows.Forms.Button()
         Me.BlockAllButton = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.InfoButton = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.ProgBar = New System.Windows.Forms.ProgressBar()
         CType(Me.MainDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -73,14 +73,14 @@ Partial Class App
         Me.MainDataGridView.AllowUserToOrderColumns = True
         Me.MainDataGridView.AllowUserToResizeRows = False
         Me.MainDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Arial Rounded MT Bold", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.MainDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Arial Rounded MT Bold", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.MainDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.MainDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.MainDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Servers, Me.Latency})
         Me.MainDataGridView.Location = New System.Drawing.Point(76, 54)
@@ -135,15 +135,15 @@ Partial Class App
         Me.BlockAllButton.Text = "Block All"
         Me.BlockAllButton.UseVisualStyleBackColor = False
         '
-        'Button1
+        'InfoButton
         '
-        Me.Button1.Font = New System.Drawing.Font("Arial Rounded MT Bold", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(76, 26)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 22)
-        Me.Button1.TabIndex = 4
-        Me.Button1.Text = "Info"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.InfoButton.Font = New System.Drawing.Font("Arial Rounded MT Bold", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.InfoButton.Location = New System.Drawing.Point(76, 26)
+        Me.InfoButton.Name = "InfoButton"
+        Me.InfoButton.Size = New System.Drawing.Size(75, 22)
+        Me.InfoButton.TabIndex = 4
+        Me.InfoButton.Text = "Info"
+        Me.InfoButton.UseVisualStyleBackColor = True
         '
         'PictureBox1
         '
@@ -174,7 +174,7 @@ Partial Class App
         Me.ClientSize = New System.Drawing.Size(756, 430)
         Me.Controls.Add(Me.ProgBar)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.InfoButton)
         Me.Controls.Add(Me.BlockAllButton)
         Me.Controls.Add(Me.UnblockSelectedButton)
         Me.Controls.Add(Me.BlockSelectedButton)
@@ -199,7 +199,7 @@ Partial Class App
     Friend WithEvents BlockSelectedButton As Button
     Friend WithEvents UnblockSelectedButton As Button
     Friend WithEvents BlockAllButton As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents InfoButton As Button
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents ProgBar As ProgressBar
 End Class

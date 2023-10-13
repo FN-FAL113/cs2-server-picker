@@ -2,22 +2,30 @@
 
     Private serverDict As New Dictionary(Of String, String)
 
-    Private pingObjs As List(Of Net.NetworkInformation.Ping) = New List(Of Net.NetworkInformation.Ping)
+    Private pingObjsDict As New Dictionary(Of String, Net.NetworkInformation.Ping)
+
+    Public pendingOperation As Boolean = False
 
     Public Function Get_Server_Dictionary() As Dictionary(Of String, String)
         Return serverDict
+    End Function
+
+    Public Function Get_Ping_Objects_Dictionary() As Dictionary(Of String, Net.NetworkInformation.Ping)
+        Return pingObjsDict
     End Function
 
     Public Function Get_DataGridView_Control() As DataGridView
         Return MainDataGridView
     End Function
 
-    Public Function Get_Ping_Objects() As List(Of Net.NetworkInformation.Ping)
-        Return pingObjs
-    End Function
+    Public Sub Set_Pending_Operation(bool As Boolean)
+        pendingOperation = bool
+
+        ProgBar.Visible = bool
+    End Sub
 
     Private Sub RefreshButton_Click(sender As Object, e As EventArgs) Handles RefreshButton.Click
-        Ping_Servers()
+        Ping_All_Servers()
     End Sub
 
     Private Sub MainDataGridView_SelectionChanged(sender As Object, e As EventArgs) Handles MainDataGridView.SelectionChanged
@@ -46,7 +54,7 @@
 
             Should_Block_All_Servers(False)
         Else
-            Ping_Servers()
+            Ping_All_Servers()
         End If
     End Sub
 
@@ -74,17 +82,19 @@
         Process.Start("https://github.com/FN-FAL113/csgo-server-picker")
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub InfoButton_Click(sender As Object, e As EventArgs) Handles InfoButton.Click
         MessageBox.Show(
-            "How to select server:" + Environment.NewLine +
-            "  - hold down CTRL to select multiple server or" + Environment.NewLine +
-            "  - hold LEFT CLICK on a server name then drag down" + Environment.NewLine +
+            "How to select server/s:" + Environment.NewLine +
+            "  - hold down CTRL and left click any server." + Environment.NewLine +
+            "  - hold down LEFT CLICK on a server then drag down." + Environment.NewLine +
             Environment.NewLine +
             "Note:" + Environment.NewLine +
             "  - Blocked servers will be automatically unblocked if server data is updated on next launch." + Environment.NewLine +
+            "  - You may ping single or multiple selected server/s by double clicking on the highlighted region." + Environment.NewLine +
             Environment.NewLine +
             "Author: FN-FAL113 (github username)" + Environment.NewLine +
-            "License: GNU General Public License V3",
+            "License: GNU General Public License V3" + Environment.NewLine +
+            "App Version: 2.0.1",
             "App Info"
         )
     End Sub
@@ -99,4 +109,13 @@
             e.Handled = True
         End If
     End Sub
+
+    Private Sub MainDataGridView_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles MainDataGridView.CellDoubleClick
+        If e.RowIndex = -1 Or MainDataGridView.SelectedRows.Count <= 0 Then
+            Return
+        End If
+
+        Ping_Servers(MainDataGridView.SelectedRows)
+    End Sub
+
 End Class

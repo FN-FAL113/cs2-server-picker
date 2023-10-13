@@ -8,8 +8,6 @@ Module ServerService
         {"India", "Chennai,Mumbai"}
     }
 
-    Public pendingOperation As Boolean = False
-
     Public Function Fetch_Server_Data() As String
         Try
             Dim webReq As String = New Net.WebClient().DownloadString("https://api.steampowered.com/ISteamApps/GetSDRConfig/v1/?appid=730")
@@ -79,26 +77,22 @@ Module ServerService
         Dim MainDataGridView As DataGridView = App.Get_DataGridView_Control()
         Dim serverDictionary As Dictionary(Of String, String) = App.Get_Server_Dictionary()
 
-        If pendingOperation Then
+        If App.pendingOperation Then
             MessageBox.Show("Operation in progress, please wait a moment...")
 
             Return
         End If
 
-        pendingOperation = True
-
-        App.ProgBar.Visible = True
+        App.Set_Pending_Operation(True)
 
         Cancel_Pending_Ping()
 
         ' offload this blocking task into a seperate thread to lessen load in the UI thread
         Await Task.Run(Sub() Handle_Selected_Server_Block_Unblock(MainDataGridView, serverDictionary, block))
 
-        pendingOperation = False
+        App.Set_Pending_Operation(False)
 
-        App.ProgBar.Visible = False
-
-        Ping_Servers()
+        Ping_Servers(MainDataGridView.SelectedRows)
     End Sub
 
     Private Sub Handle_Selected_Server_Block_Unblock(MainDataGridView As DataGridView, ServerDictionary As Dictionary(Of String, String), block As Boolean)
@@ -142,26 +136,22 @@ Module ServerService
         Dim serverDictionary As Dictionary(Of String, String) = App.Get_Server_Dictionary()
         Dim MainDataGridView As DataGridView = App.Get_DataGridView_Control()
 
-        If pendingOperation Then
+        If App.pendingOperation Then
             MessageBox.Show("Operation in progress, please wait a moment...")
 
             Return
         End If
 
-        pendingOperation = True
-
-        App.ProgBar.Visible = True
+        App.Set_Pending_Operation(True)
 
         Cancel_Pending_Ping()
 
         ' offload this blocking task into a seperate thread to lessen load in the UI thread
         Await Task.Run(Sub() Handle_All_Server_Block_Unblock(MainDataGridView, serverDictionary, block))
 
-        pendingOperation = False
+        App.Set_Pending_Operation(False)
 
-        App.ProgBar.Visible = False
-
-        Ping_Servers()
+        Ping_All_Servers()
     End Sub
 
     Private Sub Handle_All_Server_Block_Unblock(MainDataGridView As DataGridView, ServerDictionary As Dictionary(Of String, String), block As Boolean)
