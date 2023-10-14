@@ -16,7 +16,11 @@ Module ServerService
             Dim serverRevision As String = mainJson.SelectToken("revision").ToString()
 
             If serverRevision Is Nothing Then
-                MessageBox.Show("Failed to load server data! Please report to github issue-tracker.", "Error")
+                MessageBox.Show("Failed to load server data!" + Environment.NewLine + Environment.NewLine +
+                                "Possible solutions:" + Environment.NewLine +
+                                "1. Please make sure you are connected to the internet and no third-party software is blocking the app's internet access." + Environment.NewLine +
+                                "2. Use VPN incase your ISP has blocked access to numerous internet services, you may turn off the vpn after using this app." + Environment.NewLine +
+                                "3. Report to github tracker if previous steps are not able to resolve the issue.", "Server Data Fetch Error")
 
                 Return "null"
             End If
@@ -67,7 +71,7 @@ Module ServerService
 
             Return serverRevision
         Catch ex As Exception
-            MessageBox.Show("An error has occured while retrieving server data! Please report to github issue-tracker.", "Error")
+            MessageBox.Show("An error has occured while retrieving or displaying server data! Please report to github issue-tracker.", "Server Data Fetch/Display Error")
 
             Return "null"
         End Try
@@ -76,6 +80,8 @@ Module ServerService
     Public Async Sub Should_Block_Selected_Servers(block As Boolean)
         Dim MainDataGridView As DataGridView = App.Get_DataGridView_Control()
         Dim serverDictionary As Dictionary(Of String, String) = App.Get_Server_Dictionary()
+
+        Dim selectedRows As DataGridViewSelectedRowCollection = MainDataGridView.SelectedRows
 
         If App.pendingOperation Then
             MessageBox.Show("Operation in progress, please wait a moment...")
@@ -92,7 +98,7 @@ Module ServerService
 
         App.Set_Pending_Operation(False)
 
-        Ping_Servers(MainDataGridView.SelectedRows)
+        Ping_Servers(selectedRows)
     End Sub
 
     Private Sub Handle_Selected_Server_Block_Unblock(MainDataGridView As DataGridView, ServerDictionary As Dictionary(Of String, String), block As Boolean)
