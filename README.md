@@ -8,13 +8,13 @@
 
 </div>
 
-A lightweight server picker for CS2. Previously developed for CS:GO but is now for CS2! All regions available are included for freedom of selection. Still showing passion for this game since I started playing way back in 2013 despite the fact that my laptop cannot handle the game anymore with the new visual upgrades 😃.
+A lightweight server picker for CS2. Previously developed for CS:GO but is now for CS2! All regions available are included for freedom of selection. Still showing passion for the game since I started playing way back in 2013 despite the fact that my laptop cannot handle the game anymore with the new visual upgrades 😃.
 
 ## ⬇️ Download
 ### [Releases](https://github.com/FN-FAL113/csgo-server-picker/releases)
 
 ## 📷 Screenshot
-![image](https://github.com/FN-FAL113/csgo-server-picker/assets/88238718/101e6b5b-b826-42a7-927a-316e7833d246)
+![Screenshot 2023-10-25 095439](https://github.com/FN-FAL113/cs2-server-picker/assets/88238718/74de5ee8-ef02-4bc7-b873-a1b0fc66c0a0)
 
 ## ⚙️ Requirements
 - Windows 10 or Above
@@ -50,7 +50,7 @@ A lightweight server picker for CS2. Previously developed for CS:GO but is now f
 
 ## 💖 Support the Project/Dev
 I develop stuff for free with dedication and hard work. Sharing this project with fellow gamers or giving it a star is a huge sign of appreciation!</br>
-if you want to show appreciation through a donation, I greatly appreciate it:<br/>
+As requested by a few generous people, a donation button (currently using parent's paypal due to my pending account requirements):<br/>
 <a href="https://www.paypal.com/paypalme/ameliaOrbeta" target=_blank>
   <img src="https://raw.githubusercontent.com/stefan-niedermann/paypal-donate-button/master/paypal-donate-button.png" alt="Donate with PayPal" width="40%" />
 </a>

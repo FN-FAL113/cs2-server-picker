@@ -50,10 +50,10 @@ Module ServerService
                     For Each clusterKvp As KeyValuePair(Of String, String) In clusterDict  ' traverse every cluster
                         For Each clusterValue As String In clusterKvp.Value.Split(",") ' traverse cluster comma-separated values
                             If serverName.Contains(clusterValue) Then
-                                If Not App.Get_Server_Dictionary().ContainsKey(clusterKvp.Key) Then ' initialize cluster with values
-                                    App.Get_Server_Dictionary().Add(clusterKvp.Key, String.Join(",", ipArr))
-                                Else ' concatenate server ip to cluter
-                                    App.Get_Server_Dictionary().Item(clusterKvp.Key) = App.Get_Server_Dictionary().Item(clusterKvp.Key) _
+                                If Not App.Get_Server_Dictionary_Clustered().ContainsKey(clusterKvp.Key) Then ' initialize cluster with values
+                                    App.Get_Server_Dictionary_Clustered().Add(clusterKvp.Key, String.Join(",", ipArr))
+                                Else ' concatenate server ip to cluster
+                                    App.Get_Server_Dictionary_Clustered().Item(clusterKvp.Key) = App.Get_Server_Dictionary_Clustered().Item(clusterKvp.Key) _
                                         + "," + String.Join(",", ipArr)
                                 End If
 
@@ -62,9 +62,11 @@ Module ServerService
                         Next
                     Next
 
+                    App.Get_Server_Dictionary_Unclustered().Add(serverName, String.Join(",", ipArr))
+
                     ' server is not part of clustered servers 
                     If Not serverIsClustered Then
-                        App.Get_Server_Dictionary().Add(serverName, String.Join(",", ipArr))
+                        App.Get_Server_Dictionary_Clustered().Add(serverName, String.Join(",", ipArr))
                     End If
                 End If
             Next
@@ -79,11 +81,11 @@ Module ServerService
 
     Public Async Sub Should_Block_Selected_Servers(block As Boolean)
         Dim MainDataGridView As DataGridView = App.Get_DataGridView_Control()
-        Dim serverDictionary As Dictionary(Of String, String) = App.Get_Server_Dictionary()
+        Dim serverDictionary As Dictionary(Of String, String) = IIf(App.Get_Is_Clustered(), App.Get_Server_Dictionary_Clustered(), App.Get_Server_Dictionary_Unclustered())
 
         Dim selectedRows As DataGridViewSelectedRowCollection = MainDataGridView.SelectedRows
 
-        If App.pendingOperation Then
+        If App.Get_Pending_Operation() Then
             MessageBox.Show("Operation in progress, please wait a moment...")
 
             Return
@@ -138,11 +140,11 @@ Module ServerService
         proc.Dispose()
     End Sub
 
-    Public Async Sub Should_Block_All_Servers(block As Boolean)
-        Dim serverDictionary As Dictionary(Of String, String) = App.Get_Server_Dictionary()
+    Public Async Function Should_Block_All_Servers(block As Boolean, Optional pingServers As Boolean = True) As Task
+        Dim serverDictionary As Dictionary(Of String, String) = IIf(App.Get_Is_Clustered(), App.Get_Server_Dictionary_Clustered(), App.Get_Server_Dictionary_Unclustered())
         Dim MainDataGridView As DataGridView = App.Get_DataGridView_Control()
 
-        If App.pendingOperation Then
+        If App.Get_Pending_Operation() Then
             MessageBox.Show("Operation in progress, please wait a moment...")
 
             Return
@@ -157,8 +159,10 @@ Module ServerService
 
         App.Set_Pending_Operation(False)
 
-        Ping_All_Servers()
-    End Sub
+        If pingServers Then
+            Ping_All_Servers()
+        End If
+    End Function
 
     Private Sub Handle_All_Server_Block_Unblock(MainDataGridView As DataGridView, ServerDictionary As Dictionary(Of String, String), block As Boolean)
         Dim proc As Process = Create_Custom_CMD_Process()

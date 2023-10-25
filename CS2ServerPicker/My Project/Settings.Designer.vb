@@ -65,6 +65,18 @@ Namespace My
                 Me("Server_Revision") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property Is_Clustered() As Boolean
+            Get
+                Return CType(Me("Is_Clustered"),Boolean)
+            End Get
+            Set
+                Me("Is_Clustered") = value
+            End Set
+        End Property
     End Class
 End Namespace
 
