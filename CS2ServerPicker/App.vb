@@ -1,21 +1,29 @@
 ﻿Public Class App
 
-    Private serverDict As New Dictionary(Of String, String)
+    Private serverDictClustered As New Dictionary(Of String, String)
+
+    Private serverDictUnclustered As New Dictionary(Of String, String)
 
     Private pingObjsDict As New Dictionary(Of String, Net.NetworkInformation.Ping)
 
-    Public pendingOperation As Boolean = False
+    Private pendingOperation As Boolean = False
 
-    Public Function Get_Server_Dictionary() As Dictionary(Of String, String)
-        Return serverDict
+    Private isClustered As Boolean = My.Settings.Is_Clustered
+
+    Public Function Get_Server_Dictionary_Clustered() As Dictionary(Of String, String)
+        Return serverDictClustered
+    End Function
+
+    Public Function Get_Server_Dictionary_Unclustered() As Dictionary(Of String, String)
+        Return serverDictUnclustered
     End Function
 
     Public Function Get_Ping_Objects_Dictionary() As Dictionary(Of String, Net.NetworkInformation.Ping)
         Return pingObjsDict
     End Function
 
-    Public Function Get_DataGridView_Control() As DataGridView
-        Return MainDataGridView
+    Public Function Get_Pending_Operation() As Boolean
+        Return pendingOperation
     End Function
 
     Public Sub Set_Pending_Operation(bool As Boolean)
@@ -23,6 +31,18 @@
 
         ProgBar.Visible = bool
     End Sub
+
+    Public Function Get_Is_Clustered() As Boolean
+        Return isClustered
+    End Function
+
+    Public Sub Set_Is_Clustered(bool As Boolean)
+        isClustered = bool
+    End Sub
+
+    Public Function Get_DataGridView_Control() As DataGridView
+        Return MainDataGridView
+    End Function
 
     Private Sub RefreshButton_Click(sender As Object, e As EventArgs) Handles RefreshButton.Click
         Ping_All_Servers()
@@ -35,7 +55,7 @@
         Next
     End Sub
 
-    Private Sub App_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Async Sub App_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim serverRevision As String = Fetch_Server_Data()
 
         ' if app failed to retrieve server data
@@ -52,9 +72,15 @@
             My.Settings.Save()
             My.Settings.Reload()
 
-            Should_Block_All_Servers(False)
+            Await Should_Block_All_Servers(False)
         Else
             Ping_All_Servers()
+        End If
+
+        If isClustered Then
+            ClusterButton.Text = "Uncluster"
+        Else
+            ClusterButton.Text = "Cluster"
         End If
     End Sub
 
@@ -62,16 +88,16 @@
         Cancel_Pending_Ping()
     End Sub
 
-    Private Sub BlockAllButton_Click(sender As Object, e As EventArgs) Handles BlockAllButton.Click
-        Should_Block_All_Servers(True)
+    Private Async Sub BlockAllButton_Click(sender As Object, e As EventArgs) Handles BlockAllButton.Click
+        Await Should_Block_All_Servers(True)
+    End Sub
+
+    Private Async Sub UnblockAllButton_Click(sender As Object, e As EventArgs) Handles UnblockAllButton.Click
+        Await Should_Block_All_Servers(False)
     End Sub
 
     Private Sub BlockSelectedButton_Click(sender As Object, e As EventArgs) Handles BlockSelectedButton.Click
         Should_Block_Selected_Servers(True)
-    End Sub
-
-    Private Sub UnblockAllButton_Click(sender As Object, e As EventArgs) Handles UnblockAllButton.Click
-        Should_Block_All_Servers(False)
     End Sub
 
     Private Sub UnblockSelectedButton_Click(sender As Object, e As EventArgs) Handles UnblockSelectedButton.Click
@@ -91,10 +117,11 @@
             "Note:" + Environment.NewLine +
             "  - Blocked servers will be automatically unblocked if server data is updated on next launch." + Environment.NewLine +
             "  - You may ping single or multiple selected server/s by double clicking on the highlighted region." + Environment.NewLine +
+            "  - Servers that get un/clustered are China, India, Japan, Stockholm." + Environment.NewLine +
             Environment.NewLine +
             "Author: FN-FAL113 (github username)" + Environment.NewLine +
             "License: GNU General Public License V3" + Environment.NewLine +
-            "App Version: 2.0.3",
+            "App Version: 2.0.4",
             "App Info"
         )
     End Sub
@@ -118,4 +145,33 @@
         Ping_Servers(MainDataGridView.SelectedRows)
     End Sub
 
+    Private Async Sub ClusterButton_Click(sender As Object, e As EventArgs) Handles ClusterButton.Click
+        If pendingOperation Then
+            MessageBox.Show("Operation in progress, please wait a moment...")
+
+            Return
+        End If
+
+        MessageBox.Show("App will unblock all servers before " + IIf(isClustered, "unclustering", "clustering") + " servers. Please standby...", "Info")
+
+        Await Should_Block_All_Servers(False, False)
+
+        Clear_DataGridView_Rows()
+
+        If isClustered Then
+            ClusterButton.Text = "Cluster"
+
+            isClustered = False
+        Else
+            ClusterButton.Text = "Uncluster"
+
+            isClustered = True
+        End If
+
+        Load_Server_List()
+
+        My.Settings.Is_Clustered = isClustered
+        My.Settings.Save()
+        My.Settings.Reload()
+    End Sub
 End Class

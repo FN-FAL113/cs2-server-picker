@@ -22,7 +22,7 @@ Partial Class App
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.RefreshButton = New System.Windows.Forms.Button()
         Me.Latency = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Servers = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -34,6 +34,7 @@ Partial Class App
         Me.InfoButton = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.ProgBar = New System.Windows.Forms.ProgressBar()
+        Me.ClusterButton = New System.Windows.Forms.Button()
         CType(Me.MainDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -73,14 +74,14 @@ Partial Class App
         Me.MainDataGridView.AllowUserToOrderColumns = True
         Me.MainDataGridView.AllowUserToResizeRows = False
         Me.MainDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Arial Rounded MT Bold", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.MainDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Arial Rounded MT Bold", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.MainDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.MainDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.MainDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Servers, Me.Latency})
         Me.MainDataGridView.Location = New System.Drawing.Point(76, 54)
@@ -167,11 +168,22 @@ Partial Class App
         Me.ProgBar.TabIndex = 6
         Me.ProgBar.Visible = False
         '
+        'ClusterButton
+        '
+        Me.ClusterButton.Font = New System.Drawing.Font("Arial Rounded MT Bold", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ClusterButton.Location = New System.Drawing.Point(506, 24)
+        Me.ClusterButton.Name = "ClusterButton"
+        Me.ClusterButton.Size = New System.Drawing.Size(87, 24)
+        Me.ClusterButton.TabIndex = 7
+        Me.ClusterButton.Text = "Uncluster"
+        Me.ClusterButton.UseVisualStyleBackColor = True
+        '
         'App
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(756, 430)
+        Me.Controls.Add(Me.ClusterButton)
         Me.Controls.Add(Me.ProgBar)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.InfoButton)
@@ -202,4 +214,5 @@ Partial Class App
     Friend WithEvents InfoButton As Button
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents ProgBar As ProgressBar
+    Friend WithEvents ClusterButton As Button
 End Class

@@ -3,9 +3,11 @@
     Public Async Sub Ping_Servers(dgRows As DataGridViewSelectedRowCollection)
         ' DO NOT call this procedure in a separate thread
         ' it references UI controls which can only be accessed in the UI thread
+        Dim serverDict As Dictionary(Of String, String) = IIf(App.Get_Is_Clustered(), App.Get_Server_Dictionary_Clustered(), App.Get_Server_Dictionary_Unclustered())
+
         For Each dgRow As DataGridViewRow In dgRows
             Dim serverName As String = dgRow.Cells(0).Value.ToString()
-            Dim address = App.Get_Server_Dictionary().Item(serverName).Split(",")(0)
+            Dim address = serverDict.Item(serverName).Split(",")(0)
 
             Cancel_Pending_Ping(serverName)
 
@@ -24,8 +26,10 @@
 
         Cancel_Pending_Ping()
 
+        Dim serverDict As Dictionary(Of String, String) = IIf(App.Get_Is_Clustered(), App.Get_Server_Dictionary_Clustered(), App.Get_Server_Dictionary_Unclustered())
+
         For Each dgRow As DataGridViewRow In App.Get_DataGridView_Control().Rows()
-            For Each address As String In App.Get_Server_Dictionary().Item(dgRow.Cells(0).Value).Split(",")
+            For Each address As String In serverDict.Item(dgRow.Cells(0).Value).Split(",")
                 ' replace host id from ip address since this will be traversed from 0 to max 8 bit value
                 Dim addressNoHostValue As String = address.Remove(address.LastIndexOf(".") + 1, address.Split(".")(3).Length)
 
