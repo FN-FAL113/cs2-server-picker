@@ -62,11 +62,25 @@ Module ServerService
                         Next
                     Next
 
-                    App.Get_Server_Dictionary_Unclustered().Add(serverName, String.Join(",", ipArr))
+                    ' As of November 1's server revision, different server network IDs and geolocation but with same server name were added. 
+                    ' Have to make validations on the dictionary to prevent duplicate key exception.
+                    If Not App.Get_Server_Dictionary_Unclustered().ContainsKey(serverName) Then
+                        App.Get_Server_Dictionary_Unclustered().Add(serverName, String.Join(",", ipArr))
+                    Else
+                        App.Get_Server_Dictionary_Unclustered().Item(serverName) = App.Get_Server_Dictionary_Unclustered().Item(serverName) _
+                            + "," + String.Join(",", ipArr)
+                    End If
 
                     ' server is not part of clustered servers 
                     If Not serverIsClustered Then
-                        App.Get_Server_Dictionary_Clustered().Add(serverName, String.Join(",", ipArr))
+                        If Not App.Get_Server_Dictionary_Clustered().ContainsKey(serverName) Then
+                            App.Get_Server_Dictionary_Clustered().Add(serverName, String.Join(",", ipArr))
+                        Else
+                            App.Get_Server_Dictionary_Clustered().Item(serverName) = App.Get_Server_Dictionary_Clustered().Item(serverName) _
+                            + "," + String.Join(",", ipArr)
+                        End If
+
+
                     End If
                 End If
             Next
