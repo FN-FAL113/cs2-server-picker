@@ -40,13 +40,14 @@ A lightweight server picker for CS2. Previously developed for CS:GO but is now f
   - The app is written using VB.NET, and the Windows platform still dominates the gaming scene due to better compatibility. Steam Charts has great statistics on this.
 
 ## 📔 To Do
-- TBD
+- By Preset/Profile server block/unblock. No ETA for this feature yet.
 
 ## 💡 Contributors
 - @Mohamad82Bz (for testing out the app on EU Servers and providing necessary details)
 
 ## 💙 Donors
 - Thanks to @rainbowjose for the donation.
+- THanks to @kulture for the donation.
 
 ## 💖 Support the Project/Dev
 I develop stuff for free with dedication and hard work. Sharing this project with fellow gamers or giving it a star is a huge sign of appreciation!</br>
