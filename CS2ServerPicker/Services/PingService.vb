@@ -95,7 +95,7 @@
 
         If String.IsNullOrEmpty(serverName) Then
             For Each ping As Net.NetworkInformation.Ping In pingObjs.Values
-                pingObjs.Item(serverName).SendAsyncCancel()
+                ping.SendAsyncCancel()
                 ping.Dispose()
             Next
 
