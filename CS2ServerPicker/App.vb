@@ -121,7 +121,7 @@
             Environment.NewLine +
             "Author: FN-FAL113 (github username)" + Environment.NewLine +
             "License: GNU General Public License V3" + Environment.NewLine +
-            "App Version: 2.0.6",
+            "App Version: 2.0.7",
             "App Info"
         )
     End Sub
@@ -170,8 +170,14 @@
 
         Load_Server_List()
 
+        ' save clustered settings
         My.Settings.Is_Clustered = isClustered
         My.Settings.Save()
         My.Settings.Reload()
+    End Sub
+
+    Private Sub PresetsButton_Click(sender As Object, e As EventArgs) Handles PresetsButton.Click
+        Presets.ShowDialog()
+        Presets.Activate()
     End Sub
 End Class

@@ -32,9 +32,10 @@ Partial Class App
         Me.UnblockSelectedButton = New System.Windows.Forms.Button()
         Me.BlockAllButton = New System.Windows.Forms.Button()
         Me.InfoButton = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.ProgBar = New System.Windows.Forms.ProgressBar()
         Me.ClusterButton = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PresetsButton = New System.Windows.Forms.Button()
         CType(Me.MainDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -146,18 +147,6 @@ Partial Class App
         Me.InfoButton.Text = "Info"
         Me.InfoButton.UseVisualStyleBackColor = True
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox1.BackgroundImage = Global.CS2ServerPicker.My.Resources.Resources.GitHub_Mark
-        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox1.Location = New System.Drawing.Point(6, 4)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(30, 28)
-        Me.PictureBox1.TabIndex = 5
-        Me.PictureBox1.TabStop = False
-        '
         'ProgBar
         '
         Me.ProgBar.Location = New System.Drawing.Point(300, 26)
@@ -178,11 +167,34 @@ Partial Class App
         Me.ClusterButton.Text = "Uncluster"
         Me.ClusterButton.UseVisualStyleBackColor = True
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox1.BackgroundImage = Global.CS2ServerPicker.My.Resources.Resources.GitHub_Mark
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox1.Location = New System.Drawing.Point(6, 4)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(30, 28)
+        Me.PictureBox1.TabIndex = 5
+        Me.PictureBox1.TabStop = False
+        '
+        'PresetsButton
+        '
+        Me.PresetsButton.Font = New System.Drawing.Font("Arial Rounded MT Bold", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PresetsButton.Location = New System.Drawing.Point(157, 25)
+        Me.PresetsButton.Name = "PresetsButton"
+        Me.PresetsButton.Size = New System.Drawing.Size(87, 24)
+        Me.PresetsButton.TabIndex = 8
+        Me.PresetsButton.Text = "Presets"
+        Me.PresetsButton.UseVisualStyleBackColor = True
+        '
         'App
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(756, 430)
+        Me.Controls.Add(Me.PresetsButton)
         Me.Controls.Add(Me.ClusterButton)
         Me.Controls.Add(Me.ProgBar)
         Me.Controls.Add(Me.PictureBox1)
@@ -215,4 +227,5 @@ Partial Class App
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents ProgBar As ProgressBar
     Friend WithEvents ClusterButton As Button
+    Friend WithEvents PresetsButton As Button
 End Class

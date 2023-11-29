@@ -121,6 +121,24 @@
       <DependentUpon>App.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Presets\AddPresetForm.Designer.vb">
+      <DependentUpon>AddPresetForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presets\AddPresetForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presets\DeletePresetForm.Designer.vb">
+      <DependentUpon>DeletePresetForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presets\DeletePresetForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presets\Presets.Designer.vb">
+      <DependentUpon>Presets.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presets\Presets.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Services\DataGridViewService.vb" />
     <Compile Include="Services\PingService.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -151,6 +169,15 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presets\AddPresetForm.resx">
+      <DependentUpon>AddPresetForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presets\DeletePresetForm.resx">
+      <DependentUpon>DeletePresetForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presets\Presets.resx">
+      <DependentUpon>Presets.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
