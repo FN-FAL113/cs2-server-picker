@@ -59,7 +59,7 @@
 
         row.Cells(1).Value = "Getting latency..."
 
-        ' this loop maintains its context through suspension points (Await) so I don't have to worry about unpredictability
+        ' this loop maintains its context through suspension points (Await) so I don't have to worry about race conditions
         For Each address As String In addresses.Split(",")
             Try
                 Dim result = Await ping.SendPingAsync(address)
@@ -89,7 +89,7 @@
     Public Sub Cancel_Pending_Ping(Optional serverName As String = "")
         Dim pingObjs = App.Get_Ping_Objects_Dictionary()
 
-        If pingObjs.Count < 0 Then
+        If pingObjs.Count <= 0 Then
             Return
         End If
 

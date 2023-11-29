@@ -62,7 +62,7 @@ Module ServerService
                         Next
                     Next
 
-                    ' As of November 1's server revision, different server network IDs and geolocation but with same server name were added. 
+                    ' As of november the 1st server revision, different server network IDs and geolocation that has existing server name prop were added. 
                     ' Have to make validations on the dictionary to prevent duplicate key exception.
                     If Not App.Get_Server_Dictionary_Unclustered().ContainsKey(serverName) Then
                         App.Get_Server_Dictionary_Unclustered().Add(serverName, String.Join(",", ipArr))
@@ -79,8 +79,6 @@ Module ServerService
                             App.Get_Server_Dictionary_Clustered().Item(serverName) = App.Get_Server_Dictionary_Clustered().Item(serverName) _
                             + "," + String.Join(",", ipArr)
                         End If
-
-
                     End If
                 End If
             Next
@@ -92,6 +90,63 @@ Module ServerService
             Return "null"
         End Try
     End Function
+
+    Public Async Sub Block_Preset_Servers()
+        If App.Get_Pending_Operation() Then
+            MessageBox.Show("Operation in progress, please wait a moment...")
+
+            Return
+        End If
+
+        ' unblock servers first before doing a block by preset
+        Await Should_Block_All_Servers(False, False)
+
+        Dim serverDictionary As Dictionary(Of String, String) = IIf(App.Get_Is_Clustered(), App.Get_Server_Dictionary_Clustered(), App.Get_Server_Dictionary_Unclustered())
+
+        Dim presetServersDataGridView As DataGridView = Presets.PresetServerListDataGridView
+
+        App.Set_Pending_Operation(True)
+
+        Cancel_Pending_Ping()
+
+        ' offload this blocking task into a seperate thread from the thread pool to lessen load in the UI thread
+        Await Task.Run(Sub() Handle_Preset_Servers_Block(presetServersDataGridView, serverDictionary))
+
+        App.Set_Pending_Operation(False)
+
+        Ping_All_Servers()
+    End Sub
+
+    Private Sub Handle_Preset_Servers_Block(PresetServersDataGridView As DataGridView, ServerDictionary As Dictionary(Of String, String))
+        Dim proc As Process = Create_Custom_CMD_Process()
+
+        ' traverse every datagrid row and block servers from given preset server datagrid view
+        For Each row As DataGridViewRow In PresetServersDataGridView.Rows
+            If Is_Server_Blocked_Or_Unblocked(row.Cells(0).Value, True) Or Not ServerDictionary.ContainsKey(row.Cells(0).Value) Then
+                Continue For
+            End If
+
+            Try
+                Dim region As String = row.Cells(0).Value
+
+                proc.StartInfo.Arguments = "/c netsh advfirewall firewall add rule " +
+                        "name=CS2ServerPicker_" + region.Replace(" ", "") + " dir=out action=block protocol=ANY " +
+                        "remoteip=" + ServerDictionary.Item(region)
+                proc.Start()
+                proc.WaitForExit()
+
+                If proc.ExitCode = 1 Or proc.ExitCode < 0 Then
+                    Throw New Exception(proc.StandardOutput.ReadToEnd().Split(".")(0))
+
+                    Continue For
+                End If
+            Catch ex As Exception
+                MessageBox.Show("An error has occured while blocking servers by preset with the following message: " + Environment.NewLine + ex.Message, "Error Block by Preset")
+            End Try
+        Next
+
+        proc.Dispose()
+    End Sub
 
     Public Async Sub Should_Block_Selected_Servers(block As Boolean)
         Dim MainDataGridView As DataGridView = App.Get_DataGridView_Control()
@@ -105,11 +160,17 @@ Module ServerService
             Return
         End If
 
+        If selectedRows.Count <= 0 Then
+            MessageBox.Show("You haven't selected any server.", "Info")
+
+            Return
+        End If
+
         App.Set_Pending_Operation(True)
 
         Cancel_Pending_Ping()
 
-        ' offload this blocking task into a seperate thread to lessen load in the UI thread
+        ' offload this blocking task into a seperate thread from the thread pool to lessen load in the UI thread
         Await Task.Run(Sub() Handle_Selected_Server_Block_Unblock(MainDataGridView, serverDictionary, block))
 
         App.Set_Pending_Operation(False)
@@ -118,12 +179,6 @@ Module ServerService
     End Sub
 
     Private Sub Handle_Selected_Server_Block_Unblock(MainDataGridView As DataGridView, ServerDictionary As Dictionary(Of String, String), block As Boolean)
-        If MainDataGridView.SelectedRows.Count <= 0 Then
-            MessageBox.Show("You haven't selected any server.", "Info")
-
-            Return
-        End If
-
         Dim proc As Process = Create_Custom_CMD_Process()
 
         ' traverse every datagrid row and block/unblock selected servers
@@ -155,6 +210,8 @@ Module ServerService
     End Sub
 
     Public Async Function Should_Block_All_Servers(block As Boolean, Optional pingServers As Boolean = True) As Task
+        ' this method was converted async since its invoked by other methods/tasks and
+        ' it does not evaluate synchronously due to its async operation that must be awaited
         Dim serverDictionary As Dictionary(Of String, String) = IIf(App.Get_Is_Clustered(), App.Get_Server_Dictionary_Clustered(), App.Get_Server_Dictionary_Unclustered())
         Dim MainDataGridView As DataGridView = App.Get_DataGridView_Control()
 
@@ -168,7 +225,7 @@ Module ServerService
 
         Cancel_Pending_Ping()
 
-        ' offload this blocking task into a seperate thread to lessen load in the UI thread
+        ' offload this blocking task into a seperate thread from the thread pool to lessen load in the UI thread
         Await Task.Run(Sub() Handle_All_Server_Block_Unblock(MainDataGridView, serverDictionary, block))
 
         App.Set_Pending_Operation(False)
@@ -181,15 +238,15 @@ Module ServerService
     Private Sub Handle_All_Server_Block_Unblock(MainDataGridView As DataGridView, ServerDictionary As Dictionary(Of String, String), block As Boolean)
         Dim proc As Process = Create_Custom_CMD_Process()
 
-        Try
-            ' traverse every datagrid row and block/unblock all servers
-            For i = 0 To MainDataGridView.Rows.Count - 1
-                Dim region As String = MainDataGridView.Rows(i).Cells(0).Value
+        ' traverse every datagrid row and block/unblock all servers
+        For Each row As DataGridViewRow In MainDataGridView.Rows
+            Dim region As String = row.Cells(0).Value
 
-                If Is_Server_Blocked_Or_Unblocked(region, block) Then
-                    Continue For
-                End If
+            If Is_Server_Blocked_Or_Unblocked(region, block) Then
+                Continue For
+            End If
 
+            Try
                 proc.StartInfo.Arguments = "/c netsh advfirewall firewall " + If(block, "add", "delete") + " rule " +
                 "name=CS2ServerPicker_" + region.Replace(" ", "") + If(block, " dir=out action=block protocol=ANY " +
                     "remoteip=" + ServerDictionary.Item(region), "")
@@ -201,10 +258,10 @@ Module ServerService
 
                     Continue For
                 End If
-            Next
-        Catch ex As Exception
-            MessageBox.Show("An error has occured while blocking/unblocking all servers with the following message: " + Environment.NewLine + ex.Message, "Error")
-        End Try
+            Catch ex As Exception
+                MessageBox.Show("An error has occured while blocking/unblocking all servers with the following message: " + Environment.NewLine + ex.Message, "Error")
+            End Try
+        Next
 
         proc.Dispose()
     End Sub
