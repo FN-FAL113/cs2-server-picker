@@ -183,8 +183,8 @@
 
     Private Sub DarkModeButton_Click(sender As Object, e As EventArgs) Handles DarkModeButton.Click
 
-        If Not (BackColor = Color.Black) Then
-            Me.BackColor = Color.Black
+        If Not (BackColor = Color.FromArgb(50, 57, 73)) Then
+            Me.BackColor = Color.FromArgb(50, 57, 73)
             PictureBox1.BackgroundImage = My.Resources.GitHub_Mark_Dark
             DarkModeButton.Image = My.Resources.Button_Dark_Theme
 
@@ -193,9 +193,6 @@
             PictureBox1.BackgroundImage = My.Resources.GitHub_Mark
             DarkModeButton.Image = My.Resources.Button_Light_Theme
         End If
-
-
-
 
 
     End Sub
