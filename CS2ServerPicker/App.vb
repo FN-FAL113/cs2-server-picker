@@ -180,4 +180,23 @@
         Presets.ShowDialog()
         Presets.Activate()
     End Sub
+
+    Private Sub DarkModeButton_Click(sender As Object, e As EventArgs) Handles DarkModeButton.Click
+
+        If Not (BackColor = Color.Black) Then
+            Me.BackColor = Color.Black
+            PictureBox1.BackgroundImage = My.Resources.GitHub_Mark_Dark
+            DarkModeButton.Image = My.Resources.Button_Dark_Theme
+
+        Else
+            Me.BackColor = SystemColors.Control
+            PictureBox1.BackgroundImage = My.Resources.GitHub_Mark
+            DarkModeButton.Image = My.Resources.Button_Light_Theme
+        End If
+
+
+
+
+
+    End Sub
 End Class
