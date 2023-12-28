@@ -52,7 +52,7 @@ A lightweight server picker for CS2. Previously developed for CS:GO but is now f
 
 ## 💖 Support the Project/Dev
 I develop stuff for free with dedication and hard work. Sharing this project with fellow gamers or giving it a star is a huge sign of appreciation!</br>
-As requested by a few generous people, a donation button (currently using parent's paypal due to my pending account requirements). Donations go towards the goal of getting a PC:<br/>
+As requested by a few generous people, a donation button (currently using parent's paypal due to my pending account requirements). Donations go towards the goal of getting a PC. App is also open for advertisement sponsorships. <br/>
 <a href="https://www.paypal.com/paypalme/ameliaOrbeta" target=_blank>
   <img src="https://raw.githubusercontent.com/stefan-niedermann/paypal-donate-button/master/paypal-donate-button.png" alt="Donate with PayPal" width="40%" />
 </a>
