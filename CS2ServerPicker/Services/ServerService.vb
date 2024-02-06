@@ -43,16 +43,17 @@ Module ServerService
                         ipArr.Add(ipToken.SelectToken("ipv4").ToString())
                     Next
 
-                    Dim serverName As String = serverProp.Value.SelectToken("desc").ToString()
+                    Dim serverName As String = serverProp.Value.SelectToken("desc").ToString() + " (" + serverProp.Name + ")"
+
                     Dim serverIsClustered As Boolean = False
 
                     ' if server is part of clustered servers then add/concatenate its ip addresses to its cluster name key 
                     For Each clusterKvp As KeyValuePair(Of String, String) In clusterDict  ' traverse every cluster
-                        For Each clusterValue As String In clusterKvp.Value.Split(",") ' traverse cluster comma-separated values
-                            If serverName.Contains(clusterValue) Then
+                        For Each clusterValue As String In clusterKvp.Value.Split(",") ' traverse cluster comma-separated server name values
+                            If serverName.Contains(clusterValue) Then ' check if server name prop is included as cluster array value
                                 If Not App.Get_Server_Dictionary_Clustered().ContainsKey(clusterKvp.Key) Then ' initialize cluster with values
                                     App.Get_Server_Dictionary_Clustered().Add(clusterKvp.Key, String.Join(",", ipArr))
-                                Else ' concatenate server ip to cluster
+                                Else ' concatenate server ip to clustered server
                                     App.Get_Server_Dictionary_Clustered().Item(clusterKvp.Key) = App.Get_Server_Dictionary_Clustered().Item(clusterKvp.Key) _
                                         + "," + String.Join(",", ipArr)
                                 End If

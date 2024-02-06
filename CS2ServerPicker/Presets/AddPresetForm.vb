@@ -18,7 +18,7 @@ Public Class AddPresetForm
     Private Sub AddPresetButton_Click(sender As Object, e As EventArgs) Handles AddPresetButton.Click
         ' add/create a preset from selected servers on add preset button click
         Dim presetName As String = AddPresetNameTextBox.Text
-        Dim regex As Text.RegularExpressions.Regex = New Text.RegularExpressions.Regex("[^a-zA-Z0-9]")
+        Dim regex As Text.RegularExpressions.Regex = New Text.RegularExpressions.Regex("[^a-zA-Z0-9 ]")
 
         If String.IsNullOrWhiteSpace(presetName) Or regex.IsMatch(presetName) Then
             MessageBox.Show("Preset name field cannot be empty or have special characters.", "Info")
