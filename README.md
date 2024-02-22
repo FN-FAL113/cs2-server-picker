@@ -8,7 +8,7 @@
 
 </div>
 
-A lightweight server picker for CS2. Previously developed for CS:GO but is now for CS2! All regions available are included for freedom of selection. Still showing passion for the game since I started playing way back in 2013 despite the fact that my laptop cannot handle the game anymore with the new visual upgrades 😃.
+A lightweight server picker for CS2. Previously developed for CS:GO but now for CS2! All regions available are included for freedom of selection. Still showing passion for the game since I started playing way back in 2013 despite the fact that my laptop cannot handle the game anymore with the new visual upgrades 😃.
 
 ## ⬇️ Download
 ### [Releases](https://github.com/FN-FAL113/csgo-server-picker/releases)
@@ -26,7 +26,8 @@ A lightweight server picker for CS2. Previously developed for CS:GO but is now f
  - The app does not modify any game or system files, you are safe from being banned when using the app. It will add necessary firewall policies to block game server relay ip addresses from being accessed by your network thus skipping them in-game when finding a match.
 
 **2. Not being routed to lowest ping server or not working on your location?**
-  - Due to the fact that we can only access and block IP relay addresses from valve's network points around the world rather than the game's actual server IP addresses directly, which are not exposed publicly, either your connection got relayed to the nearest available server due to how Steam Datagram relay works or your location might be a factor. Re-routing can also happen anytime, even mid-game. One of the best ways to test it out is to block low-ping servers and leave out high-ping servers that are far from your current region. If your ping is high in-game, then you are being routed properly, and the blocked IP relays are not able to re-route you to a nearby server. I was able to test this out properly way back.
+  - Due to the fact that we can only access and block **_IP relay addresses_** from valve's network points around the world rather than the game's actual server IP addresses directly, which are **_not exposed_** publicly, either your connection got relayed to the nearest available server due to **_how Steam Datagram relay works_** or **_your location might be a factor_**. 
+- Re-routing can also happen anytime, even mid-game. One of the best ways to test it out is to block low-ping servers and leave out high-ping servers that are far from your current region. If your ping is high in-game, then you are being routed properly, and the blocked IP relays are not able to re-route you to a nearby server. I was able to test this out properly way back.
 
 **3. Why it requires admin permission on execution?<br>**
   - This is due to how Windows requires elevated execution when adding the necessary firewall policies. If the app is running in normal mode, it will not be able to do its operations and will throw errors.
@@ -53,7 +54,7 @@ A lightweight server picker for CS2. Previously developed for CS:GO but is now f
 
 ## 💖 Support the Project/Dev
 I develop stuff for free with dedication and hard work. Sharing this project with fellow gamers or giving it a star is a huge sign of appreciation!</br>
-This project is non-sponsored, donations are welcome and highly appreciated. <br/>
+This project is non-sponsored, donations are welcome and highly appreciated. Donation button as requested by few generous people who have donated, once again thank you. <br/>
 <a href="https://www.paypal.com/paypalme/ameliaOrbeta" target=_blank>
   <img src="https://raw.githubusercontent.com/stefan-niedermann/paypal-donate-button/master/paypal-donate-button.png" alt="Donate with PayPal" width="40%" />
 </a>
