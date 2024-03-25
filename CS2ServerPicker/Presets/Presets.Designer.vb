@@ -31,6 +31,8 @@ Partial Class Presets
         Me.BlockPresetServersButton = New System.Windows.Forms.Button()
         Me.AddPresetFormButton = New System.Windows.Forms.Button()
         Me.DeletePresetFormButton = New System.Windows.Forms.Button()
+        Me.BlockExceptPresetServersButton = New System.Windows.Forms.Button()
+        Me.UpdatePresetFormButton = New System.Windows.Forms.Button()
         CType(Me.PresetsDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PresetServerListDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -53,6 +55,7 @@ Partial Class Presets
         Me.PresetsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.PresetsDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PresetList})
         Me.PresetsDataGridView.Location = New System.Drawing.Point(30, 52)
+        Me.PresetsDataGridView.MultiSelect = False
         Me.PresetsDataGridView.Name = "PresetsDataGridView"
         Me.PresetsDataGridView.RowHeadersVisible = False
         Me.PresetsDataGridView.RowHeadersWidth = 51
@@ -107,17 +110,17 @@ Partial Class Presets
         '
         Me.BlockPresetServersButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.BlockPresetServersButton.Font = New System.Drawing.Font("Arial Rounded MT Bold", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BlockPresetServersButton.Location = New System.Drawing.Point(54, 368)
+        Me.BlockPresetServersButton.Location = New System.Drawing.Point(159, 368)
         Me.BlockPresetServersButton.Name = "BlockPresetServersButton"
-        Me.BlockPresetServersButton.Size = New System.Drawing.Size(181, 46)
+        Me.BlockPresetServersButton.Size = New System.Drawing.Size(114, 46)
         Me.BlockPresetServersButton.TabIndex = 4
-        Me.BlockPresetServersButton.Text = "Block By Selected Preset"
+        Me.BlockPresetServersButton.Text = "Block Preset"
         Me.BlockPresetServersButton.UseVisualStyleBackColor = False
         '
         'AddPresetFormButton
         '
         Me.AddPresetFormButton.Font = New System.Drawing.Font("Arial Rounded MT Bold", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.AddPresetFormButton.Location = New System.Drawing.Point(533, 22)
+        Me.AddPresetFormButton.Location = New System.Drawing.Point(405, 22)
         Me.AddPresetFormButton.Name = "AddPresetFormButton"
         Me.AddPresetFormButton.Size = New System.Drawing.Size(109, 24)
         Me.AddPresetFormButton.TabIndex = 8
@@ -134,11 +137,34 @@ Partial Class Presets
         Me.DeletePresetFormButton.Text = "Delete Preset"
         Me.DeletePresetFormButton.UseVisualStyleBackColor = True
         '
+        'BlockExceptPresetServersButton
+        '
+        Me.BlockExceptPresetServersButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.BlockExceptPresetServersButton.Font = New System.Drawing.Font("Arial Rounded MT Bold", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BlockExceptPresetServersButton.Location = New System.Drawing.Point(30, 368)
+        Me.BlockExceptPresetServersButton.Name = "BlockExceptPresetServersButton"
+        Me.BlockExceptPresetServersButton.Size = New System.Drawing.Size(123, 46)
+        Me.BlockExceptPresetServersButton.TabIndex = 10
+        Me.BlockExceptPresetServersButton.Text = "Block Except Preset"
+        Me.BlockExceptPresetServersButton.UseVisualStyleBackColor = False
+        '
+        'UpdatePresetFormButton
+        '
+        Me.UpdatePresetFormButton.Font = New System.Drawing.Font("Arial Rounded MT Bold", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.UpdatePresetFormButton.Location = New System.Drawing.Point(520, 22)
+        Me.UpdatePresetFormButton.Name = "UpdatePresetFormButton"
+        Me.UpdatePresetFormButton.Size = New System.Drawing.Size(122, 24)
+        Me.UpdatePresetFormButton.TabIndex = 11
+        Me.UpdatePresetFormButton.Text = "Update Preset"
+        Me.UpdatePresetFormButton.UseVisualStyleBackColor = True
+        '
         'Presets
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 15.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 11.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 438)
+        Me.ClientSize = New System.Drawing.Size(800, 445)
+        Me.Controls.Add(Me.UpdatePresetFormButton)
+        Me.Controls.Add(Me.BlockExceptPresetServersButton)
         Me.Controls.Add(Me.DeletePresetFormButton)
         Me.Controls.Add(Me.AddPresetFormButton)
         Me.Controls.Add(Me.BlockPresetServersButton)
@@ -162,4 +188,6 @@ Partial Class Presets
     Friend WithEvents DeletePresetFormButton As Button
     Friend WithEvents PresetList As DataGridViewTextBoxColumn
     Friend WithEvents PresetServers As DataGridViewTextBoxColumn
+    Friend WithEvents BlockExceptPresetServersButton As Button
+    Friend WithEvents UpdatePresetFormButton As Button
 End Class

@@ -72,7 +72,7 @@
             My.Settings.Save()
             My.Settings.Reload()
 
-            Await Should_Block_All_Servers(False)
+            Await Block_Unblock_All_Servers(False)
         Else
             Ping_All_Servers()
         End If
@@ -89,23 +89,27 @@
     End Sub
 
     Private Async Sub BlockAllButton_Click(sender As Object, e As EventArgs) Handles BlockAllButton.Click
-        Await Should_Block_All_Servers(True)
+        Await Block_Unblock_All_Servers(True)
     End Sub
 
     Private Async Sub UnblockAllButton_Click(sender As Object, e As EventArgs) Handles UnblockAllButton.Click
-        Await Should_Block_All_Servers(False)
+        Await Block_Unblock_All_Servers(False)
     End Sub
 
     Private Sub BlockSelectedButton_Click(sender As Object, e As EventArgs) Handles BlockSelectedButton.Click
-        Should_Block_Selected_Servers(True)
+        Block_Unblock_Selected_Servers(True)
     End Sub
 
     Private Sub UnblockSelectedButton_Click(sender As Object, e As EventArgs) Handles UnblockSelectedButton.Click
-        Should_Block_Selected_Servers(False)
+        Block_Unblock_Selected_Servers(False)
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
         Process.Start("https://github.com/FN-FAL113/csgo-server-picker")
+    End Sub
+
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        Process.Start("https://www.paypal.com/paypalme/ameliaOrbeta")
     End Sub
 
     Private Sub InfoButton_Click(sender As Object, e As EventArgs) Handles InfoButton.Click
@@ -121,7 +125,7 @@
             Environment.NewLine +
             "Author: FN-FAL113 (github username)" + Environment.NewLine +
             "License: GNU General Public License V3" + Environment.NewLine +
-            "App Version: 2.0.7",
+            "App Version: 2.0.9",
             "App Info"
         )
     End Sub
@@ -154,7 +158,7 @@
 
         MessageBox.Show("App will unblock all servers before " + IIf(isClustered, "unclustering", "clustering") + " servers. Please standby...", "Info")
 
-        Await Should_Block_All_Servers(False, False)
+        Await Block_Unblock_All_Servers(False, False)
 
         Clear_DataGridView_Rows()
 

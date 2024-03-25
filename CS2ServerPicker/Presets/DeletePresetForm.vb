@@ -4,8 +4,14 @@ Imports System.IO
 
 Public Class DeletePresetForm
     Private Sub DeletePresetButton_Click(sender As Object, e As EventArgs) Handles DeletePresetButton.Click
+        If Presets.PresetsDataGridView.SelectedCells.Count <= 0 Then
+            MessageBox.Show("Please select a preset to delete.", "Info")
+
+            Return
+        End If
+
         ' delete a preset from given preset name on delete preset button click
-        Dim presetName As String = DeletePresetNameTextBox.Text
+        Dim presetName As String = Presets.PresetsDataGridView.SelectedCells.Item(0).Value
 
         If String.IsNullOrWhiteSpace(presetName) Then
             MessageBox.Show("Preset name field cannot be empty.", "Info")
@@ -29,7 +35,7 @@ Public Class DeletePresetForm
             File.WriteAllText("presets.json", JsonConvert.SerializeObject(jObj, Formatting.Indented))
 
             ' refresh/reload presets control data grids
-            Load_Presets()
+            Presets.Load_Presets()
         Catch ex As Exception
             MessageBox.Show("An error has occured while deleting preset! Please report to github issue-tracker. Error: " _
                 + Environment.NewLine + Environment.NewLine + ex.Message, "Delete Preset Error")
@@ -38,5 +44,11 @@ Public Class DeletePresetForm
         End Try
 
         MessageBox.Show("Succesfully deleted preset!")
+
+        Close()
+    End Sub
+
+    Private Sub CloseDeletePresetFormButton_Click(sender As Object, e As EventArgs) Handles CloseDeletePresetFormButton.Click
+        Close()
     End Sub
 End Class

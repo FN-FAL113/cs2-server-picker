@@ -22,7 +22,7 @@ Partial Class App
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.RefreshButton = New System.Windows.Forms.Button()
         Me.Latency = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Servers = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -34,9 +34,11 @@ Partial Class App
         Me.InfoButton = New System.Windows.Forms.Button()
         Me.ProgBar = New System.Windows.Forms.ProgressBar()
         Me.ClusterButton = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PresetsButton = New System.Windows.Forms.Button()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.MainDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -75,14 +77,14 @@ Partial Class App
         Me.MainDataGridView.AllowUserToOrderColumns = True
         Me.MainDataGridView.AllowUserToResizeRows = False
         Me.MainDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Arial Rounded MT Bold", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.MainDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Arial Rounded MT Bold", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.MainDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.MainDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.MainDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Servers, Me.Latency})
         Me.MainDataGridView.Location = New System.Drawing.Point(76, 54)
@@ -167,6 +169,28 @@ Partial Class App
         Me.ClusterButton.Text = "Uncluster"
         Me.ClusterButton.UseVisualStyleBackColor = True
         '
+        'PresetsButton
+        '
+        Me.PresetsButton.Font = New System.Drawing.Font("Arial Rounded MT Bold", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PresetsButton.Location = New System.Drawing.Point(157, 25)
+        Me.PresetsButton.Name = "PresetsButton"
+        Me.PresetsButton.Size = New System.Drawing.Size(87, 24)
+        Me.PresetsButton.TabIndex = 8
+        Me.PresetsButton.Text = "Presets"
+        Me.PresetsButton.UseVisualStyleBackColor = True
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox2.BackgroundImage = Global.CS2ServerPicker.My.Resources.Resources.Paypal
+        Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox2.Location = New System.Drawing.Point(6, 41)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(30, 28)
+        Me.PictureBox2.TabIndex = 9
+        Me.PictureBox2.TabStop = False
+        '
         'PictureBox1
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
@@ -179,21 +203,12 @@ Partial Class App
         Me.PictureBox1.TabIndex = 5
         Me.PictureBox1.TabStop = False
         '
-        'PresetsButton
-        '
-        Me.PresetsButton.Font = New System.Drawing.Font("Arial Rounded MT Bold", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PresetsButton.Location = New System.Drawing.Point(157, 25)
-        Me.PresetsButton.Name = "PresetsButton"
-        Me.PresetsButton.Size = New System.Drawing.Size(87, 24)
-        Me.PresetsButton.TabIndex = 8
-        Me.PresetsButton.Text = "Presets"
-        Me.PresetsButton.UseVisualStyleBackColor = True
-        '
         'App
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(756, 430)
+        Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PresetsButton)
         Me.Controls.Add(Me.ClusterButton)
         Me.Controls.Add(Me.ProgBar)
@@ -211,6 +226,7 @@ Partial Class App
         Me.Name = "App"
         Me.Text = "Counter Strike 2 Server Picker"
         CType(Me.MainDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -228,4 +244,5 @@ Partial Class App
     Friend WithEvents ProgBar As ProgressBar
     Friend WithEvents ClusterButton As Button
     Friend WithEvents PresetsButton As Button
+    Friend WithEvents PictureBox2 As PictureBox
 End Class

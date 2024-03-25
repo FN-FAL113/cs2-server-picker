@@ -24,11 +24,11 @@
 
         Cancel_Pending_Ping()
 
-        Dim serverDict As Dictionary(Of String, String) = IIf(App.Get_Is_Clustered(), App.Get_Server_Dictionary_Clustered(), App.Get_Server_Dictionary_Unclustered())
+        Dim serverDictionary As Dictionary(Of String, String) = IIf(App.Get_Is_Clustered(), App.Get_Server_Dictionary_Clustered(), App.Get_Server_Dictionary_Unclustered())
 
         For Each dgRow As DataGridViewRow In App.Get_DataGridView_Control().Rows()
-            ' string of addresses joined by "," wil be splitted where each address is pinged
-            Dim addresses As String = serverDict.Item(dgRow.Cells(0).Value)
+            ' comma separated server addresses, will get split
+            Dim addresses As String = serverDictionary.Item(dgRow.Cells(0).Value)
 
             Await Task.Run(Sub() Ping_Handler(addresses, dgRow))
         Next
