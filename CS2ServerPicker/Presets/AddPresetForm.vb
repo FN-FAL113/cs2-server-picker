@@ -18,6 +18,7 @@ Public Class AddPresetForm
     Private Sub AddPresetButton_Click(sender As Object, e As EventArgs) Handles AddPresetButton.Click
         ' add/create a preset from selected servers on add preset button click
         Dim presetName As String = AddPresetNameTextBox.Text
+        Dim presetNameTrimmed = presetName.Replace(" ", "")
         Dim regex As Text.RegularExpressions.Regex = New Text.RegularExpressions.Regex("[^a-zA-Z0-9 ]")
 
         If String.IsNullOrWhiteSpace(presetName) Or regex.IsMatch(presetName) Then
@@ -33,35 +34,45 @@ Public Class AddPresetForm
         End If
 
         Try
+            ' deserialize presets back to its complex form
             Dim jObj As JObject = JObject.Parse(File.ReadAllText("presets.json"))
 
-            If jObj.ContainsKey(presetName.Replace(" ", "")) Then
+            If jObj.ContainsKey(presetNameTrimmed) Then
                 MessageBox.Show("Given preset name already exists.", "Info")
 
                 Return
             End If
 
-            ' create property using preset name trimmed as key with object as value that contains necessary props 
-            ' "presetName" prop with untrimmed preset name as string value and "servers" prop contains the checked items as JArray value
-            jObj.Add(presetName.Replace(" ", ""), New JObject(
+            ' property uses trimmed preset name, access unmodified name through child prop (presetName)
+            jObj.Add(presetNameTrimmed, New JObject(
                      New JProperty("presetName", presetName),
                      New JProperty("clustered", App.Get_Is_Clustered()),
                      New JProperty("servers", JArray.FromObject(PresetServersCheckedListBox.CheckedItems))
                 )
             )
 
-            ' serialize jObj to presets json file
+            ' serialize jObj to primitive form in presets json file
             File.WriteAllText("presets.json", JsonConvert.SerializeObject(jObj, Formatting.Indented))
 
             ' refresh/reload presets control data grids
-            Load_Presets()
+            Presets.Load_Presets()
+
+            MessageBox.Show("Succesfully added preset!", "Info")
         Catch ex As Exception
-            MessageBox.Show("An error has occured while adding preset! Please report to github issue-tracker. Error: " _
+            MessageBox.Show("An error has occured while adding preset! Error: " _
                 + Environment.NewLine + Environment.NewLine + ex.Message, "Add Preset Error")
-
-            Return
         End Try
+    End Sub
 
-        MessageBox.Show("Succesfully added preset!")
+    Private Sub ResetPresetSelectionButton_Click(sender As Object, e As EventArgs) Handles ResetPresetSelectionButton.Click
+        Dim checkedIndexes As CheckedListBox.CheckedIndexCollection = PresetServersCheckedListBox.CheckedIndices
+
+        If checkedIndexes.Count = 0 Then
+            Return
+        End If
+
+        For Each selectedIndex As Integer In checkedIndexes
+            PresetServersCheckedListBox.SetItemChecked(selectedIndex, False)
+        Next
     End Sub
 End Class

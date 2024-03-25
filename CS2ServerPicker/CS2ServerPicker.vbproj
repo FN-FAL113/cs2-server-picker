@@ -139,6 +139,12 @@
     <Compile Include="Presets\Presets.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Presets\UpdatePresetForm.Designer.vb">
+      <DependentUpon>UpdatePresetForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presets\UpdatePresetForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Services\DataGridViewService.vb" />
     <Compile Include="Services\PingService.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -179,6 +185,9 @@
     <EmbeddedResource Include="Presets\Presets.resx">
       <DependentUpon>Presets.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presets\UpdatePresetForm.resx">
+      <DependentUpon>UpdatePresetForm.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.manifest" />
@@ -208,6 +217,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\Paypal.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
