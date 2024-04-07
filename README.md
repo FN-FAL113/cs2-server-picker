@@ -19,11 +19,11 @@ A lightweight server picker for CS2. Previously developed for CS:GO but now for 
 
 ## ⚙️ Requirements
 - Windows 10 or above
-- Works on Windows 8.1 but requires [.NET Framework 4.7.2](https://dotnet.microsoft.com/en-us/download/dotnet-framework/thank-you/net472-web-installer) to be installed separately
+- Works on Windows 8.1 but requires [.NET Framework 4.7.2](https://dotnet.microsoft.com/en-us/download/dotnet-framework/thank-you/net472-web-installer) to be installed separately.
 
 ## ❔FAQ
 **1. How it works, will I get banned?!**
- - The app does not modify any game or system files, you are safe from being banned when using the app. It will add necessary firewall policies to block game server relay ip addresses from being accessed by your network thus skipping them in-game when finding a match.
+ - The app does not modify any game or system files, I can assure you are safe from being banned when using the app as long as you do not download from untrusted sources. It will add necessary firewall policies to block game server relay ip addresses from being accessed by your network thus skipping them in-game when finding a match.
 
 **2. Not being routed to lowest ping server or not working on your location?**
   - Due to the fact that we can only access and block **_IP relay addresses_** from valve's network points around the world rather than the game's actual server IP addresses directly, which are **_not exposed_** publicly, either your connection got relayed to the nearest available server due to **_how Steam Datagram relay works_** or **_your location might be a factor_**. 
@@ -33,7 +33,7 @@ A lightweight server picker for CS2. Previously developed for CS:GO but now for 
   - This is due to how Windows requires elevated execution when adding the necessary firewall policies. If the app is running in normal mode, it will not be able to do its operations and will throw errors.
 
 **4. Windows smartscreen detected unrecognized app/publisher<br>**
-  - The app requires a registered publisher which costs a lot of money. Rest assured the app is safe and has been tested by several users.
+  - The app requires a registered publisher which costs a lot of money. Rest assured the app is safe and has been tested already with more than 10k downloads.
 
 ![image](https://github.com/FN-FAL113/csgo-server-picker/assets/88238718/fe0af8a8-4195-457e-bbbf-3a772e7f646c)
 
@@ -55,8 +55,8 @@ A lightweight server picker for CS2. Previously developed for CS:GO but now for 
 
 ## 💖 Support the Project/Dev
 - I develop stuff for free with dedication and hard work. Sharing this project with fellow gamers or giving it a star is a huge sign of appreciation!</br>
-- The app averages 40+ downloads per day and is accepting sponsorship by proudly displaying the sponsor's brand logo or poster in the user interface of the desktop application, offering visibility and support for their contribution to the project. <br/>
-- donations are welcome and highly appreciated. Donation button as requested by few generous people who have donated, once again thank you. <br/>
+- the app averages **50+** downloads per day and is accepting sponsorship by proudly displaying the sponsor's brand logo or poster in the user interface of the desktop application, offering visibility and support for their contribution to the project. <br/>
+- **donations** are also welcome and highly appreciated. <br/>
 <a href="https://www.paypal.com/paypalme/ameliaOrbeta" target=_blank>
   <img src="https://raw.githubusercontent.com/stefan-niedermann/paypal-donate-button/master/paypal-donate-button.png" alt="Donate with PayPal" width="40%" />
 </a>
