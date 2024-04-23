@@ -30,41 +30,42 @@ Partial Class DeletePresetForm
         'PresetConfirmationLabel
         '
         Me.PresetConfirmationLabel.AutoSize = True
-        Me.PresetConfirmationLabel.Location = New System.Drawing.Point(88, 37)
+        Me.PresetConfirmationLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PresetConfirmationLabel.Location = New System.Drawing.Point(73, 41)
         Me.PresetConfirmationLabel.Name = "PresetConfirmationLabel"
-        Me.PresetConfirmationLabel.Size = New System.Drawing.Size(137, 12)
+        Me.PresetConfirmationLabel.Size = New System.Drawing.Size(159, 15)
         Me.PresetConfirmationLabel.TabIndex = 3
         Me.PresetConfirmationLabel.Text = "Delete selected preset?"
         '
         'DeletePresetButton
         '
-        Me.DeletePresetButton.Font = New System.Drawing.Font("Arial Rounded MT Bold", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DeletePresetButton.Location = New System.Drawing.Point(40, 81)
+        Me.DeletePresetButton.Font = New System.Drawing.Font("Arial", 8.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DeletePresetButton.Location = New System.Drawing.Point(40, 87)
         Me.DeletePresetButton.Name = "DeletePresetButton"
-        Me.DeletePresetButton.Size = New System.Drawing.Size(97, 24)
+        Me.DeletePresetButton.Size = New System.Drawing.Size(97, 26)
         Me.DeletePresetButton.TabIndex = 9
         Me.DeletePresetButton.Text = "Yes"
         Me.DeletePresetButton.UseVisualStyleBackColor = True
         '
         'CloseDeletePresetFormButton
         '
-        Me.CloseDeletePresetFormButton.Font = New System.Drawing.Font("Arial Rounded MT Bold", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CloseDeletePresetFormButton.Location = New System.Drawing.Point(165, 81)
+        Me.CloseDeletePresetFormButton.Font = New System.Drawing.Font("Arial", 8.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CloseDeletePresetFormButton.Location = New System.Drawing.Point(165, 87)
         Me.CloseDeletePresetFormButton.Name = "CloseDeletePresetFormButton"
-        Me.CloseDeletePresetFormButton.Size = New System.Drawing.Size(97, 24)
+        Me.CloseDeletePresetFormButton.Size = New System.Drawing.Size(97, 26)
         Me.CloseDeletePresetFormButton.TabIndex = 10
         Me.CloseDeletePresetFormButton.Text = "No"
         Me.CloseDeletePresetFormButton.UseVisualStyleBackColor = True
         '
         'DeletePresetForm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 11.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(306, 130)
+        Me.ClientSize = New System.Drawing.Size(306, 140)
         Me.Controls.Add(Me.CloseDeletePresetFormButton)
         Me.Controls.Add(Me.DeletePresetButton)
         Me.Controls.Add(Me.PresetConfirmationLabel)
-        Me.Font = New System.Drawing.Font("Arial Rounded MT Bold", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Font = New System.Drawing.Font("Arial", 8.5!)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
         Me.Name = "DeletePresetForm"

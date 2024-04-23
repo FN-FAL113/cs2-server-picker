@@ -8,11 +8,23 @@ Public Class Presets
     End Sub
 
     Private Sub DeletePresetFormButton_Click(sender As Object, e As EventArgs) Handles DeletePresetFormButton.Click
+        If PresetsDataGridView.SelectedCells.Count <= 0 Then
+            MessageBox.Show("Please select a preset to delete.", "Info")
+
+            Return
+        End If
+
         DeletePresetForm.ShowDialog()
         DeletePresetForm.Activate()
     End Sub
 
     Private Sub UpdatePresetFormButton_Click(sender As Object, e As EventArgs) Handles UpdatePresetFormButton.Click
+        If PresetsDataGridView.SelectedCells.Count <= 0 Then
+            MessageBox.Show("Please select a preset to update.", "Info")
+
+            Return
+        End If
+
         UpdatePresetForm.ShowDialog()
         UpdatePresetForm.Activate()
     End Sub
@@ -46,8 +58,8 @@ Public Class Presets
     End Sub
 
     Private Sub PresetsDataGridView_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles PresetsDataGridView.CellEnter
-        ' load preset servers for the initial focused (first cell is focused on load) or user selected preset name cell 
-        ' this event gets fired twice on initial load, cell value validations needed
+        ' load selected preset servers
+        ' this event gets fired twice on initial form load, cell value validations needed
         Dim presetName As String = PresetsDataGridView.Rows(e.RowIndex).Cells(0).Value
 
         If String.IsNullOrWhiteSpace(presetName) Then

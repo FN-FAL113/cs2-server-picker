@@ -33,72 +33,81 @@ Partial Class AddPresetForm
         'PresetServersCheckedListBox
         '
         Me.PresetServersCheckedListBox.CheckOnClick = True
-        Me.PresetServersCheckedListBox.Font = New System.Drawing.Font("Arial Rounded MT Bold", 8.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PresetServersCheckedListBox.Font = New System.Drawing.Font("Arial", 8.5!)
         Me.PresetServersCheckedListBox.FormattingEnabled = True
-        Me.PresetServersCheckedListBox.Location = New System.Drawing.Point(59, 97)
+        Me.PresetServersCheckedListBox.Location = New System.Drawing.Point(66, 100)
+        Me.PresetServersCheckedListBox.Margin = New System.Windows.Forms.Padding(4)
         Me.PresetServersCheckedListBox.Name = "PresetServersCheckedListBox"
-        Me.PresetServersCheckedListBox.Size = New System.Drawing.Size(271, 308)
+        Me.PresetServersCheckedListBox.Size = New System.Drawing.Size(271, 340)
         Me.PresetServersCheckedListBox.TabIndex = 0
         '
         'PresetNameLabel
         '
         Me.PresetNameLabel.AutoSize = True
-        Me.PresetNameLabel.Location = New System.Drawing.Point(56, 21)
+        Me.PresetNameLabel.Font = New System.Drawing.Font("Arial", 8.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PresetNameLabel.Location = New System.Drawing.Point(63, 18)
+        Me.PresetNameLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.PresetNameLabel.Name = "PresetNameLabel"
-        Me.PresetNameLabel.Size = New System.Drawing.Size(95, 16)
+        Me.PresetNameLabel.Size = New System.Drawing.Size(81, 15)
         Me.PresetNameLabel.TabIndex = 1
         Me.PresetNameLabel.Text = "Preset Name"
         '
         'AddPresetNameTextBox
         '
-        Me.AddPresetNameTextBox.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.AddPresetNameTextBox.Location = New System.Drawing.Point(59, 44)
+        Me.AddPresetNameTextBox.Font = New System.Drawing.Font("Arial", 8.5!)
+        Me.AddPresetNameTextBox.Location = New System.Drawing.Point(66, 43)
+        Me.AddPresetNameTextBox.Margin = New System.Windows.Forms.Padding(4)
         Me.AddPresetNameTextBox.Name = "AddPresetNameTextBox"
-        Me.AddPresetNameTextBox.Size = New System.Drawing.Size(271, 25)
+        Me.AddPresetNameTextBox.Size = New System.Drawing.Size(271, 21)
         Me.AddPresetNameTextBox.TabIndex = 2
         '
         'PresetServersLabel
         '
         Me.PresetServersLabel.AutoSize = True
-        Me.PresetServersLabel.Location = New System.Drawing.Point(56, 74)
+        Me.PresetServersLabel.Font = New System.Drawing.Font("Arial", 8.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PresetServersLabel.Location = New System.Drawing.Point(63, 75)
+        Me.PresetServersLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.PresetServersLabel.Name = "PresetServersLabel"
-        Me.PresetServersLabel.Size = New System.Drawing.Size(109, 16)
+        Me.PresetServersLabel.Size = New System.Drawing.Size(93, 15)
         Me.PresetServersLabel.TabIndex = 3
         Me.PresetServersLabel.Text = "Preset Servers"
         '
         'AddPresetButton
         '
-        Me.AddPresetButton.Font = New System.Drawing.Font("Arial Rounded MT Bold", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.AddPresetButton.Location = New System.Drawing.Point(207, 428)
+        Me.AddPresetButton.Font = New System.Drawing.Font("Arial", 8.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.AddPresetButton.Location = New System.Drawing.Point(214, 457)
+        Me.AddPresetButton.Margin = New System.Windows.Forms.Padding(4)
         Me.AddPresetButton.Name = "AddPresetButton"
-        Me.AddPresetButton.Size = New System.Drawing.Size(123, 24)
+        Me.AddPresetButton.Size = New System.Drawing.Size(123, 26)
         Me.AddPresetButton.TabIndex = 8
         Me.AddPresetButton.Text = "Add Preset"
         Me.AddPresetButton.UseVisualStyleBackColor = True
         '
         'ResetPresetSelectionButton
         '
-        Me.ResetPresetSelectionButton.Font = New System.Drawing.Font("Arial Rounded MT Bold", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ResetPresetSelectionButton.Location = New System.Drawing.Point(59, 428)
+        Me.ResetPresetSelectionButton.Font = New System.Drawing.Font("Arial", 8.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ResetPresetSelectionButton.Location = New System.Drawing.Point(66, 457)
+        Me.ResetPresetSelectionButton.Margin = New System.Windows.Forms.Padding(4)
         Me.ResetPresetSelectionButton.Name = "ResetPresetSelectionButton"
-        Me.ResetPresetSelectionButton.Size = New System.Drawing.Size(123, 24)
+        Me.ResetPresetSelectionButton.Size = New System.Drawing.Size(123, 26)
         Me.ResetPresetSelectionButton.TabIndex = 9
         Me.ResetPresetSelectionButton.Text = "Reset Selection"
         Me.ResetPresetSelectionButton.UseVisualStyleBackColor = True
         '
         'AddPresetForm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 15.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(400, 464)
+        Me.ClientSize = New System.Drawing.Size(400, 500)
         Me.Controls.Add(Me.ResetPresetSelectionButton)
         Me.Controls.Add(Me.AddPresetButton)
         Me.Controls.Add(Me.PresetServersLabel)
         Me.Controls.Add(Me.AddPresetNameTextBox)
         Me.Controls.Add(Me.PresetNameLabel)
         Me.Controls.Add(Me.PresetServersCheckedListBox)
-        Me.Font = New System.Drawing.Font("Arial Rounded MT Bold", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
         Me.Name = "AddPresetForm"
         Me.Text = "Add Preset"

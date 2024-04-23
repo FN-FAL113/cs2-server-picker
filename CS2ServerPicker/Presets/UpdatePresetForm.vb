@@ -7,12 +7,6 @@ Public Class UpdatePresetForm
     Private initialPresetName As String
 
     Private Sub UpdatePresetForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If Presets.PresetsDataGridView.SelectedCells.Count <= 0 Then
-            MessageBox.Show("Please select a preset to update.", "Info")
-
-            Return
-        End If
-
         ' reset checked list box items
         PresetServersCheckedListBox.Items.Clear()
 
@@ -49,7 +43,7 @@ Public Class UpdatePresetForm
         Dim regex As Text.RegularExpressions.Regex = New Text.RegularExpressions.Regex("[^a-zA-Z0-9 ]")
 
         If String.IsNullOrWhiteSpace(presetName) Or regex.IsMatch(presetName) Then
-            MessageBox.Show("Preset name field cannot be empty or have any special characters.", "Info")
+            MessageBox.Show("Preset name field cannot be empty nor have any special characters.", "Info")
 
             Return
         End If
@@ -67,7 +61,7 @@ Public Class UpdatePresetForm
             ' remove old property, an exception will be thrown if same property exist
             jObj.Remove(initialPresetName.Replace(" ", ""))
 
-            ' property uses trimmed preset name, access unmodified name through child prop (presetName)
+            ' property uses trimmed preset name, untrimmed preset name through a child prop (presetName)
             jObj.Add(presetNameTrimmed, New JObject(
                      New JProperty("presetName", presetName),
                      New JProperty("clustered", App.Get_Is_Clustered()),

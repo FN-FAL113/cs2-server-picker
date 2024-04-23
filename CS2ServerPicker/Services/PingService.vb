@@ -37,12 +37,12 @@
     Public Async Sub Ping_Handler(addresses As String, row As DataGridViewRow)
         If Is_Server_Blocked_Or_Unblocked(row.Cells(0).Value, True) Then
             ' do not ping if server is blocked
-            row.Cells(0).Style.BackColor = Color.Red
-            row.Cells(1).Style.BackColor = Color.Red
+            row.Cells(0).Style.BackColor = Color.FromArgb(255, 128, 128)
+            row.Cells(1).Style.BackColor = Color.FromArgb(255, 128, 128)
             row.Cells(1).Value = "Blocked"
 
             Return
-        ElseIf row.Cells(0).Style.BackColor = Color.Red Then
+        ElseIf row.Cells(0).Style.BackColor = Color.FromArgb(255, 128, 128) Then
             ' if server is not blocked and cell back color is red then unset color
             row.Cells(0).Style.BackColor = Color.Empty
             row.Cells(1).Style.BackColor = Color.Empty
