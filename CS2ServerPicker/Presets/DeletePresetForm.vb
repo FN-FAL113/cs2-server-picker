@@ -4,12 +4,6 @@ Imports System.IO
 
 Public Class DeletePresetForm
     Private Sub DeletePresetButton_Click(sender As Object, e As EventArgs) Handles DeletePresetButton.Click
-        If Presets.PresetsDataGridView.SelectedCells.Count <= 0 Then
-            MessageBox.Show("Please select a preset to delete.", "Info")
-
-            Return
-        End If
-
         ' delete a preset from given preset name on delete preset button click
         Dim presetName As String = Presets.PresetsDataGridView.SelectedCells.Item(0).Value
 

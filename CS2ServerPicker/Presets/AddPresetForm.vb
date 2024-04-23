@@ -22,7 +22,7 @@ Public Class AddPresetForm
         Dim regex As Text.RegularExpressions.Regex = New Text.RegularExpressions.Regex("[^a-zA-Z0-9 ]")
 
         If String.IsNullOrWhiteSpace(presetName) Or regex.IsMatch(presetName) Then
-            MessageBox.Show("Preset name field cannot be empty or have special characters.", "Info")
+            MessageBox.Show("Preset name field cannot be empty nor have special characters.", "Info")
 
             Return
         End If
