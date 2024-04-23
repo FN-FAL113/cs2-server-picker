@@ -109,7 +109,7 @@ Partial Class Presets
         'BlockPresetServersButton
         '
         Me.BlockPresetServersButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.BlockPresetServersButton.Font = New System.Drawing.Font("Arial", 8.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BlockPresetServersButton.Font = New System.Drawing.Font("Arial", 8.5!, System.Drawing.FontStyle.Bold)
         Me.BlockPresetServersButton.Location = New System.Drawing.Point(159, 396)
         Me.BlockPresetServersButton.Name = "BlockPresetServersButton"
         Me.BlockPresetServersButton.Size = New System.Drawing.Size(114, 50)
@@ -119,7 +119,7 @@ Partial Class Presets
         '
         'AddPresetFormButton
         '
-        Me.AddPresetFormButton.Font = New System.Drawing.Font("Arial", 8.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.AddPresetFormButton.Font = New System.Drawing.Font("Arial", 8.5!, System.Drawing.FontStyle.Bold)
         Me.AddPresetFormButton.Location = New System.Drawing.Point(405, 24)
         Me.AddPresetFormButton.Name = "AddPresetFormButton"
         Me.AddPresetFormButton.Size = New System.Drawing.Size(109, 26)
@@ -129,7 +129,7 @@ Partial Class Presets
         '
         'DeletePresetFormButton
         '
-        Me.DeletePresetFormButton.Font = New System.Drawing.Font("Arial", 8.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DeletePresetFormButton.Font = New System.Drawing.Font("Arial", 8.5!, System.Drawing.FontStyle.Bold)
         Me.DeletePresetFormButton.Location = New System.Drawing.Point(648, 24)
         Me.DeletePresetFormButton.Name = "DeletePresetFormButton"
         Me.DeletePresetFormButton.Size = New System.Drawing.Size(109, 26)
@@ -140,7 +140,7 @@ Partial Class Presets
         'BlockExceptPresetServersButton
         '
         Me.BlockExceptPresetServersButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.BlockExceptPresetServersButton.Font = New System.Drawing.Font("Arial", 8.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BlockExceptPresetServersButton.Font = New System.Drawing.Font("Arial", 8.5!, System.Drawing.FontStyle.Bold)
         Me.BlockExceptPresetServersButton.Location = New System.Drawing.Point(30, 396)
         Me.BlockExceptPresetServersButton.Name = "BlockExceptPresetServersButton"
         Me.BlockExceptPresetServersButton.Size = New System.Drawing.Size(123, 50)
@@ -150,7 +150,7 @@ Partial Class Presets
         '
         'UpdatePresetFormButton
         '
-        Me.UpdatePresetFormButton.Font = New System.Drawing.Font("Arial", 8.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.UpdatePresetFormButton.Font = New System.Drawing.Font("Arial", 8.5!, System.Drawing.FontStyle.Bold)
         Me.UpdatePresetFormButton.Location = New System.Drawing.Point(520, 24)
         Me.UpdatePresetFormButton.Name = "UpdatePresetFormButton"
         Me.UpdatePresetFormButton.Size = New System.Drawing.Size(122, 26)

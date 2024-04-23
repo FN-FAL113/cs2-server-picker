@@ -44,7 +44,7 @@ Partial Class App
         '
         'RefreshButton
         '
-        Me.RefreshButton.Font = New System.Drawing.Font("Arial", 8.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RefreshButton.Font = New System.Drawing.Font("Arial", 8.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RefreshButton.Location = New System.Drawing.Point(599, 26)
         Me.RefreshButton.Name = "RefreshButton"
         Me.RefreshButton.Size = New System.Drawing.Size(87, 26)
@@ -98,7 +98,7 @@ Partial Class App
         'UnblockAllButton
         '
         Me.UnblockAllButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.UnblockAllButton.Font = New System.Drawing.Font("Arial", 8.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.UnblockAllButton.Font = New System.Drawing.Font("Arial", 8.5!, System.Drawing.FontStyle.Bold)
         Me.UnblockAllButton.Location = New System.Drawing.Point(423, 391)
         Me.UnblockAllButton.Name = "UnblockAllButton"
         Me.UnblockAllButton.Size = New System.Drawing.Size(89, 50)
@@ -109,7 +109,7 @@ Partial Class App
         'BlockSelectedButton
         '
         Me.BlockSelectedButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.BlockSelectedButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BlockSelectedButton.Font = New System.Drawing.Font("Arial", 8.5!, System.Drawing.FontStyle.Bold)
         Me.BlockSelectedButton.Location = New System.Drawing.Point(241, 391)
         Me.BlockSelectedButton.Name = "BlockSelectedButton"
         Me.BlockSelectedButton.Size = New System.Drawing.Size(94, 50)
@@ -120,7 +120,7 @@ Partial Class App
         'UnblockSelectedButton
         '
         Me.UnblockSelectedButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.UnblockSelectedButton.Font = New System.Drawing.Font("Arial", 8.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.UnblockSelectedButton.Font = New System.Drawing.Font("Arial", 8.5!, System.Drawing.FontStyle.Bold)
         Me.UnblockSelectedButton.Location = New System.Drawing.Point(518, 391)
         Me.UnblockSelectedButton.Name = "UnblockSelectedButton"
         Me.UnblockSelectedButton.Size = New System.Drawing.Size(95, 50)
@@ -131,7 +131,7 @@ Partial Class App
         'BlockAllButton
         '
         Me.BlockAllButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.BlockAllButton.Font = New System.Drawing.Font("Arial", 8.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BlockAllButton.Font = New System.Drawing.Font("Arial", 8.5!, System.Drawing.FontStyle.Bold)
         Me.BlockAllButton.Location = New System.Drawing.Point(145, 391)
         Me.BlockAllButton.Name = "BlockAllButton"
         Me.BlockAllButton.Size = New System.Drawing.Size(90, 50)
@@ -141,7 +141,7 @@ Partial Class App
         '
         'InfoButton
         '
-        Me.InfoButton.Font = New System.Drawing.Font("Arial", 8.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.InfoButton.Font = New System.Drawing.Font("Arial", 8.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.InfoButton.Location = New System.Drawing.Point(76, 28)
         Me.InfoButton.Name = "InfoButton"
         Me.InfoButton.Size = New System.Drawing.Size(75, 24)
@@ -161,7 +161,7 @@ Partial Class App
         '
         'ClusterButton
         '
-        Me.ClusterButton.Font = New System.Drawing.Font("Arial", 8.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ClusterButton.Font = New System.Drawing.Font("Arial", 8.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ClusterButton.Location = New System.Drawing.Point(506, 26)
         Me.ClusterButton.Name = "ClusterButton"
         Me.ClusterButton.Size = New System.Drawing.Size(87, 26)
@@ -171,7 +171,7 @@ Partial Class App
         '
         'PresetsButton
         '
-        Me.PresetsButton.Font = New System.Drawing.Font("Arial", 8.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PresetsButton.Font = New System.Drawing.Font("Arial", 8.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PresetsButton.Location = New System.Drawing.Point(157, 27)
         Me.PresetsButton.Name = "PresetsButton"
         Me.PresetsButton.Size = New System.Drawing.Size(87, 26)
