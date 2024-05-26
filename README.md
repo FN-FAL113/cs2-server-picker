@@ -28,6 +28,8 @@ A lightweight server picker for CS2. Previously developed for CS:GO but now for 
 **2. Not being routed to lowest ping server or not working on your location?**
   - Due to the fact that we can only access and block **_IP relay addresses_** from valve's network points around the world rather than the game's actual server IP addresses directly, which are **_not exposed_** publicly, either your connection got relayed to the nearest available server due to **_how Steam Datagram relay works_** or **_your location might be a factor_**. 
 - Re-routing can also happen anytime, even mid-game. One of the best ways to test it out is to block low-ping servers and leave out high-ping servers that are far from your current region. If your ping is high in-game, then you are being routed properly, and the blocked IP relays are not able to re-route you to a nearby server. I was able to test this out properly way back.
+- Some solutions that might help out but are not guaranteed: turning off any vpn, uninstalling third-party antivirus and let windefender manage the firewall.
+- ISP-related issues, such as bad routing or high ping, are out of scope and control since the app only adds firewall entries. Please contact your ISP instead.
 
 **3. Why it requires admin permission on execution?<br>**
   - This is due to how Windows requires elevated execution when adding the necessary firewall policies. If the app is running in normal mode, it will not be able to do its operations and will throw errors.
@@ -48,15 +50,13 @@ A lightweight server picker for CS2. Previously developed for CS:GO but now for 
 
 ## 💡 Contributors
 - @Mohamad82Bz (for testing out the app on EU Servers and providing necessary details)
-- Donators and the people in the issue-tracker and pr
+- people from the issue tracker
 
 ## 🔽 Disclaimer
 - This project or its author are not affiliated, associated, authorized, endorsed by valve, its affiliates or subsidiaries. Images, names and other form of trademark are registered to their respective owners.
 
 ## 💖 Support the Project/Dev
 - I develop stuff for free with dedication and hard work. Sharing this project with fellow gamers or giving it a star is a huge sign of appreciation!</br>
-- the app averages **50+** downloads per day and is accepting sponsorship by proudly displaying the sponsor's brand logo or poster in the user interface of the desktop application, offering visibility and support for their contribution to the project. <br/>
-- **donations** are also welcome and highly appreciated. <br/>
 <a href="https://www.paypal.com/paypalme/ameliaOrbeta" target=_blank>
-  <img src="https://raw.githubusercontent.com/stefan-niedermann/paypal-donate-button/master/paypal-donate-button.png" alt="Donate with PayPal" width="40%" />
+  <img src="https://raw.githubusercontent.com/stefan-niedermann/paypal-donate-button/master/paypal-donate-button.png" alt="Donate with PayPal" width="36%" />
 </a>
