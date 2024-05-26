@@ -50,7 +50,7 @@ A lightweight server picker for CS2. Previously developed for CS:GO but now for 
 
 ## 💡 Contributors
 - @Mohamad82Bz (for testing out the app on EU Servers and providing necessary details)
-- people from the issue tracker
+- people from the issue tracker and pr section
 
 ## 🔽 Disclaimer
 - This project or its author are not affiliated, associated, authorized, endorsed by valve, its affiliates or subsidiaries. Images, names and other form of trademark are registered to their respective owners.
