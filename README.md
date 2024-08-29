@@ -1,13 +1,12 @@
 # Counter Strike 2 Server Picker
 <div align="center">
- 
-  ![image](https://img.shields.io/github/downloads/FN-FAL113/cs2-server-picker/total.svg)
-  ![GitHub](https://img.shields.io/github/license/FN-FAL113/cs2-server-picker)
-  ![GitHub release (with filter)](https://img.shields.io/github/v/release/FN-FAL113/cs2-server-picker)
-  ![GitHub Repo stars](https://img.shields.io/github/stars/FN-FAL113/cs2-server-picker)
+
+  <a href="https://api.github.com/repositories/649341649/releases"><img src="https://img.shields.io/github/downloads/FN-FAL113/cs2-server-picker/total.svg"/></a>
+  <img src="https://img.shields.io/github/license/FN-FAL113/cs2-server-picker"/>
+  <img src="https://img.shields.io/github/v/release/FN-FAL113/cs2-server-picker"/>
+  <img src="https://img.shields.io/github/stars/FN-FAL113/cs2-server-picker"/>
 
 </div>
-
 A lightweight server picker for CS2. Previously developed for CS:GO but now for CS2! All regions available are included for freedom of selection. Still showing passion for the game since I started playing way back in 2013 despite the fact that my laptop cannot handle the game anymore with the new visual upgrades 😃.
 
 ## ⬇️ Download
