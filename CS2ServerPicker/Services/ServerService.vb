@@ -196,12 +196,12 @@ Module ServerService
 
         ' traverse every datagrid row and block/unblock selected servers
         For Each row As DataGridViewRow In mainDataGridView.SelectedRows
-            If Is_Server_Blocked_Or_Unblocked(row.Cells(0).Value, block) Then
+            If Is_Server_Blocked_Or_Unblocked(row.Cells(1).Value, block) Then
                 Continue For
             End If
 
             Try
-                Dim region As String = row.Cells(0).Value
+                Dim region As String = row.Cells(1).Value
 
                 proc.StartInfo.Arguments = "/c netsh advfirewall firewall " + If(block, "add", "delete") + " rule " +
                         "name=CS2ServerPicker_" + region.Replace(" ", "") + If(block, " dir=out action=block protocol=ANY " +
@@ -253,7 +253,7 @@ Module ServerService
 
         ' traverse every datagrid row and block/unblock all servers
         For Each row As DataGridViewRow In mainDataGridView.Rows
-            Dim region As String = row.Cells(0).Value
+            Dim region As String = row.Cells(1).Value
 
             If Is_Server_Blocked_Or_Unblocked(region, block) Then
                 Continue For
