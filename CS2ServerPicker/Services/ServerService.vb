@@ -1,4 +1,7 @@
-﻿Imports Newtonsoft.Json.Linq
+﻿Imports System.IO
+Imports System.Net
+Imports System.Threading
+Imports Newtonsoft.Json.Linq
 Module ServerService
 
     Private clusterDict As New Dictionary(Of String, String) From {
@@ -38,6 +41,8 @@ Module ServerService
                     Dim ipObjArr As JArray = serverProp.Value.SelectToken("relays") ' array of objects
                     Dim ipArr As List(Of String) = New List(Of String)
 
+                    ' Fetch_Save_Server_Flags(serverProp)
+
                     ' collect server relay addresses to an array
                     For Each ipToken As JObject In ipObjArr
                         ipArr.Add(ipToken.SelectToken("ipv4").ToString())
@@ -55,7 +60,7 @@ Module ServerService
                                     App.Get_Server_Dictionary_Clustered().Add(clusterKvp.Key, String.Join(",", ipArr))
                                 Else ' concatenate server ip to clustered server
                                     App.Get_Server_Dictionary_Clustered().Item(clusterKvp.Key) = App.Get_Server_Dictionary_Clustered().Item(clusterKvp.Key) _
-                                        + "," + String.Join(",", ipArr)
+                                            + "," + String.Join(",", ipArr)
                                 End If
 
                                 serverIsClustered = True
@@ -69,7 +74,7 @@ Module ServerService
                         App.Get_Server_Dictionary_Unclustered().Add(serverName, String.Join(",", ipArr))
                     Else
                         App.Get_Server_Dictionary_Unclustered().Item(serverName) = App.Get_Server_Dictionary_Unclustered().Item(serverName) _
-                            + "," + String.Join(",", ipArr)
+                                + "," + String.Join(",", ipArr)
                     End If
 
                     ' server is not part of clustered servers 
@@ -78,7 +83,7 @@ Module ServerService
                             App.Get_Server_Dictionary_Clustered().Add(serverName, String.Join(",", ipArr))
                         Else
                             App.Get_Server_Dictionary_Clustered().Item(serverName) = App.Get_Server_Dictionary_Clustered().Item(serverName) _
-                            + "," + String.Join(",", ipArr)
+                                + "," + String.Join(",", ipArr)
                         End If
                     End If
                 End If
@@ -91,6 +96,36 @@ Module ServerService
             Return "null"
         End Try
     End Function
+
+    Private Sub Fetch_Save_Server_Flags(serverProp As JProperty)
+        ' this method was particularly used on development for fetching flag images and saving them locally as resources instead due to rate limits
+        ' server relay addresses are not geolocation accurate thus it was not utilized although a separate branch was created with the implementation (Dev/server-flags-using-api)
+        Dim latitude As String = serverProp.Value.SelectToken("geo").AsEnumerable()(0).ToString()
+        Dim longitude As String = serverProp.Value.SelectToken("geo").AsEnumerable()(1).ToString()
+
+        Dim wClient As WebClient = New WebClient()
+
+        Dim locResponse As JObject = JObject.Parse(wClient.DownloadString("https://api.opencagedata.com/geocode/v1/json?key=<API_KEY>&q=" + longitude + "%2C+" + latitude + "&pretty=1&no_annotations=1"))
+        Dim locResultsArr As JArray = locResponse.SelectToken("results")
+
+        Dim baseAppDotVbPath As String = Path.GetFullPath(Path.Combine(Application.StartupPath, "..\..\"))
+        Dim serverName As String = serverProp.Value.SelectToken("desc").ToString() + " (" + serverProp.Name + ")" + ".png"
+
+        If (Not File.Exists(baseAppDotVbPath + serverName)) Then
+            Dim countryCode As String = ""
+
+            If (serverProp.Name = "mad") Then
+                ' reverse geocode fails for madrid, coords points to balearic sea lol 
+                countryCode = "ES"
+            Else
+                countryCode = locResultsArr(0).SelectToken("components").SelectToken("country_code").ToString().ToUpper()
+            End If
+
+            wClient.DownloadFile("https://flagsapi.com/" + countryCode + "/flat/48.png", baseAppDotVbPath + serverName)
+
+            wClient.Dispose()
+        End If
+    End Sub
 
     Public Async Sub Block_Except_Preset_Servers(Optional exceptPresetServers As Boolean = False)
         If App.Get_Pending_Operation() Then
@@ -196,12 +231,12 @@ Module ServerService
 
         ' traverse every datagrid row and block/unblock selected servers
         For Each row As DataGridViewRow In mainDataGridView.SelectedRows
-            If Is_Server_Blocked_Or_Unblocked(row.Cells(0).Value, block) Then
+            If Is_Server_Blocked_Or_Unblocked(row.Cells(1).Value, block) Then
                 Continue For
             End If
 
             Try
-                Dim region As String = row.Cells(0).Value
+                Dim region As String = row.Cells(1).Value
 
                 proc.StartInfo.Arguments = "/c netsh advfirewall firewall " + If(block, "add", "delete") + " rule " +
                         "name=CS2ServerPicker_" + region.Replace(" ", "") + If(block, " dir=out action=block protocol=ANY " +
@@ -253,7 +288,7 @@ Module ServerService
 
         ' traverse every datagrid row and block/unblock all servers
         For Each row As DataGridViewRow In mainDataGridView.Rows
-            Dim region As String = row.Cells(0).Value
+            Dim region As String = row.Cells(1).Value
 
             If Is_Server_Blocked_Or_Unblocked(region, block) Then
                 Continue For

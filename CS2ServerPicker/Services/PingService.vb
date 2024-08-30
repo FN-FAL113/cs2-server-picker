@@ -6,13 +6,13 @@
         Dim serverDict As Dictionary(Of String, String) = IIf(App.Get_Is_Clustered(), App.Get_Server_Dictionary_Clustered(), App.Get_Server_Dictionary_Unclustered())
 
         For Each dgRow As DataGridViewRow In dgRows
-            Dim serverName As String = dgRow.Cells(0).Value
+            Dim serverName As String = dgRow.Cells(1).Value
             ' string of addresses joined by "," wil be splitted where each address is pinged
             Dim addresses As String = serverDict.Item(serverName)
 
             Cancel_Pending_Ping(serverName)
 
-            dgRow.Cells(1).Value = "Refreshing..."
+            dgRow.Cells(2).Value = "Refreshing..."
 
             Await Task.Run(Sub() Ping_Handler(addresses, dgRow))
         Next
@@ -28,24 +28,24 @@
 
         For Each dgRow As DataGridViewRow In App.Get_DataGridView_Control().Rows()
             ' comma separated server addresses, will get split
-            Dim addresses As String = serverDictionary.Item(dgRow.Cells(0).Value)
+            Dim addresses As String = serverDictionary.Item(dgRow.Cells(1).Value)
 
             Await Task.Run(Sub() Ping_Handler(addresses, dgRow))
         Next
     End Sub
 
     Public Async Sub Ping_Handler(addresses As String, row As DataGridViewRow)
-        If Is_Server_Blocked_Or_Unblocked(row.Cells(0).Value, True) Then
+        If Is_Server_Blocked_Or_Unblocked(row.Cells(1).Value, True) Then
             ' do not ping if server is blocked
-            row.Cells(0).Style.BackColor = Color.FromArgb(255, 128, 128)
             row.Cells(1).Style.BackColor = Color.FromArgb(255, 128, 128)
-            row.Cells(1).Value = "Blocked"
+            row.Cells(2).Style.BackColor = Color.FromArgb(255, 128, 128)
+            row.Cells(2).Value = "Blocked"
 
             Return
-        ElseIf row.Cells(0).Style.BackColor = Color.FromArgb(255, 128, 128) Then
+        ElseIf row.Cells(1).Style.BackColor = Color.FromArgb(255, 128, 128) Then
             ' if server is not blocked and cell back color is red then unset color
-            row.Cells(0).Style.BackColor = Color.Empty
             row.Cells(1).Style.BackColor = Color.Empty
+            row.Cells(2).Style.BackColor = Color.Empty
         End If
 
         Dim ping As New Net.NetworkInformation.Ping
@@ -53,11 +53,11 @@
         Dim pingResult As Integer = 0
 
         ' add created ping obj to dictionary that gets cleared on subsequent refresh or form close
-        If Not pingObjsDict.ContainsKey(row.Cells(0).Value) Then
-            pingObjsDict.Add(row.Cells(0).Value, ping)
+        If Not pingObjsDict.ContainsKey(row.Cells(1).Value) Then
+            pingObjsDict.Add(row.Cells(1).Value, ping)
         End If
 
-        row.Cells(1).Value = "Getting latency..."
+        row.Cells(2).Value = "Getting latency..."
 
         ' this loop maintains its context through suspension points (Await) so I don't have to worry about race conditions
         For Each address As String In addresses.Split(",")
@@ -68,8 +68,8 @@
                 If result.RoundtripTime > 0 Then
                     pingResult = result.RoundtripTime
 
-                    row.Cells(1).Value = pingResult.ToString() + "ms"
-                    row.Cells(1).Style.BackColor = Color.LightGreen
+                    row.Cells(2).Value = pingResult.ToString() + "ms"
+                    row.Cells(2).Style.BackColor = Color.LightGreen
 
                     Exit For
                 End If
@@ -79,8 +79,8 @@
         Next
 
         If pingResult = 0 Then
-            row.Cells(1).Value = "Ping timed out, try again..."
-            row.Cells(1).Style.BackColor = Color.Orange
+            row.Cells(2).Value = "Ping timed out, try again..."
+            row.Cells(2).Style.BackColor = Color.Orange
         End If
 
         ping.Dispose()

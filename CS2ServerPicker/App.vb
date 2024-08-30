@@ -132,7 +132,7 @@
 
     Private Sub MainDataGridView_SortCompare(sender As Object, e As DataGridViewSortCompareEventArgs) Handles MainDataGridView.SortCompare
         ' sort latency column by splitting "ms" and parsing numeric value
-        If e.Column.Index = 1 Then
+        If e.Column.Index = 2 Then
             Dim cell1Val As Integer = Integer.Parse(IIf(e.CellValue1.ToString().Contains("ms"), e.CellValue1.ToString().Split("ms")(0), "999999"))
             Dim cell2Val As Integer = Integer.Parse(IIf(e.CellValue2.ToString().Contains("ms"), e.CellValue2.ToString().Split("ms")(0), "999999"))
 
