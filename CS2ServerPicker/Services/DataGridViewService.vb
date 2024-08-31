@@ -19,6 +19,7 @@ Module DataGridViewService
             Dim rowIndex As Integer = App.Get_DataGridView_Control().Rows().Add()
 
             If (Not ServerFlagDictionary.ContainsKey(kvp.Key)) Then
+                ' server relay addresses are not geolocate accurate thus servers may show different flag which is undesireable
                 Dim ipCountryRes As String = wClient.DownloadString(" https://ipapi.co/" + kvp.Value.Split(",")(0).ToString() + "/country_code")
 
                 'Dim countryCodeJson As JObject = JObject.Parse(ipCountryRes)

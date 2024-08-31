@@ -1,4 +1,5 @@
-﻿Imports Newtonsoft.Json.Linq
+﻿Imports System.Net
+Imports Newtonsoft.Json.Linq
 Module ServerService
 
     Private clusterDict As New Dictionary(Of String, String) From {
@@ -8,9 +9,9 @@ Module ServerService
         {"India", "Chennai,Mumbai"}
     }
 
-    Public Function Fetch_Server_Data() As String
+    Public Async Function Fetch_Server_Data() As Task(Of String)
         Try
-            Dim webReq As String = New Net.WebClient().DownloadString("https://api.steampowered.com/ISteamApps/GetSDRConfig/v1/?appid=730")
+            Dim webReq As String = Await New WebClient().DownloadStringTaskAsync("https://api.steampowered.com/ISteamApps/GetSDRConfig/v1/?appid=730")
 
             Dim mainJson As JObject = JObject.Parse(webReq)
             Dim serverRevision As String = mainJson.SelectToken("revision").ToString()
@@ -55,7 +56,7 @@ Module ServerService
                                     App.Get_Server_Dictionary_Clustered().Add(clusterKvp.Key, String.Join(",", ipArr))
                                 Else ' concatenate server ip to clustered server
                                     App.Get_Server_Dictionary_Clustered().Item(clusterKvp.Key) = App.Get_Server_Dictionary_Clustered().Item(clusterKvp.Key) _
-                                        + "," + String.Join(",", ipArr)
+                                            + "," + String.Join(",", ipArr)
                                 End If
 
                                 serverIsClustered = True
@@ -69,7 +70,7 @@ Module ServerService
                         App.Get_Server_Dictionary_Unclustered().Add(serverName, String.Join(",", ipArr))
                     Else
                         App.Get_Server_Dictionary_Unclustered().Item(serverName) = App.Get_Server_Dictionary_Unclustered().Item(serverName) _
-                            + "," + String.Join(",", ipArr)
+                                + "," + String.Join(",", ipArr)
                     End If
 
                     ' server is not part of clustered servers 
@@ -78,7 +79,7 @@ Module ServerService
                             App.Get_Server_Dictionary_Clustered().Add(serverName, String.Join(",", ipArr))
                         Else
                             App.Get_Server_Dictionary_Clustered().Item(serverName) = App.Get_Server_Dictionary_Clustered().Item(serverName) _
-                            + "," + String.Join(",", ipArr)
+                                + "," + String.Join(",", ipArr)
                         End If
                     End If
                 End If
