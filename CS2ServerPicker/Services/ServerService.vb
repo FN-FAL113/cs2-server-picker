@@ -1,6 +1,5 @@
 ﻿Imports System.IO
 Imports System.Net
-Imports System.Threading
 Imports Newtonsoft.Json.Linq
 Module ServerService
 
@@ -11,9 +10,9 @@ Module ServerService
         {"India", "Chennai,Mumbai"}
     }
 
-    Public Function Fetch_Server_Data() As String
+    Public Async Function Fetch_Server_Data() As Task(Of String)
         Try
-            Dim webReq As String = New Net.WebClient().DownloadString("https://api.steampowered.com/ISteamApps/GetSDRConfig/v1/?appid=730")
+            Dim webReq As String = Await New WebClient().DownloadStringTaskAsync("https://api.steampowered.com/ISteamApps/GetSDRConfig/v1/?appid=730")
 
             Dim mainJson As JObject = JObject.Parse(webReq)
             Dim serverRevision As String = mainJson.SelectToken("revision").ToString()

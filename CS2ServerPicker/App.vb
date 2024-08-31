@@ -56,9 +56,15 @@
     End Sub
 
     Private Async Sub App_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim serverRevision As String = Fetch_Server_Data()
+        Version_Check()
 
-        ' if app failed to retrieve server data
+        Set_Pending_Operation(True)
+
+        Dim serverRevision As String = Await Fetch_Server_Data()
+
+        Set_Pending_Operation(False)
+
+        ' if app failed to retrieve server data or somehow steam api got updated with different response structure
         If serverRevision = "null" Then
             Return
         End If

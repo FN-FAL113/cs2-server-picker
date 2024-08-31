@@ -23,6 +23,7 @@ Partial Class App
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(App))
         Me.RefreshButton = New System.Windows.Forms.Button()
         Me.MainDataGridView = New System.Windows.Forms.DataGridView()
         Me.Flag = New System.Windows.Forms.DataGridViewImageColumn()
@@ -198,9 +199,10 @@ Partial Class App
         Me.PictureBox2.BackgroundImage = Global.CS2ServerPicker.My.Resources.Resources.Paypal
         Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PictureBox2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox2.Location = New System.Drawing.Point(6, 44)
+        Me.PictureBox2.Location = New System.Drawing.Point(728, 435)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(30, 30)
+        Me.PictureBox2.Size = New System.Drawing.Size(22, 22)
         Me.PictureBox2.TabIndex = 9
         Me.PictureBox2.TabStop = False
         '
@@ -211,9 +213,10 @@ Partial Class App
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox1.ErrorImage = Global.CS2ServerPicker.My.Resources.Resources.Warsaw__Poland___waw_
-        Me.PictureBox1.Location = New System.Drawing.Point(6, 4)
+        Me.PictureBox1.Location = New System.Drawing.Point(702, 435)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(30, 30)
+        Me.PictureBox1.Size = New System.Drawing.Size(22, 22)
         Me.PictureBox1.TabIndex = 5
         Me.PictureBox1.TabStop = False
         '
@@ -236,8 +239,10 @@ Partial Class App
         Me.Controls.Add(Me.MainDataGridView)
         Me.Font = New System.Drawing.Font("Arial", 8.5!)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "App"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Counter Strike 2 Server Picker"
         CType(Me.MainDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
