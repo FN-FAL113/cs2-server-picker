@@ -23,10 +23,12 @@ Partial Class App
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(App))
         Me.RefreshButton = New System.Windows.Forms.Button()
-        Me.Latency = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Servers = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MainDataGridView = New System.Windows.Forms.DataGridView()
+        Me.Flag = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.Servers = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Latency = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.UnblockAllButton = New System.Windows.Forms.Button()
         Me.BlockSelectedButton = New System.Windows.Forms.Button()
         Me.UnblockSelectedButton = New System.Windows.Forms.Button()
@@ -52,24 +54,6 @@ Partial Class App
         Me.RefreshButton.Text = "Refresh"
         Me.RefreshButton.UseVisualStyleBackColor = True
         '
-        'Latency
-        '
-        Me.Latency.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Latency.HeaderText = "Latency"
-        Me.Latency.MinimumWidth = 6
-        Me.Latency.Name = "Latency"
-        Me.Latency.ReadOnly = True
-        Me.Latency.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        '
-        'Servers
-        '
-        Me.Servers.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Servers.HeaderText = "Servers"
-        Me.Servers.MinimumWidth = 6
-        Me.Servers.Name = "Servers"
-        Me.Servers.ReadOnly = True
-        Me.Servers.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        '
         'MainDataGridView
         '
         Me.MainDataGridView.AllowUserToAddRows = False
@@ -86,7 +70,7 @@ Partial Class App
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.MainDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.MainDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.MainDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Servers, Me.Latency})
+        Me.MainDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Flag, Me.Servers, Me.Latency})
         Me.MainDataGridView.Location = New System.Drawing.Point(76, 58)
         Me.MainDataGridView.Name = "MainDataGridView"
         Me.MainDataGridView.RowHeadersVisible = False
@@ -94,6 +78,36 @@ Partial Class App
         Me.MainDataGridView.RowTemplate.Height = 24
         Me.MainDataGridView.Size = New System.Drawing.Size(610, 313)
         Me.MainDataGridView.TabIndex = 0
+        '
+        'Flag
+        '
+        Me.Flag.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Flag.FillWeight = 19.25134!
+        Me.Flag.HeaderText = ""
+        Me.Flag.MinimumWidth = 10
+        Me.Flag.Name = "Flag"
+        Me.Flag.ReadOnly = True
+        Me.Flag.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        '
+        'Servers
+        '
+        Me.Servers.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Servers.FillWeight = 140.3743!
+        Me.Servers.HeaderText = "Servers"
+        Me.Servers.MinimumWidth = 6
+        Me.Servers.Name = "Servers"
+        Me.Servers.ReadOnly = True
+        Me.Servers.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        '
+        'Latency
+        '
+        Me.Latency.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Latency.FillWeight = 140.3743!
+        Me.Latency.HeaderText = "Latency"
+        Me.Latency.MinimumWidth = 6
+        Me.Latency.Name = "Latency"
+        Me.Latency.ReadOnly = True
+        Me.Latency.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         '
         'UnblockAllButton
         '
@@ -185,9 +199,10 @@ Partial Class App
         Me.PictureBox2.BackgroundImage = Global.CS2ServerPicker.My.Resources.Resources.Paypal
         Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PictureBox2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox2.Location = New System.Drawing.Point(6, 44)
+        Me.PictureBox2.Location = New System.Drawing.Point(728, 435)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(30, 30)
+        Me.PictureBox2.Size = New System.Drawing.Size(22, 22)
         Me.PictureBox2.TabIndex = 9
         Me.PictureBox2.TabStop = False
         '
@@ -197,15 +212,17 @@ Partial Class App
         Me.PictureBox1.BackgroundImage = Global.CS2ServerPicker.My.Resources.Resources.GitHub_Mark
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox1.Location = New System.Drawing.Point(6, 4)
+        Me.PictureBox1.ErrorImage = Global.CS2ServerPicker.My.Resources.Resources.Warsaw__Poland___waw_
+        Me.PictureBox1.Location = New System.Drawing.Point(702, 435)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(30, 30)
+        Me.PictureBox1.Size = New System.Drawing.Size(22, 22)
         Me.PictureBox1.TabIndex = 5
         Me.PictureBox1.TabStop = False
         '
         'App
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 14.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(756, 463)
         Me.Controls.Add(Me.PictureBox2)
@@ -222,8 +239,10 @@ Partial Class App
         Me.Controls.Add(Me.MainDataGridView)
         Me.Font = New System.Drawing.Font("Arial", 8.5!)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "App"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Counter Strike 2 Server Picker"
         CType(Me.MainDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -232,8 +251,6 @@ Partial Class App
 
     End Sub
     Friend WithEvents RefreshButton As Button
-    Friend WithEvents Latency As DataGridViewTextBoxColumn
-    Friend WithEvents Servers As DataGridViewTextBoxColumn
     Friend WithEvents MainDataGridView As DataGridView
     Friend WithEvents UnblockAllButton As Button
     Friend WithEvents BlockSelectedButton As Button
@@ -245,4 +262,7 @@ Partial Class App
     Friend WithEvents ClusterButton As Button
     Friend WithEvents PresetsButton As Button
     Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents Flag As DataGridViewImageColumn
+    Friend WithEvents Servers As DataGridViewTextBoxColumn
+    Friend WithEvents Latency As DataGridViewTextBoxColumn
 End Class

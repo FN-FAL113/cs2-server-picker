@@ -1,4 +1,5 @@
-﻿Imports Newtonsoft.Json.Linq
+﻿Imports System.Net
+Imports Newtonsoft.Json.Linq
 Module ServerService
 
     Private clusterDict As New Dictionary(Of String, String) From {
@@ -8,9 +9,9 @@ Module ServerService
         {"India", "Chennai,Mumbai"}
     }
 
-    Public Function Fetch_Server_Data() As String
+    Public Async Function Fetch_Server_Data() As Task(Of String)
         Try
-            Dim webReq As String = New Net.WebClient().DownloadString("https://api.steampowered.com/ISteamApps/GetSDRConfig/v1/?appid=730")
+            Dim webReq As String = Await New WebClient().DownloadStringTaskAsync("https://api.steampowered.com/ISteamApps/GetSDRConfig/v1/?appid=730")
 
             Dim mainJson As JObject = JObject.Parse(webReq)
             Dim serverRevision As String = mainJson.SelectToken("revision").ToString()
@@ -55,7 +56,7 @@ Module ServerService
                                     App.Get_Server_Dictionary_Clustered().Add(clusterKvp.Key, String.Join(",", ipArr))
                                 Else ' concatenate server ip to clustered server
                                     App.Get_Server_Dictionary_Clustered().Item(clusterKvp.Key) = App.Get_Server_Dictionary_Clustered().Item(clusterKvp.Key) _
-                                        + "," + String.Join(",", ipArr)
+                                            + "," + String.Join(",", ipArr)
                                 End If
 
                                 serverIsClustered = True
@@ -69,7 +70,7 @@ Module ServerService
                         App.Get_Server_Dictionary_Unclustered().Add(serverName, String.Join(",", ipArr))
                     Else
                         App.Get_Server_Dictionary_Unclustered().Item(serverName) = App.Get_Server_Dictionary_Unclustered().Item(serverName) _
-                            + "," + String.Join(",", ipArr)
+                                + "," + String.Join(",", ipArr)
                     End If
 
                     ' server is not part of clustered servers 
@@ -78,7 +79,7 @@ Module ServerService
                             App.Get_Server_Dictionary_Clustered().Add(serverName, String.Join(",", ipArr))
                         Else
                             App.Get_Server_Dictionary_Clustered().Item(serverName) = App.Get_Server_Dictionary_Clustered().Item(serverName) _
-                            + "," + String.Join(",", ipArr)
+                                + "," + String.Join(",", ipArr)
                         End If
                     End If
                 End If
@@ -196,12 +197,12 @@ Module ServerService
 
         ' traverse every datagrid row and block/unblock selected servers
         For Each row As DataGridViewRow In mainDataGridView.SelectedRows
-            If Is_Server_Blocked_Or_Unblocked(row.Cells(0).Value, block) Then
+            If Is_Server_Blocked_Or_Unblocked(row.Cells(1).Value, block) Then
                 Continue For
             End If
 
             Try
-                Dim region As String = row.Cells(0).Value
+                Dim region As String = row.Cells(1).Value
 
                 proc.StartInfo.Arguments = "/c netsh advfirewall firewall " + If(block, "add", "delete") + " rule " +
                         "name=CS2ServerPicker_" + region.Replace(" ", "") + If(block, " dir=out action=block protocol=ANY " +
@@ -253,7 +254,7 @@ Module ServerService
 
         ' traverse every datagrid row and block/unblock all servers
         For Each row As DataGridViewRow In mainDataGridView.Rows
-            Dim region As String = row.Cells(0).Value
+            Dim region As String = row.Cells(1).Value
 
             If Is_Server_Blocked_Or_Unblocked(region, block) Then
                 Continue For

@@ -56,7 +56,7 @@ Partial Class UpdatePresetForm
         Me.PresetServersLabel.Font = New System.Drawing.Font("Arial", 8.75!, System.Drawing.FontStyle.Bold)
         Me.PresetServersLabel.Location = New System.Drawing.Point(63, 75)
         Me.PresetServersLabel.Name = "PresetServersLabel"
-        Me.PresetServersLabel.Size = New System.Drawing.Size(93, 15)
+        Me.PresetServersLabel.Size = New System.Drawing.Size(116, 18)
         Me.PresetServersLabel.TabIndex = 13
         Me.PresetServersLabel.Text = "Preset Servers"
         '
@@ -65,7 +65,7 @@ Partial Class UpdatePresetForm
         Me.UpdatePresetNameTextBox.Font = New System.Drawing.Font("Arial", 8.5!)
         Me.UpdatePresetNameTextBox.Location = New System.Drawing.Point(66, 43)
         Me.UpdatePresetNameTextBox.Name = "UpdatePresetNameTextBox"
-        Me.UpdatePresetNameTextBox.Size = New System.Drawing.Size(271, 21)
+        Me.UpdatePresetNameTextBox.Size = New System.Drawing.Size(271, 24)
         Me.UpdatePresetNameTextBox.TabIndex = 12
         '
         'PresetNameLabel
@@ -74,7 +74,7 @@ Partial Class UpdatePresetForm
         Me.PresetNameLabel.Font = New System.Drawing.Font("Arial", 8.75!, System.Drawing.FontStyle.Bold)
         Me.PresetNameLabel.Location = New System.Drawing.Point(63, 18)
         Me.PresetNameLabel.Name = "PresetNameLabel"
-        Me.PresetNameLabel.Size = New System.Drawing.Size(81, 15)
+        Me.PresetNameLabel.Size = New System.Drawing.Size(99, 18)
         Me.PresetNameLabel.TabIndex = 11
         Me.PresetNameLabel.Text = "Preset Name"
         '
@@ -85,12 +85,12 @@ Partial Class UpdatePresetForm
         Me.PresetServersCheckedListBox.FormattingEnabled = True
         Me.PresetServersCheckedListBox.Location = New System.Drawing.Point(66, 100)
         Me.PresetServersCheckedListBox.Name = "PresetServersCheckedListBox"
-        Me.PresetServersCheckedListBox.Size = New System.Drawing.Size(271, 340)
+        Me.PresetServersCheckedListBox.Size = New System.Drawing.Size(271, 327)
         Me.PresetServersCheckedListBox.TabIndex = 10
         '
         'UpdatePresetForm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 14.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(400, 500)
         Me.Controls.Add(Me.ResetPresetSelectionButton)
@@ -103,6 +103,7 @@ Partial Class UpdatePresetForm
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
         Me.Name = "UpdatePresetForm"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Update Preset"
         Me.ResumeLayout(False)
         Me.PerformLayout()

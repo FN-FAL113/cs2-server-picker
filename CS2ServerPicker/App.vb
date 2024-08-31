@@ -56,9 +56,15 @@
     End Sub
 
     Private Async Sub App_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim serverRevision As String = Fetch_Server_Data()
+        Version_Check()
 
-        ' if app failed to retrieve server data
+        Set_Pending_Operation(True)
+
+        Dim serverRevision As String = Await Fetch_Server_Data()
+
+        Set_Pending_Operation(False)
+
+        ' if app failed to retrieve server data or somehow steam api got updated with different response structure
         If serverRevision = "null" Then
             Return
         End If
@@ -125,14 +131,14 @@
             Environment.NewLine +
             "Author: FN-FAL113 (github username)" + Environment.NewLine +
             "License: GNU General Public License V3" + Environment.NewLine +
-            "App Version: 2.1.0",
+            "App Version: 2.2.0",
             "App Info"
         )
     End Sub
 
     Private Sub MainDataGridView_SortCompare(sender As Object, e As DataGridViewSortCompareEventArgs) Handles MainDataGridView.SortCompare
         ' sort latency column by splitting "ms" and parsing numeric value
-        If e.Column.Index = 1 Then
+        If e.Column.Index = 2 Then
             Dim cell1Val As Integer = Integer.Parse(IIf(e.CellValue1.ToString().Contains("ms"), e.CellValue1.ToString().Split("ms")(0), "999999"))
             Dim cell2Val As Integer = Integer.Parse(IIf(e.CellValue2.ToString().Contains("ms"), e.CellValue2.ToString().Split("ms")(0), "999999"))
 

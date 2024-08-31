@@ -85,6 +85,9 @@
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>fav_icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -165,6 +168,7 @@
     </Compile>
     <Compile Include="Services\ProcessService.vb" />
     <Compile Include="Services\ServerService.vb" />
+    <Compile Include="Services\VersionService.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.resx">
@@ -220,6 +224,174 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="asset\Paypal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\flags\Alibaba Cloud Chengdu - Mobile %28China%29 %28ctum%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\flags\Alibaba Cloud Chengdu - Telecom %28China%29 %28ctut%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\flags\Alibaba Cloud Chengdu - Unicom %28China%29 %28ctuu%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\flags\Alibaba Cloud Shanghai Alicloud - Mobile %28China%29 %28pvgm%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\flags\Alibaba Cloud Shanghai Alicloud - Telecom %28China%29 %28pvgt%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\flags\Alibaba Cloud Shanghai Alicloud - Unicom %28China%29 %28pvgu%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\flags\Amsterdam %28Netherlands%29 %28ams%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\flags\Atlanta %28Georgia%29 %28atl%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\flags\Buenos Aires %28Argentina%29 %28eze%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\flags\Chennai - Ambattur %28India%29 %28maa2%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\flags\Chicago %28Illinois%29 %28ord%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\flags\China.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\flags\Dallas %28Texas%29 %28dfw%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\flags\Dubai %28United Arab Emirates%29 %28dxb%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\flags\Frankfurt %28Germany%29 %28fra%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\flags\Helsinki %28Finland%29 %28hel%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\flags\Hong Kong %28hkg%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\flags\India.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\flags\Japan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\flags\Johannesburg %28South Africa%29 %28jnb%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\flags\Lima %28Peru%29 %28lim%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\flags\London %28England%29 %28lhr%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\flags\Los Angeles %28California%29 %28lax%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\flags\Madrid %28Spain%29 %28mad%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\flags\Mumbai %28India%29 %28bom2%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\flags\New York %28jfk%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\flags\Paris %28France%29 %28par%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\flags\Perfect World %28sha-4%29 Backbone %28Shanghai, China%29 %28shb%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\flags\Perfect World Guangdong 1 %28China%29 %28pwg%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\flags\Perfect World Guangdong 2 - Mobile %28China%29 %28canm%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\flags\Perfect World Guangdong 2 - Telecom %28China%29 %28cant%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\flags\Perfect World Guangdong 2 - Unicom %28China%29 %28canu%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\flags\Perfect World Hebei %28China%29 %28pwu%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\flags\Perfect World Shanghai - Mobile %28China%29 %28sham%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\flags\Perfect World Shanghai - Telecom %28China%29 %28shat%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\flags\Perfect World Shanghai - Unicom %28China%29 %28shau%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\flags\Perfect World Tianjin - Mobile %28China%29 %28tsnm%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\flags\Perfect World Tianjin - Telecom %28China%29 %28tsnt%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\flags\Perfect World Tianjin - Unicom %28China%29 %28tsnu%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\flags\Perfect World Tianjin %28China%29 %28pwj%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\flags\Perfect World Wuhan %28China%29 %28pww%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\flags\Perfect World Zhejiang %28China%29 %28pwz%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\flags\Santiago %28Chile%29 %28scl%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\flags\Sao Paulo %28Brazil%29 %28gru%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\flags\Seattle %28Washington%29 %28sea%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\flags\Seoul %28South Korea%29 %28seo%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\flags\Singapore %28sgp%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\flags\Sterling %28Virginia%29 %28iad%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\flags\Stockholm - Bromma %28Sweden%29 %28sto2%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\flags\Stockholm - Kista %28Sweden%29 %28sto%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\flags\Stockholm %28Sweden%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\flags\Sydney %28Australia%29 %28syd%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\flags\Tokyo Koto City %28Japan%29 %28tyo%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\flags\Vienna %28Austria%29 %28vie%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\flags\Warsaw %28Poland%29 %28waw%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fav_icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
