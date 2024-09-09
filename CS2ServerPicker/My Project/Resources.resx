@@ -118,175 +118,178 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Paypal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\asset\Paypal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="GitHub-Mark" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\asset\GitHub-Mark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Johannesburg (South Africa) (jnb)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\flags\Johannesburg (South Africa) (jnb).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Alibaba Cloud Chengdu - Mobile (China) (ctum)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\asset\flags\Alibaba Cloud Chengdu - Mobile (China) (ctum).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Perfect World Tianjin (China) (pwj)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\flags\Perfect World Tianjin (China) (pwj).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Paypal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\Paypal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Alibaba Cloud Chengdu - Telecom (China) (ctut)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\asset\flags\Alibaba Cloud Chengdu - Telecom (China) (ctut).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Alibaba Cloud Chengdu - Unicom (China) (ctuu)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\asset\flags\Alibaba Cloud Chengdu - Unicom (China) (ctuu).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Alibaba Cloud Shanghai Alicloud - Mobile (China) (pvgm)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\asset\flags\Alibaba Cloud Shanghai Alicloud - Mobile (China) (pvgm).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Alibaba Cloud Shanghai Alicloud - Telecom (China) (pvgt)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\asset\flags\Alibaba Cloud Shanghai Alicloud - Telecom (China) (pvgt).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Alibaba Cloud Shanghai Alicloud - Unicom (China) (pvgu)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\asset\flags\Alibaba Cloud Shanghai Alicloud - Unicom (China) (pvgu).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Amsterdam (Netherlands) (ams)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\asset\flags\Amsterdam (Netherlands) (ams).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Atlanta (Georgia) (atl)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\asset\flags\Atlanta (Georgia) (atl).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Buenos Aires (Argentina) (eze)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\asset\flags\Buenos Aires (Argentina) (eze).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Chennai - Ambattur (India) (maa2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\asset\flags\Chennai - Ambattur (India) (maa2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Chicago (Illinois) (ord)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\asset\flags\Chicago (Illinois) (ord).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="China" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\asset\flags\China.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Dallas (Texas) (dfw)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\asset\flags\Dallas (Texas) (dfw).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Dubai (United Arab Emirates) (dxb)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\asset\flags\Dubai (United Arab Emirates) (dxb).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Frankfurt (Germany) (fra)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\asset\flags\Frankfurt (Germany) (fra).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Helsinki (Finland) (hel)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\asset\flags\Helsinki (Finland) (hel).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Hong Kong (hkg)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\asset\flags\Hong Kong (hkg).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="India" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\asset\flags\India.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Japan" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\asset\flags\Japan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Johannesburg (South Africa) (jnb)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\asset\flags\Johannesburg (South Africa) (jnb).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Lima (Peru) (lim)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\asset\flags\Lima (Peru) (lim).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="London (England) (lhr)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\asset\flags\London (England) (lhr).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Los Angeles (California) (lax)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\asset\flags\Los Angeles (California) (lax).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Madrid (Spain) (mad)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\asset\flags\Madrid (Spain) (mad).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Mumbai (India) (bom2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\asset\flags\Mumbai (India) (bom2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="New York (jfk)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\asset\flags\New York (jfk).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Paris (France) (par)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\asset\flags\Paris (France) (par).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Perfect World (sha-4) Backbone (Shanghai, China) (shb)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\asset\flags\Perfect World (sha-4) Backbone (Shanghai, China) (shb).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Perfect World Guangdong 1 (China) (pwg)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\asset\flags\Perfect World Guangdong 1 (China) (pwg).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Perfect World Guangdong 2 - Mobile (China) (canm)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\asset\flags\Perfect World Guangdong 2 - Mobile (China) (canm).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Perfect World Guangdong 2 - Telecom (China) (cant)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\asset\flags\Perfect World Guangdong 2 - Telecom (China) (cant).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Perfect World Guangdong 2 - Unicom (China) (canu)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\asset\flags\Perfect World Guangdong 2 - Unicom (China) (canu).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Perfect World Hebei (China) (pwu)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\asset\flags\Perfect World Hebei (China) (pwu).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Perfect World Shanghai - Mobile (China) (sham)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\asset\flags\Perfect World Shanghai - Mobile (China) (sham).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Perfect World Shanghai - Telecom (China) (shat)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\asset\flags\Perfect World Shanghai - Telecom (China) (shat).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Perfect World Shanghai - Unicom (China) (shau)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\asset\flags\Perfect World Shanghai - Unicom (China) (shau).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Perfect World Tianjin - Mobile (China) (tsnm)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\asset\flags\Perfect World Tianjin - Mobile (China) (tsnm).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Perfect World Tianjin - Telecom (China) (tsnt)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\asset\flags\Perfect World Tianjin - Telecom (China) (tsnt).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Perfect World Tianjin - Unicom (China) (tsnu)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\asset\flags\Perfect World Tianjin - Unicom (China) (tsnu).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Perfect World Tianjin (China) (pwj)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\asset\flags\Perfect World Tianjin (China) (pwj).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="GitHub-Mark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\GitHub-Mark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Perfect World Wuhan (China) (pww)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\asset\flags\Perfect World Wuhan (China) (pww).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Hong Kong (hkg)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\flags\Hong Kong (hkg).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Perfect World Zhejiang (China) (pwz)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\asset\flags\Perfect World Zhejiang (China) (pwz).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Santiago (Chile) (scl)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\asset\flags\Santiago (Chile) (scl).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Perfect World (sha-4) Backbone (Shanghai, China) (shb)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\flags\Perfect World (sha-4) Backbone (Shanghai, China) (shb).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Sao Paulo (Brazil) (gru)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\asset\flags\Sao Paulo (Brazil) (gru).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Seattle (Washington) (sea)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\asset\flags\Seattle (Washington) (sea).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Alibaba Cloud Shanghai Alicloud - Telecom (China) (pvgt)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\flags\Alibaba Cloud Shanghai Alicloud - Telecom (China) (pvgt).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Seoul (South Korea) (seo)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\asset\flags\Seoul (South Korea) (seo).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Singapore (sgp)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\asset\flags\Singapore (sgp).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Perfect World Shanghai - Mobile (China) (sham)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\flags\Perfect World Shanghai - Mobile (China) (sham).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Sterling (Virginia) (iad)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\asset\flags\Sterling (Virginia) (iad).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Mumbai (India) (bom2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\flags\Mumbai (India) (bom2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="India" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\flags\India.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Perfect World Zhejiang (China) (pwz)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\flags\Perfect World Zhejiang (China) (pwz).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="London (England) (lhr)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\flags\London (England) (lhr).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Alibaba Cloud Shanghai Alicloud - Mobile (China) (pvgm)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\flags\Alibaba Cloud Shanghai Alicloud - Mobile (China) (pvgm).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Perfect World Guangdong 2 - Mobile (China) (canm)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\flags\Perfect World Guangdong 2 - Mobile (China) (canm).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Lima (Peru) (lim)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\flags\Lima (Peru) (lim).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Buenos Aires (Argentina) (eze)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\flags\Buenos Aires (Argentina) (eze).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Dubai (United Arab Emirates) (dxb)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\flags\Dubai (United Arab Emirates) (dxb).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Chennai - Ambattur (India) (maa2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\flags\Chennai - Ambattur (India) (maa2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Perfect World Shanghai - Telecom (China) (shat)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\flags\Perfect World Shanghai - Telecom (China) (shat).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Chicago (Illinois) (ord)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\flags\Chicago (Illinois) (ord).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Paris (France) (par)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\flags\Paris (France) (par).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Perfect World Wuhan (China) (pww)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\flags\Perfect World Wuhan (China) (pww).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Perfect World Shanghai - Unicom (China) (shau)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\flags\Perfect World Shanghai - Unicom (China) (shau).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Santiago (Chile) (scl)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\flags\Santiago (Chile) (scl).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Japan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\flags\Japan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Amsterdam (Netherlands) (ams)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\flags\Amsterdam (Netherlands) (ams).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Perfect World Tianjin - Mobile (China) (tsnm)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\flags\Perfect World Tianjin - Mobile (China) (tsnm).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Seoul (South Korea) (seo)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\flags\Seoul (South Korea) (seo).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Alibaba Cloud Shanghai Alicloud - Unicom (China) (pvgu)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\flags\Alibaba Cloud Shanghai Alicloud - Unicom (China) (pvgu).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Perfect World Tianjin - Telecom (China) (tsnt)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\flags\Perfect World Tianjin - Telecom (China) (tsnt).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Stockholm - Bromma (Sweden) (sto2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\asset\flags\Stockholm - Bromma (Sweden) (sto2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Stockholm - Kista (Sweden) (sto)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\asset\flags\Stockholm - Kista (Sweden) (sto).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Stockholm (Sweden)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\asset\flags\Stockholm (Sweden).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Sydney (Australia) (syd)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\asset\flags\Sydney (Australia) (syd).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="China" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\flags\China.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Tokyo Koto City (Japan) (tyo)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\asset\flags\Tokyo Koto City (Japan) (tyo).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="New York (jfk)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\flags\New York (jfk).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Stockholm (Sweden)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\flags\Stockholm (Sweden).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Perfect World Guangdong 1 (China) (pwg)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\flags\Perfect World Guangdong 1 (China) (pwg).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Singapore (sgp)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\flags\Singapore (sgp).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Seattle (Washington) (sea)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\flags\Seattle (Washington) (sea).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Vienna (Austria) (vie)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\asset\flags\Vienna (Austria) (vie).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Dallas (Texas) (dfw)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\flags\Dallas (Texas) (dfw).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Sydney (Australia) (syd)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\flags\Sydney (Australia) (syd).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Perfect World Guangdong 2 - Telecom (China) (cant)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\flags\Perfect World Guangdong 2 - Telecom (China) (cant).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Perfect World Hebei (China) (pwu)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\flags\Perfect World Hebei (China) (pwu).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Frankfurt (Germany) (fra)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\flags\Frankfurt (Germany) (fra).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Atlanta (Georgia) (atl)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\flags\Atlanta (Georgia) (atl).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Stockholm - Kista (Sweden) (sto)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\flags\Stockholm - Kista (Sweden) (sto).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Warsaw (Poland) (waw)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\asset\flags\Warsaw (Poland) (waw).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Madrid (Spain) (mad)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\flags\Madrid (Spain) (mad).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Alibaba Cloud Chengdu - Unicom (China) (ctuu)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\flags\Alibaba Cloud Chengdu - Unicom (China) (ctuu).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Los Angeles (California) (lax)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\flags\Los Angeles (California) (lax).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\Settings.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

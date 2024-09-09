@@ -131,7 +131,7 @@
             Environment.NewLine +
             "Author: FN-FAL113 (github username)" + Environment.NewLine +
             "License: GNU General Public License V3" + Environment.NewLine +
-            "App Version: 2.2.0",
+            "App Version: 2.2.1",
             "App Info"
         )
     End Sub
@@ -189,5 +189,10 @@
     Private Sub PresetsButton_Click(sender As Object, e As EventArgs) Handles PresetsButton.Click
         Presets.ShowDialog()
         Presets.Activate()
+    End Sub
+
+    Private Sub SettingsIcon_Click(sender As Object, e As EventArgs) Handles SettingsIcon.Click
+        Settings.ShowDialog()
+        Settings.Activate()
     End Sub
 End Class
