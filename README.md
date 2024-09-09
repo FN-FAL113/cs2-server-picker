@@ -13,7 +13,7 @@ A lightweight server picker for CS2. Previously developed for CS:GO but now for 
 ### [Releases](https://github.com/FN-FAL113/csgo-server-picker/releases)
 
 ## 📷 Screenshot
-![CS2ServerPicker](https://github.com/user-attachments/assets/5de56ee1-6107-4f09-93f4-0b50d59df47f)
+![CS2ServerPicker](https://github.com/user-attachments/assets/e5c7c2a7-c560-4826-bcd5-9540d66abec6)
 ![Demo.gif](https://github.com/FN-FAL113/cs2-server-picker/assets/88238718/a46e515c-d591-49e2-ac98-f6f0088bf8eb)
 
 ## ⚙️ Requirements

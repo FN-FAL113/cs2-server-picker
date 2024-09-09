@@ -4,6 +4,10 @@ Imports Newtonsoft.Json.Linq
 Module VersionService
     Public Async Sub Version_Check()
         Try
+            If Not My.Settings.VersionCheckOnStartup Then
+                Return
+            End If
+
             Dim wClient As WebClient = New WebClient()
 
             ' github requires a user-agent header on non-browser request

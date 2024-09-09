@@ -190,4 +190,9 @@
         Presets.ShowDialog()
         Presets.Activate()
     End Sub
+
+    Private Sub SettingsIcon_Click(sender As Object, e As EventArgs) Handles SettingsIcon.Click
+        Settings.ShowDialog()
+        Settings.Activate()
+    End Sub
 End Class

@@ -37,9 +37,11 @@ Partial Class App
         Me.ProgBar = New System.Windows.Forms.ProgressBar()
         Me.ClusterButton = New System.Windows.Forms.Button()
         Me.PresetsButton = New System.Windows.Forms.Button()
+        Me.SettingsIcon = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.MainDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SettingsIcon, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -193,13 +195,24 @@ Partial Class App
         Me.PresetsButton.Text = "Presets"
         Me.PresetsButton.UseVisualStyleBackColor = True
         '
+        'SettingsIcon
+        '
+        Me.SettingsIcon.BackgroundImage = Global.CS2ServerPicker.My.Resources.Resources.Settings
+        Me.SettingsIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.SettingsIcon.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.SettingsIcon.Location = New System.Drawing.Point(662, 434)
+        Me.SettingsIcon.Name = "SettingsIcon"
+        Me.SettingsIcon.Size = New System.Drawing.Size(24, 24)
+        Me.SettingsIcon.TabIndex = 10
+        Me.SettingsIcon.TabStop = False
+        '
         'PictureBox2
         '
         Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox2.BackgroundImage = Global.CS2ServerPicker.My.Resources.Resources.Paypal
         Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PictureBox2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox2.Location = New System.Drawing.Point(728, 435)
+        Me.PictureBox2.Location = New System.Drawing.Point(723, 435)
         Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(22, 22)
@@ -213,7 +226,7 @@ Partial Class App
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox1.ErrorImage = Global.CS2ServerPicker.My.Resources.Resources.Warsaw__Poland___waw_
-        Me.PictureBox1.Location = New System.Drawing.Point(702, 435)
+        Me.PictureBox1.Location = New System.Drawing.Point(693, 435)
         Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(22, 22)
@@ -225,6 +238,7 @@ Partial Class App
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(756, 463)
+        Me.Controls.Add(Me.SettingsIcon)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PresetsButton)
         Me.Controls.Add(Me.ClusterButton)
@@ -245,6 +259,7 @@ Partial Class App
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Counter Strike 2 Server Picker"
         CType(Me.MainDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SettingsIcon, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -265,4 +280,5 @@ Partial Class App
     Friend WithEvents Flag As DataGridViewImageColumn
     Friend WithEvents Servers As DataGridViewTextBoxColumn
     Friend WithEvents Latency As DataGridViewTextBoxColumn
+    Friend WithEvents SettingsIcon As PictureBox
 End Class

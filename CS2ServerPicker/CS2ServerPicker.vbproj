@@ -169,6 +169,12 @@
     <Compile Include="Services\ProcessService.vb" />
     <Compile Include="Services\ServerService.vb" />
     <Compile Include="Services\VersionService.vb" />
+    <Compile Include="Settings.Designer.vb">
+      <DependentUpon>Settings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.resx">
@@ -191,6 +197,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presets\UpdatePresetForm.resx">
       <DependentUpon>UpdatePresetForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings.resx">
+      <DependentUpon>Settings.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -391,6 +400,7 @@
     <None Include="asset\flags\Warsaw %28Poland%29 %28waw%29.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="asset\Settings.png" />
     <Content Include="fav_icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
