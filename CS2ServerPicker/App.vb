@@ -131,19 +131,22 @@
             Environment.NewLine +
             "Author: FN-FAL113 (github username)" + Environment.NewLine +
             "License: GNU General Public License V3" + Environment.NewLine +
-            "App Version: 2.2.1",
+            "App Version: 2.2.2",
             "App Info"
         )
     End Sub
 
     Private Sub MainDataGridView_SortCompare(sender As Object, e As DataGridViewSortCompareEventArgs) Handles MainDataGridView.SortCompare
         ' sort latency column by splitting "ms" and parsing numeric value
+        e.Handled = True
+
+        If e.CellValue1 Is Nothing Or e.CellValue2 Is Nothing Then Return
+
         If e.Column.Index = 2 Then
             Dim cell1Val As Integer = Integer.Parse(IIf(e.CellValue1.ToString().Contains("ms"), e.CellValue1.ToString().Split("ms")(0), "999999"))
             Dim cell2Val As Integer = Integer.Parse(IIf(e.CellValue2.ToString().Contains("ms"), e.CellValue2.ToString().Split("ms")(0), "999999"))
 
             e.SortResult = cell1Val.CompareTo(cell2Val)
-            e.Handled = True
         End If
     End Sub
 
