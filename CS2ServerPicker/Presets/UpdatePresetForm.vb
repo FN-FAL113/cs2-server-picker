@@ -79,8 +79,9 @@ Public Class UpdatePresetForm
 
             MessageBox.Show("Succesfully updated preset!", "Info")
         Catch ex As Exception
-            MessageBox.Show("An error has occured while updating preset! Error: " _
-                + Environment.NewLine + Environment.NewLine + ex.Message, "Update Preset Error")
+            Log_Exception_To_File(ex, "An error has occured while updating preset!")
+
+            MessageBox.Show("An error has occured while updating preset! Please upload error file to github issue tracker.", "Update Preset Error")
         End Try
     End Sub
 
