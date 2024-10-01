@@ -98,8 +98,9 @@ Public Class Presets
                 PresetsDataGridView.Rows(rowIndex).Cells(0).Value = preset.Value.SelectToken("presetName")
             Next
         Catch ex As Exception
-            MessageBox.Show("An error has occured while loading presets! Please report to github issue-tracker. Error: " _
-                + Environment.NewLine + Environment.NewLine + ex.Message, "Load Presets Error")
+            Log_Exception_To_File(ex, "An error has occured while loading presets!")
+
+            MessageBox.Show("An error has occured while loading presets! Please upload error file to github issue tracker.", "Load Presets Error")
         End Try
     End Sub
 
@@ -127,8 +128,9 @@ Public Class Presets
                 PresetServerListDataGridView.Rows(rowIndex).Cells(0).Value = server
             Next
         Catch ex As Exception
-            MessageBox.Show("An error has occured while loading preset servers! Please report to github issue-tracker. Error: " _
-               + Environment.NewLine + Environment.NewLine + ex.Message, "Load Preset Servers Error")
+            Log_Exception_To_File(ex, "An error has occured while loading preset servers!")
+
+            MessageBox.Show("An error has occured while loading preset servers! Please upload error file to github issue tracker", "Load Preset Servers Error")
         End Try
     End Sub
 End Class

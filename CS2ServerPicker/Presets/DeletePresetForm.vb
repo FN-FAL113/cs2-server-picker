@@ -31,8 +31,9 @@ Public Class DeletePresetForm
             ' refresh/reload presets control data grids
             Presets.Load_Presets()
         Catch ex As Exception
-            MessageBox.Show("An error has occured while deleting preset! Please report to github issue-tracker. Error: " _
-                + Environment.NewLine + Environment.NewLine + ex.Message, "Delete Preset Error")
+            Log_Exception_To_File(ex, "An error has occured while deleting preset!")
+
+            MessageBox.Show("An error has occured while deleting preset! Please upload error file to github issue tracker.", "Delete Preset Error")
 
             Return
         End Try

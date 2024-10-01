@@ -1,6 +1,4 @@
-﻿Imports System.Net
-
-Module DataGridViewService
+﻿Module DataGridViewService
 
     ' cache server flag image to prevent unnecessary requests
 
@@ -8,8 +6,6 @@ Module DataGridViewService
         Dim serverDict As Dictionary(Of String, String) = IIf(App.Get_Is_Clustered(), App.Get_Server_Dictionary_Clustered(), App.Get_Server_Dictionary_Unclustered)
 
         Dim dg As DataGridView = App.Get_DataGridView_Control()
-
-        Dim wClient As WebClient = New WebClient()
 
         ' display each server name key value from server dictionary in the datagridview control
         For Each kvp As KeyValuePair(Of String, String) In serverDict
@@ -19,7 +15,6 @@ Module DataGridViewService
             dg.Rows(rowIndex).Cells(1).Value = kvp.Key
         Next
 
-        wClient.Dispose()
     End Sub
 
     Public Sub Clear_Column_Values()

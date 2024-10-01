@@ -87,7 +87,9 @@ Module ServerService
 
             Return serverRevision
         Catch ex As Exception
-            MessageBox.Show("An error has occured while retrieving or displaying server data! Please report to github issue-tracker.", "Server Data Fetch/Display Error")
+            Log_Exception_To_File(ex, "An error has occurred while retrieving or displaying server data!")
+
+            MessageBox.Show("An error has occurred while retrieving or displaying server data! Please upload error file to github issue tracker", "Server Data Fetch/Display Error")
 
             Return "null"
         End Try
@@ -155,7 +157,9 @@ Module ServerService
                     Continue For
                 End If
             Catch ex As Exception
-                MessageBox.Show("An error has occured while blocking servers by preset with the following message: " + Environment.NewLine + ex.Message, "Error")
+                Log_Exception_To_File(ex, "An error has occurred while blocking servers by preset!")
+
+                MessageBox.Show("An error has occurred while blocking servers by preset! Please upload error file to github issue tracker.", "Error")
             End Try
         Next
 
@@ -216,7 +220,9 @@ Module ServerService
                     Continue For
                 End If
             Catch ex As Exception
-                MessageBox.Show("An error has occured while blocking/unblocking selected server with the following message: " + Environment.NewLine + ex.Message, "Error")
+                Log_Exception_To_File(ex, "An error has occurred while blocking/unblocking selected server!")
+
+                MessageBox.Show("An error has occurred while blocking/unblocking selected server! Please upload error file to github issue tracker.", "Error")
             End Try
         Next
 
@@ -273,7 +279,9 @@ Module ServerService
                     Continue For
                 End If
             Catch ex As Exception
-                MessageBox.Show("An error has occured while blocking/unblocking all servers with the following message: " + Environment.NewLine + ex.Message, "Error")
+                Log_Exception_To_File(ex, "An error has occurred while blocking/unblocking all servers!")
+
+                MessageBox.Show("An error has occurred while blocking/unblocking all servers! Please upload error file to github issue tracker.", "Error")
             End Try
         Next
 
@@ -291,7 +299,8 @@ Module ServerService
         proc.Start()
         proc.WaitForExit()
 
-        Dim procOutput = proc.StandardOutput.ReadToEnd() ' retrieve command output from stdout descriptor
+        ' retrieve command output from stdout descriptor
+        Dim procOutput = proc.StandardOutput.ReadToEnd()
 
         is_rule_exist = procOutput.Contains("CS2ServerPicker_" + region_trimmed)
 

@@ -30,7 +30,7 @@ Module VersionService
 
             wClient.Dispose()
         Catch ex As Exception
-            MessageBox.Show(App, "Failed to check for new version", "Version Check", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            MessageBox.Show(App, "Failed to check for new version! Check your internet connection.", "Version Check", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End Try
     End Sub
 End Module
