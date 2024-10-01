@@ -85,8 +85,6 @@ Module ServerService
                 End If
             Next
 
-            Throw New Exception("Test")
-
             Return serverRevision
         Catch ex As Exception
             Log_Exception_To_File(ex, "An error has occurred while retrieving or displaying server data!")
