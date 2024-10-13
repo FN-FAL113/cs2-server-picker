@@ -152,7 +152,7 @@ Module ServerService
                 proc.WaitForExit()
 
                 If proc.ExitCode = 1 Or proc.ExitCode < 0 Then
-                    Throw New Exception(proc.StandardOutput.ReadToEnd().Split(".")(0))
+                    Throw New Exception("StdOut: " + proc.StandardOutput.ReadToEnd() + Environment.NewLine + "StdErr: " + proc.StandardError.ReadToEnd())
 
                     Continue For
                 End If
@@ -215,7 +215,7 @@ Module ServerService
                 proc.WaitForExit()
 
                 If proc.ExitCode = 1 Or proc.ExitCode < 0 Then
-                    Throw New Exception(proc.StandardOutput.ReadToEnd().Split(".")(0))
+                    Throw New Exception("StdOut: " + proc.StandardOutput.ReadToEnd() + Environment.NewLine + "StdErr: " + proc.StandardError.ReadToEnd())
 
                     Continue For
                 End If
@@ -274,7 +274,7 @@ Module ServerService
                 proc.WaitForExit()
 
                 If proc.ExitCode = 1 Or proc.ExitCode < 0 Then
-                    Throw New Exception(proc.StandardOutput.ReadToEnd().Split(".")(0))
+                    Throw New Exception("StdOut: " + proc.StandardOutput.ReadToEnd() + Environment.NewLine + "StdErr: " + proc.StandardError.ReadToEnd())
 
                     Continue For
                 End If
