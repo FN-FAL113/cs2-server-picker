@@ -1,7 +1,5 @@
 ﻿Module DataGridViewService
 
-    ' cache server flag image to prevent unnecessary requests
-
     Public Sub Load_Server_List()
         Dim serverDict As Dictionary(Of String, String) = IIf(App.Get_Is_Clustered(), App.Get_Server_Dictionary_Clustered(), App.Get_Server_Dictionary_Unclustered)
 

@@ -131,7 +131,7 @@
             Environment.NewLine +
             "Author: FN-FAL113 (github username)" + Environment.NewLine +
             "License: GNU General Public License V3" + Environment.NewLine +
-            "App Version: 2.4.0",
+            "App Version: 2.4.1",
             "App Info"
         )
     End Sub
