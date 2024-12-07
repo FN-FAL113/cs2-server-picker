@@ -41,15 +41,18 @@ A lightweight server picker for CS2. Previously developed for CS:GO but now for 
 **5. I'm receiving frequent timeouts when a match is being confirmed<br>**
   - You may have blocked many servers, for optimal searching and relaying block only the necessary server relays.
 
-**6. Why windows only<br>**
+**6. Why windows only?<br>**
   - The app is written using VB.NET, and Windows platform still dominates the gaming scene due to better compatibility. [Steam Charts](https://store.steampowered.com/hwsurvey/) has great statistics on this.
+
+**7. Will this work for Deadlock?
+  - CS2 and Deadlock servers utilize same server relay addresses. Although I haven't tested it, there is a high chance it will work for deadlock and some reddit posts have recommended this app, give it a shot 😉.
 
 ## 📔 To Do
 - TBD
 
 ## 💡 Contributors
 - @Mohamad82Bz (for testing out the app on EU Servers and providing necessary details)
-- people from the issue tracker and pr section
+- contributors on pull requests and issue tracker
 - donors for heart-warming donations
 
 ## 🔽 Disclaimer
