@@ -44,7 +44,7 @@ A lightweight server picker for CS2. Previously developed for CS:GO but now for 
 **6. Why windows only?<br>**
   - The app is written using VB.NET, and Windows platform still dominates the gaming scene due to better compatibility. [Steam Charts](https://store.steampowered.com/hwsurvey/) has great statistics on this.
 
-**7. Will this work for Deadlock?
+**7. Will this work for Deadlock?**
   - CS2 and Deadlock servers utilize same server relay addresses. Although I haven't tested it, there is a high chance it will work for deadlock and some reddit posts have recommended this app, give it a shot 😉.
 
 ## 📔 To Do
