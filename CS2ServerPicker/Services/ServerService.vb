@@ -3,7 +3,7 @@ Imports Newtonsoft.Json.Linq
 Module ServerService
 
     Private clusterDict As New Dictionary(Of String, String) From {
-        {"China", "Perfect,Hong Kong,Alibaba"},
+        {"China", "Perfect,Hong Kong,Alibaba,Tencent"},
         {"Japan", "Tokyo"},
         {"Stockholm (Sweden)", "Stockholm"},
         {"India", "Chennai,Mumbai"}
@@ -64,8 +64,8 @@ Module ServerService
                         Next
                     Next
 
-                    ' As of november the 1st server revision, different server network IDs and geolocation that has existing server name prop were added. 
-                    ' Have to make validations on the dictionary to prevent duplicate key exception.
+                    ' Different server network IDs and geolocation that has existing server name prop were added. 
+                    ' Validations on the dictionary to prevent duplicate key exception.
                     If Not App.Get_Server_Dictionary_Unclustered().ContainsKey(serverName) Then
                         App.Get_Server_Dictionary_Unclustered().Add(serverName, String.Join(",", ipArr))
                     Else

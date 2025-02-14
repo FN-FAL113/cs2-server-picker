@@ -22,6 +22,7 @@ Partial Class App
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(App))
         Me.RefreshButton = New System.Windows.Forms.Button()
@@ -40,6 +41,8 @@ Partial Class App
         Me.SettingsIcon = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.DonateToolTip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.GithubToolTip = New System.Windows.Forms.ToolTip(Me.components)
         CType(Me.MainDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SettingsIcon, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -218,6 +221,7 @@ Partial Class App
         Me.PictureBox2.Size = New System.Drawing.Size(22, 22)
         Me.PictureBox2.TabIndex = 9
         Me.PictureBox2.TabStop = False
+        Me.DonateToolTip.SetToolTip(Me.PictureBox2, "PayPal Donation :')")
         '
         'PictureBox1
         '
@@ -232,10 +236,25 @@ Partial Class App
         Me.PictureBox1.Size = New System.Drawing.Size(22, 22)
         Me.PictureBox1.TabIndex = 5
         Me.PictureBox1.TabStop = False
+        Me.GithubToolTip.SetToolTip(Me.PictureBox1, "Github Repository")
+        '
+        'DonateToolTip
+        '
+        Me.DonateToolTip.AutomaticDelay = 300
+        Me.DonateToolTip.AutoPopDelay = 3000
+        Me.DonateToolTip.InitialDelay = 150
+        Me.DonateToolTip.ReshowDelay = 60
+        '
+        'GithubToolTip
+        '
+        Me.GithubToolTip.AutomaticDelay = 300
+        Me.GithubToolTip.AutoPopDelay = 3000
+        Me.GithubToolTip.InitialDelay = 150
+        Me.GithubToolTip.ReshowDelay = 60
         '
         'App
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(756, 463)
         Me.Controls.Add(Me.SettingsIcon)
@@ -281,4 +300,6 @@ Partial Class App
     Friend WithEvents Servers As DataGridViewTextBoxColumn
     Friend WithEvents Latency As DataGridViewTextBoxColumn
     Friend WithEvents SettingsIcon As PictureBox
+    Friend WithEvents DonateToolTip As ToolTip
+    Friend WithEvents GithubToolTip As ToolTip
 End Class

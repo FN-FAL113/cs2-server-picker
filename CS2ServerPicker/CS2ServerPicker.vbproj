@@ -402,6 +402,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="asset\Settings.png" />
+    <None Include="asset\flags\Tencent Guangzhou - Mobile %28China%29 %28tgdm%29.png" />
+    <None Include="asset\flags\Tencent Guangzhou - Telecom %28China%29 %28tgdt%29.png" />
+    <None Include="asset\flags\Tencent Guangzhou - Unicom %28China%29 %28tgdu%29.png" />
+    <None Include="asset\flags\Multiplay Dallas %28Texas%29 %28dfw2%29.png" />
+    <None Include="asset\flags\Multiplay Amsterdam %28Netherlands%29 %28ams4%29.png" />
+    <None Include="asset\flags\Multiplay Hong Kong %28hkg4%29.png" />
+    <None Include="asset\flags\Alibaba Cloud Beijing - Mobile %28China%29 %28pekm%29.png" />
+    <None Include="asset\flags\Alibaba Cloud Shanghai - Mobile %28China%29 %28pvgm%29.png" />
+    <None Include="asset\flags\Alibaba Cloud Beijing - Telecom %28China%29 %28pekt%29.png" />
+    <None Include="asset\flags\Alibaba Cloud Shanghai - Telecom %28China%29 %28pvgt%29.png" />
+    <None Include="asset\flags\Alibaba Cloud Beijing - Unicom %28China%29 %28peku%29.png" />
+    <None Include="asset\flags\Alibaba Cloud Shanghai - Unicom %28China%29 %28pvgu%29.png" />
     <Content Include="fav_icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

@@ -7,7 +7,7 @@
   <img src="https://img.shields.io/github/stars/FN-FAL113/cs2-server-picker"/>
 
 </div>
-A lightweight server picker for CS2. Previously developed for CS:GO but now for CS2! All regions available are included for freedom of selection. Still showing passion for the game since I started playing way back in 2013 despite the fact that my laptop cannot handle the game anymore with the new visual upgrades 😃.
+A lightweight server picker for CS2. Previously developed for CS:GO and now for CS2! All regions available are included for freedom of selection. Still showing passion for the game since I started playing way back 2013.
 
 ## ⬇️ Download
 ### [Releases](https://github.com/FN-FAL113/csgo-server-picker/releases)
@@ -15,6 +15,10 @@ A lightweight server picker for CS2. Previously developed for CS:GO but now for 
 ## 📷 Screenshot
 ![CS2ServerPicker](https://github.com/user-attachments/assets/e5c7c2a7-c560-4826-bcd5-9540d66abec6)
 ![Demo.gif](https://github.com/FN-FAL113/cs2-server-picker/assets/88238718/a46e515c-d591-49e2-ac98-f6f0088bf8eb)
+
+## 🧪 Test Result
+![Initial Setup](https://github.com/user-attachments/assets/3461718d-a33a-47f0-aef2-156ed76b5e1b)
+![In-Game Result](https://github.com/user-attachments/assets/e26bd22f-bd0c-4c70-891d-a5ae6f091e40)
 
 ## ⚙️ Requirements
 - Windows 10 or above

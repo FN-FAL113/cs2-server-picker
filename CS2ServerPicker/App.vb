@@ -111,11 +111,11 @@
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-        Process.Start("https://github.com/FN-FAL113/csgo-server-picker")
+        Process.Start("https://github.com/FN-FAL113/cs2-server-picker")
     End Sub
 
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
-        Process.Start("https://www.paypal.com/paypalme/ameliaOrbeta")
+        Process.Start("https://www.paypal.com/paypalme/fnfal113")
     End Sub
 
     Private Sub InfoButton_Click(sender As Object, e As EventArgs) Handles InfoButton.Click
@@ -131,7 +131,7 @@
             Environment.NewLine +
             "Author: FN-FAL113 (github username)" + Environment.NewLine +
             "License: GNU General Public License V3" + Environment.NewLine +
-            "App Version: 2.4.1",
+            "App Version: 2.4.2",
             "App Info"
         )
     End Sub

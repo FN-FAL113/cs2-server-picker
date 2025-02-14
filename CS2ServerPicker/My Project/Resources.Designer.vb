@@ -63,6 +63,36 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property Alibaba_Cloud_Beijing___Mobile__China___pekm_() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Alibaba Cloud Beijing - Mobile (China) (pekm)", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Alibaba_Cloud_Beijing___Telecom__China___pekt_() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Alibaba Cloud Beijing - Telecom (China) (pekt)", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Alibaba_Cloud_Beijing___Unicom__China___peku_() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Alibaba Cloud Beijing - Unicom (China) (peku)", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property Alibaba_Cloud_Chengdu___Mobile__China___ctum_() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Alibaba Cloud Chengdu - Mobile (China) (ctum)", resourceCulture)
@@ -86,6 +116,36 @@ Namespace My.Resources
         Friend ReadOnly Property Alibaba_Cloud_Chengdu___Unicom__China___ctuu_() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Alibaba Cloud Chengdu - Unicom (China) (ctuu)", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Alibaba_Cloud_Shanghai___Mobile__China___pvgm_() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Alibaba Cloud Shanghai - Mobile (China) (pvgm)", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Alibaba_Cloud_Shanghai___Telecom__China___pvgt_() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Alibaba Cloud Shanghai - Telecom (China) (pvgt)", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Alibaba_Cloud_Shanghai___Unicom__China___pvgu_() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Alibaba Cloud Shanghai - Unicom (China) (pvgu)", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -306,6 +366,36 @@ Namespace My.Resources
         Friend ReadOnly Property Madrid__Spain___mad_() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Madrid (Spain) (mad)", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Multiplay_Amsterdam__Netherlands___ams4_() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Multiplay Amsterdam (Netherlands) (ams4)", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Multiplay_Dallas__Texas___dfw2_() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Multiplay Dallas (Texas) (dfw2)", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Multiplay_Hong_Kong__hkg4_() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Multiplay Hong Kong (hkg4)", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -606,6 +696,36 @@ Namespace My.Resources
         Friend ReadOnly Property Sydney__Australia___syd_() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Sydney (Australia) (syd)", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Tencent_Guangzhou___Mobile__China___tgdm_() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Tencent Guangzhou - Mobile (China) (tgdm)", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Tencent_Guangzhou___Telecom__China___tgdt_() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Tencent Guangzhou - Telecom (China) (tgdt)", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Tencent_Guangzhou___Unicom__China___tgdu_() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Tencent Guangzhou - Unicom (China) (tgdu)", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
