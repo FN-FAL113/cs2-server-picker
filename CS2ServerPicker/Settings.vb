@@ -1,4 +1,8 @@
-﻿Public Class Settings
+﻿Imports System.IO
+
+Public Class Settings
+
+    Private netshPath As String = Path.Combine(Environment.SystemDirectory, "netsh.exe")
 
     Private Sub VersionCheckerCheckBox_CheckedChanged(sender As Object, e As EventArgs) Handles VersionCheckerCheckBox.CheckedChanged
         My.Settings.VersionCheckOnStartup = VersionCheckerCheckBox.Checked
@@ -20,7 +24,7 @@
         Try
             Dim proc As Process = Create_Custom_CMD_Process()
 
-            proc.StartInfo.Arguments = "/c netsh advfirewall reset"
+            proc.StartInfo.Arguments = $"/c {netshPath} advfirewall reset"
             proc.Start()
             proc.WaitForExit()
 
@@ -48,7 +52,7 @@
         Try
             Dim proc As Process = Create_Custom_CMD_Process()
 
-            proc.StartInfo.Arguments = "/c netsh advfirewall show allprofiles state"
+            proc.StartInfo.Arguments = $"/c {netshPath} advfirewall show allprofiles state"
             proc.Start()
             proc.WaitForExit()
 
@@ -63,7 +67,7 @@
                     Return
                 End If
 
-                proc.StartInfo.Arguments = "/c netsh advfirewall set allprofiles state on"
+                proc.StartInfo.Arguments = $"/c {netshPath} advfirewall set allprofiles state on"
                 proc.Start()
                 proc.WaitForExit()
 

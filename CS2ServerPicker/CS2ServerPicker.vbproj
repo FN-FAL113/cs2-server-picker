@@ -149,7 +149,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Services\DataGridViewService.vb" />
-    <Compile Include="Services\ErrorService.vb" />
+    <Compile Include="Services\LogService.vb" />
     <Compile Include="Services\PingService.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
