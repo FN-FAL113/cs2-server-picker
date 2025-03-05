@@ -1,5 +1,11 @@
 ﻿Public Class App
 
+#If DEBUG Then
+    Public Debug = True
+#Else
+    Public Debug = False
+#End If
+
     Private serverDictClustered As New Dictionary(Of String, String)
 
     Private serverDictUnclustered As New Dictionary(Of String, String)
@@ -56,6 +62,11 @@
     End Sub
 
     Private Async Sub App_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' Append to window title if using debug build
+        If Debug Then
+            Text = Text + " (DEBUG Build)"
+        End If
+
         Version_Check()
 
         Set_Pending_Operation(True)
@@ -131,7 +142,7 @@
             Environment.NewLine +
             "Author: FN-FAL113 (github username)" + Environment.NewLine +
             "License: GNU General Public License V3" + Environment.NewLine +
-            "App Version: 2.4.2",
+            "App Version: " + IIf(Debug, "DEBUG", "2.5.0"),
             "App Info"
         )
     End Sub

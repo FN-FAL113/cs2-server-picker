@@ -1,4 +1,5 @@
-﻿Imports System.Net
+﻿Imports System.IO
+Imports System.Net
 Imports Newtonsoft.Json.Linq
 Module ServerService
 
@@ -8,6 +9,8 @@ Module ServerService
         {"Stockholm (Sweden)", "Stockholm"},
         {"India", "Chennai,Mumbai"}
     }
+
+    Private netshPath As String = Path.Combine(Environment.SystemDirectory, "netsh.exe")
 
     Public Async Function Fetch_Server_Data() As Task(Of String)
         Try
@@ -106,7 +109,7 @@ Module ServerService
         Await Block_Unblock_All_Servers(False, False)
 
         ' is passed as a reference, should be cloned in case of unwanted modification  
-        Dim serverDIctionary As Dictionary(Of String, String) = IIf(App.Get_Is_Clustered(), App.Get_Server_Dictionary_Clustered(), App.Get_Server_Dictionary_Unclustered())
+        Dim serverDictionary As Dictionary(Of String, String) = IIf(App.Get_Is_Clustered(), App.Get_Server_Dictionary_Clustered(), App.Get_Server_Dictionary_Unclustered())
 
         Dim presetServersDataGridView As DataGridView = Presets.PresetServerListDataGridView
 
@@ -115,7 +118,7 @@ Module ServerService
         Cancel_Pending_Ping()
 
         ' offload this blocking task into a seperate thread from the thread pool to lessen load in the UI thread
-        Await Task.Run(Sub() Handle_Block_Except_Preset_Servers(presetServersDataGridView, serverDIctionary, exceptPresetServers))
+        Await Task.Run(Sub() Handle_Block_Except_Preset_Servers(presetServersDataGridView, serverDictionary, exceptPresetServers))
 
         App.Set_Pending_Operation(False)
 
@@ -145,7 +148,7 @@ Module ServerService
             End If
 
             Try
-                proc.StartInfo.Arguments = "/c netsh advfirewall firewall add rule " +
+                proc.StartInfo.Arguments = $"/c {netshPath} advfirewall firewall add rule " +
                         "name=CS2ServerPicker_" + serverKvp.Key.Replace(" ", "") + " dir=out action=block protocol=ANY " +
                         "remoteip=" + serverKvp.Value
                 proc.Start()
@@ -168,7 +171,7 @@ Module ServerService
 
     Public Async Sub Block_Unblock_Selected_Servers(block As Boolean)
         Dim mainDataGridView As DataGridView = App.Get_DataGridView_Control()
-        Dim serverDIctionary As Dictionary(Of String, String) = IIf(App.Get_Is_Clustered(), App.Get_Server_Dictionary_Clustered(), App.Get_Server_Dictionary_Unclustered())
+        Dim serverDictionary As Dictionary(Of String, String) = IIf(App.Get_Is_Clustered(), App.Get_Server_Dictionary_Clustered(), App.Get_Server_Dictionary_Unclustered())
 
         Dim selectedRows As DataGridViewSelectedRowCollection = mainDataGridView.SelectedRows
 
@@ -189,14 +192,14 @@ Module ServerService
         Cancel_Pending_Ping()
 
         ' offload this blocking task into a seperate thread from the thread pool to lessen load in the UI thread
-        Await Task.Run(Sub() Handle_Block_Unblock_Selected_Servers(mainDataGridView, serverDIctionary, block))
+        Await Task.Run(Sub() Handle_Block_Unblock_Selected_Servers(mainDataGridView, serverDictionary, block))
 
         App.Set_Pending_Operation(False)
 
         Ping_Servers(selectedRows)
     End Sub
 
-    Private Sub Handle_Block_Unblock_Selected_Servers(mainDataGridView As DataGridView, serverDIctionary As Dictionary(Of String, String), block As Boolean)
+    Private Sub Handle_Block_Unblock_Selected_Servers(mainDataGridView As DataGridView, serverDictionary As Dictionary(Of String, String), block As Boolean)
         Dim proc As Process = Create_Custom_CMD_Process()
 
         ' traverse every datagrid row and block/unblock selected servers
@@ -208,9 +211,9 @@ Module ServerService
             Try
                 Dim region As String = row.Cells(1).Value
 
-                proc.StartInfo.Arguments = "/c netsh advfirewall firewall " + If(block, "add", "delete") + " rule " +
+                proc.StartInfo.Arguments = $"/c {netshPath} advfirewall firewall " + If(block, "add", "delete") + " rule " +
                         "name=CS2ServerPicker_" + region.Replace(" ", "") + If(block, " dir=out action=block protocol=ANY " +
-                        "remoteip=" + serverDIctionary.Item(region), "")
+                        "remoteip=" + serverDictionary.Item(region), "")
                 proc.Start()
                 proc.WaitForExit()
 
@@ -232,7 +235,7 @@ Module ServerService
     Public Async Function Block_Unblock_All_Servers(block As Boolean, Optional pingServers As Boolean = True) As Task
         ' this method was converted async since its invoked by other methods/tasks and
         ' it does not evaluate synchronously due to its async operation that must be awaited
-        Dim serverDIctionary As Dictionary(Of String, String) = IIf(App.Get_Is_Clustered(), App.Get_Server_Dictionary_Clustered(), App.Get_Server_Dictionary_Unclustered())
+        Dim serverDictionary As Dictionary(Of String, String) = IIf(App.Get_Is_Clustered(), App.Get_Server_Dictionary_Clustered(), App.Get_Server_Dictionary_Unclustered())
         Dim mainDataGridView As DataGridView = App.Get_DataGridView_Control()
 
         If App.Get_Pending_Operation() Then
@@ -246,7 +249,7 @@ Module ServerService
         Cancel_Pending_Ping()
 
         ' offload this blocking task into a seperate thread from the thread pool to lessen load in the UI thread
-        Await Task.Run(Sub() Handle_Block_Unblock_All_Servers(mainDataGridView, serverDIctionary, block))
+        Await Task.Run(Sub() Handle_Block_Unblock_All_Servers(mainDataGridView, serverDictionary, block))
 
         App.Set_Pending_Operation(False)
 
@@ -255,7 +258,7 @@ Module ServerService
         End If
     End Function
 
-    Private Sub Handle_Block_Unblock_All_Servers(mainDataGridView As DataGridView, serverDIctionary As Dictionary(Of String, String), block As Boolean)
+    Private Sub Handle_Block_Unblock_All_Servers(mainDataGridView As DataGridView, serverDictionary As Dictionary(Of String, String), block As Boolean)
         Dim proc As Process = Create_Custom_CMD_Process()
 
         ' traverse every datagrid row and block/unblock all servers
@@ -267,9 +270,9 @@ Module ServerService
             End If
 
             Try
-                proc.StartInfo.Arguments = "/c netsh advfirewall firewall " + If(block, "add", "delete") + " rule " +
+                proc.StartInfo.Arguments = $"/c {netshPath} advfirewall firewall " + If(block, "add", "delete") + " rule " +
                 "name=CS2ServerPicker_" + region.Replace(" ", "") + If(block, " dir=out action=block protocol=ANY " +
-                    "remoteip=" + serverDIctionary.Item(region), "")
+                    "remoteip=" + serverDictionary.Item(region), "")
                 proc.Start()
                 proc.WaitForExit()
 
@@ -294,8 +297,7 @@ Module ServerService
         Dim is_rule_exist As Boolean
         Dim region_trimmed As String = region.Replace(" ", "")
 
-        proc.StartInfo.Arguments = "/c netsh advfirewall firewall show rule name=CS2ServerPicker_" +
-                region_trimmed + " | findstr CS2ServerPicker_" + region_trimmed
+        proc.StartInfo.Arguments = $"/c {netshPath} advfirewall firewall show rule name=CS2ServerPicker_" + region_trimmed
         proc.Start()
         proc.WaitForExit()
 

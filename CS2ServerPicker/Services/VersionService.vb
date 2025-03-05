@@ -4,7 +4,7 @@ Imports Newtonsoft.Json.Linq
 Module VersionService
     Public Async Sub Version_Check()
         Try
-            If Not My.Settings.VersionCheckOnStartup Then
+            If Not My.Settings.VersionCheckOnStartup Or App.Debug Then
                 Return
             End If
 
