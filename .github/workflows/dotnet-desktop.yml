@@ -1,0 +1,28 @@
+name: Build CS2ServerPicker
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: windows-latest # Use Windows runner for VB.NET compatibility
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x' # Specify the .NET version (adjust as needed)
+
+    - name: Restore dependencies
+      run: dotnet restore CS2ServerPicker/CS2ServerPicker.vbproj
+
+    - name: Build project
+      run: dotnet build CS2ServerPicker.sln --configuration Release --no-restore
