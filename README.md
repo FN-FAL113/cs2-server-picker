@@ -17,8 +17,20 @@ A lightweight server picker for CS2. Previously developed for CS:GO and now for 
 ![Demo.gif](https://github.com/FN-FAL113/cs2-server-picker/assets/88238718/a46e515c-d591-49e2-ac98-f6f0088bf8eb)
 
 ## 🧪 Test Result
-![Initial Setup](https://github.com/user-attachments/assets/3461718d-a33a-47f0-aef2-156ed76b5e1b)
-![In-Game Result](https://github.com/user-attachments/assets/e26bd22f-bd0c-4c70-891d-a5ae6f091e40)
+<details>
+  <summary>Test 1</summary>
+
+  ![Initial Setup](https://github.com/user-attachments/assets/3461718d-a33a-47f0-aef2-156ed76b5e1b)
+  ![In-Game Result](https://github.com/user-attachments/assets/e26bd22f-bd0c-4c70-891d-a5ae6f091e40)
+</details>
+
+<details>
+  <summary>Test 2</summary>
+  
+  ![Screenshot 2025-06-06 193216](https://github.com/user-attachments/assets/c15af912-d964-4461-b706-2a8bb0c2d00b)
+  ![20250606193344_1](https://github.com/user-attachments/assets/57ae9c7f-afca-42fa-b88a-9e77bca83570)
+  ![20250608195438_1](https://github.com/user-attachments/assets/d7ebd25f-6f17-414d-994f-f217b2d05864)
+</details>
 
 ## ⚙️ Requirements
 - Windows 10 or above
