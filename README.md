@@ -36,7 +36,7 @@ A lightweight server picker for CS2. Previously developed for CS:GO and now for 
 - Windows 10 or above
 - Works on Windows 8.1 but requires [.NET Framework 4.7.2](https://dotnet.microsoft.com/en-us/download/dotnet-framework/thank-you/net472-web-installer) to be installed separately.
 
-## ❔FAQ
+## ❔ FAQ
 **1. How it works, will I get banned?!**
  - The app does not modify any game or system files, I can assure you are safe from being banned when using the app as long as you do not download from untrusted sources. It will add necessary firewall policies to block game server relay ip addresses from being accessed by your network thus skipping them in-game when finding a match.
 
@@ -64,12 +64,12 @@ A lightweight server picker for CS2. Previously developed for CS:GO and now for 
   - CS2 and Deadlock servers utilize same server relay addresses. Although I haven't tested it, there is a high chance it will work for deadlock and some reddit posts have recommended this app, give it a shot 😉.
 
 ## 📔 To Do
-- TBD
+- Rewrite using C# WPF or multi-platform with Avalonia (still finding motivation and time)
 
 ## 💡 Contributors
 - @Mohamad82Bz (for testing out the app on EU Servers and providing necessary details)
 - contributors on pull requests and issue tracker
-- donors for heart-warming donations
+- donors, can mention names here if you wish just add a donation note on paypal
 
 ## 🔽 Disclaimer
 - This project or its author are not affiliated, associated, authorized, endorsed by valve, its affiliates or subsidiaries. Images, names and other form of trademark are registered to their respective owners.
