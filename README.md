@@ -69,14 +69,14 @@ A lightweight server picker for CS2. Previously developed for CS:GO and now for 
 ## 💡 Contributors
 - @Mohamad82Bz (for testing out the app on EU Servers and providing necessary details)
 - contributors on pull requests and issue tracker
-- donors, can mention names here if you wish just add a donation note on paypal
+- donors
 
 ## 🔽 Disclaimer
 - This project or its author are not affiliated, associated, authorized, endorsed by valve, its affiliates or subsidiaries. Images, names and other form of trademark are registered to their respective owners.
-
+- You are free to compile the project on Visual Studio, the zip file provided here is a clean compilation of the binaries and has been downloaded by thousands.
+  
 ## 💖 Support the Project/Dev
 - I develop stuff for free with dedication and hard work. Sharing this project with fellow gamers or giving it a star is a huge sign of appreciation!</br>
-- App is open for sponsorships through ad banners
 <a href="https://www.paypal.com/paypalme/fnfal113" target=_blank>
   <img src="https://raw.githubusercontent.com/stefan-niedermann/paypal-donate-button/master/paypal-donate-button.png" alt="Donate with PayPal" width="36%" />
 </a>
