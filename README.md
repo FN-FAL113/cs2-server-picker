@@ -66,9 +66,8 @@ A lightweight server picker for CS2. Previously developed for CS:GO and now for 
   - CS2 and Deadlock servers utilize same server relay addresses. Although I haven't tested it, there is a high chance it will work for deadlock and some reddit posts have recommended this app, give it a shot 😉.
 
 ## 📔 To Do
-- Rewrite the whole app in C# with Cross Platform Support (Windows, Linux, Mac)
-  - Currently being developed (WIP)
-  - Will be released when this repo reaches 512 stars as a milestone
+- [x] Rewrite the whole app in C# with Cross Platform Support (Windows, Linux)
+  - [x] Will be released when this repo reaches 512 stars as a milestone
   - Thank you for your support :)
 
 ## 💡 Contributors
