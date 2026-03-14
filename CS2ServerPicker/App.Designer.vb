@@ -43,6 +43,7 @@ Partial Class App
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.DonateToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.GithubToolTip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         CType(Me.MainDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SettingsIcon, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -216,7 +217,7 @@ Partial Class App
         Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PictureBox2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox2.Location = New System.Drawing.Point(723, 435)
-        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(22, 22)
         Me.PictureBox2.TabIndex = 9
@@ -231,7 +232,7 @@ Partial Class App
         Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox1.ErrorImage = Global.CS2ServerPicker.My.Resources.Resources.Warsaw__Poland___waw_
         Me.PictureBox1.Location = New System.Drawing.Point(693, 435)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(22, 22)
         Me.PictureBox1.TabIndex = 5
@@ -252,11 +253,24 @@ Partial Class App
         Me.GithubToolTip.InitialDelay = 150
         Me.GithubToolTip.ReshowDelay = 60
         '
+        'LinkLabel1
+        '
+        Me.LinkLabel1.AutoSize = True
+        Me.LinkLabel1.Font = New System.Drawing.Font("Arial", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.LinkLabel1.Location = New System.Drawing.Point(285, 9)
+        Me.LinkLabel1.Name = "LinkLabel1"
+        Me.LinkLabel1.Size = New System.Drawing.Size(186, 16)
+        Me.LinkLabel1.TabIndex = 11
+        Me.LinkLabel1.TabStop = True
+        Me.LinkLabel1.Text = "Server Picker X released!"
+        Me.LinkLabel1.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
         'App
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(756, 463)
+        Me.Controls.Add(Me.LinkLabel1)
         Me.Controls.Add(Me.SettingsIcon)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PresetsButton)
@@ -282,6 +296,7 @@ Partial Class App
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents RefreshButton As Button
@@ -302,4 +317,5 @@ Partial Class App
     Friend WithEvents SettingsIcon As PictureBox
     Friend WithEvents DonateToolTip As ToolTip
     Friend WithEvents GithubToolTip As ToolTip
+    Friend WithEvents LinkLabel1 As LinkLabel
 End Class

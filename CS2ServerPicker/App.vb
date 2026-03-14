@@ -142,7 +142,7 @@
             Environment.NewLine +
             "Author: FN-FAL113 (github username)" + Environment.NewLine +
             "License: GNU General Public License V3" + Environment.NewLine +
-            "App Version: " + IIf(Debug, "DEBUG", "2.5.0"),
+            "App Version: " + IIf(Debug, "DEBUG", "2.5.1"),
             "App Info"
         )
     End Sub
@@ -208,5 +208,9 @@
     Private Sub SettingsIcon_Click(sender As Object, e As EventArgs) Handles SettingsIcon.Click
         Settings.ShowDialog()
         Settings.Activate()
+    End Sub
+
+    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+        Process.Start("https://github.com/FN-FAL113/server-picker-x")
     End Sub
 End Class
