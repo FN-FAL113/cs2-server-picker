@@ -9,7 +9,7 @@
 </div>
 A lightweight server picker for CS2. Previously developed for CS:GO and now for CS2! All regions available are included for freedom of selection. Still showing passion for the game since I started playing way back 2013.
 
-### [Server Picker X is now released! <br/> Cross-platform support and modern architecture](https://github.com/FN-FAL113/server-picker-x)
+### [Server Picker X released! <br/> Cross-platform support, modern architecture and more!](https://github.com/FN-FAL113/server-picker-x)
 
 ## ⬇️ Download
 ### [Releases](https://github.com/FN-FAL113/csgo-server-picker/releases)
